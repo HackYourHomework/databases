@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
 // Start Connection With meetup DB!
 connection.connect();
 
-// Write Query To Create Each Table With Table Name, Fields [Columns] Names And Fields Data Type!
+// Write Query To Create Each Table With Table Name, Entity Names And Entity Data Type!
 const create_query_invitee = "create table Invitee (invitee_no int, invitee_name varchar(50), invited_by varchar(50))";
 const create_query_room = "create table Room (room_no int, room_name varchar(25), floor_number int)";
 const create_query_meeting = "create table Meeting (meeting_no int, meeting_title varchar(25), starting_time datetime, ending_time datetime, room_no int)";
@@ -39,7 +39,7 @@ createTable(create_query_invitee,"Invitee");
 createTable(create_query_room,"Room");
 createTable(create_query_meeting,"Meeting");
 
-// Write Query To Insert 5 Records To Each Table With Table Name And Values For Each Field!
+// Write Query To Insert 5 Records To Each Table With Table Name And Values For Each Cell!
 // There Are Many Way To Write A Insert Query, I Choose The Readable One!
 const insert_query_invitee = [
     "insert into Invitee values (10, 'Mayar', 'Khaled')",
