@@ -75,3 +75,5 @@ answerQuestions(
   "SELECT SUM (population) FROM country",
   "What is the population number of the world?"
 );
+
+connection.end();
