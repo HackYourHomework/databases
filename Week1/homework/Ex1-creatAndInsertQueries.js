@@ -65,7 +65,7 @@ const insert_query_meeting = [
 
 
 
-// Write One Function To Insert The Values Of  Depends on Insert Query!  
+// Write One Function To Insert The Values Depends on Insert Query!  
 function insertRecords(insert_query_table,tableName){
     insert_query_table.forEach(row => {
         connection.query(row, function (error, results, fields) {
