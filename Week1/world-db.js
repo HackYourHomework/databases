@@ -21,47 +21,59 @@ query("USE world", "world DB selected");
 ///Users/ahmad/Documents/HYF/Homework/databases/Week1/world.sql
 
 //query for countries with population over 8 Mil
-countriesPopulationQuer =
+const countriesPopulationQuer =
   "SELECT name FROM country WHERE Population > 8000000 ";
-
 query(
   countriesPopulationQuer,
-  "Country name with population > 8 million returned"
+  "Country names with population above 8 million are"
 );
 
 //query for countries with "land" in the name
-countriesLandQuer = `SELECT name FROM country WHERE name LIKE "%land"`;
-
-query(
-  countriesLandQuer,
-  `Country with "Land" in their name with population > 8 million returned`
-);
+const countriesLandQuer = `SELECT name FROM country WHERE name LIKE "%land"`;
+query(countriesLandQuer, `Country with "Land" in their names are`);
 
 //querry for cities with population between 500000 and 1000000
-cityPopulationQuer =
+const cityPopulationQuer =
   "SELECT name FROM city WHERE population >= 500000 AND population <= 1000000";
 query(
   cityPopulationQuer,
-  `Cities with population between 500000 and 1000000 returned`
+  `Cities with population between 500000 and 1000000 are`
 );
 
 //querry for countries in Europe
-countriesInEuropeQuer = `SELECT Name FROM country WHERE Continent = "europe"`;
-query(countriesInEuropeQuer, `Countries in Europe returned`);
+const countriesInEuropeQuer = `SELECT Name FROM country WHERE Continent = "europe"`;
+query(countriesInEuropeQuer, `Countries in Europe are`);
 
 //querry for countries in descending order based on surface area
-countriesSurAreaDesc =
+const countriesSurAreaDesc =
   "SELECT name, SurfaceArea from Country ORDER BY SurfaceArea DESC";
 query(
   countriesSurAreaDesc,
-  `Countries by surface area in descending order returned`
+  `Countries by surface area in descending order are`
 );
+
+//querry to return cities in NLD
+const CitiesInNldQuer = `SELECT name FROM city WHERE CountryCode = 'NLD'`;
+query(CitiesInNldQuer, "Cities with country code NLD are");
+
+const rotterdamPopulationQuer = `SELECT Population FROM city WHERE Name = 'Rotterdam'`;
+query(rotterdamPopulationQuer, "Population of Rotterdam is");
+
+const top10SurAreaQuer = `SELECT name, SurfaceArea from Country ORDER BY SurfaceArea DESC LIMIT 10`;
+query(top10SurAreaQuer, "Top 10 countries based on surface area are");
+
+//SELECT name,population FROM city ORDER BY population DESC LIMIT 10;
+const top10populatedCitQuer = `SELECT name,population FROM city ORDER BY population DESC LIMIT 10`;
+query(top10populatedCitQuer, "Top 10 cities based on population are");
+
+const worldPopulationSumQuer = `SELECT SUM(population) AS PopulationOfTheWorld FROM country`;
+query(worldPopulationSumQuer, "Sum of world population is");
 
 //reusuable funtion to perform query
 function query(quer, querMsg) {
   connection.query(quer, (error, results, fields) => {
     if (error) throw error;
-    console.log(querMsg);
+    console.log(`${querMsg}:`);
     console.log(results);
   });
 }

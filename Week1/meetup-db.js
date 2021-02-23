@@ -11,6 +11,7 @@ connection.connect(function (err) {
   console.log("Connected!");
 });
 
+//create and use meetup DB
 query("CREATE DATABASE meetup", "Database created!");
 
 query("USE meetup", "Database selected");
@@ -72,7 +73,7 @@ const meetingData = [
 addDataQuer(meetingInsertQuer, meetingData, "Meeting data entered");
 
 function addDataQuer(quer, data, querMsg) {
-  connection.query(quer, [data], (err, results, fields) => {
+  connection.query(quer, [data], (err, results) => {
     if (err) {
       return console.error(err.message);
     }
