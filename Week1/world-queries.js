@@ -31,9 +31,7 @@ async function worldDb() {
     const qryLandCountries = qryLandPromise[0]
       .map((country) => country.Name)
       .join(", ");
-    console.log(
-      `Countries with "land" in their names: ${qryLandCountries} \n`
-    );
+    console.log(`Countries with "land" in their names: ${qryLandCountries} \n`);
 
     // What are the names of the cities with population in between 500,000 and 1 million?
     const qryCityPopulation = `SELECT Name FROM city WHERE POPULATION > 500000 AND POPULATION < 1000000`;
@@ -73,17 +71,13 @@ async function worldDb() {
     const qryNdrlndCities = qryNdrlndPromise[0]
       .map((city) => city.Name)
       .join(", ");
-    console.log(
-      `All cities in the Netherlands: ${qryNdrlndCities} \n`
-    );
+    console.log(`All cities in the Netherlands: ${qryNdrlndCities} \n`);
 
     // What is the population of Rotterdam?
     const qryRotterdam = `SELECT Population FROM city WHERE Name = "Rotterdam"`;
     const qryRotterdamPromise = await Promise.all([execQuery(qryRotterdam)]);
     const qryRotterdamPopulation = qryRotterdamPromise[0][0].Population;
-    console.log(
-      `Population of Rotterdam: ${qryRotterdamPopulation} \n`
-    );
+    console.log(`Population of Rotterdam: ${qryRotterdamPopulation} \n`);
 
     // What's the top 10 countries by Surface Area?
     const qryTopArea = `SELECT Name FROM country ORDER BY SurfaceArea DESC LIMIT 10`;
@@ -91,27 +85,23 @@ async function worldDb() {
     const qryTopAreaCountries = qryTopAreaPromise[0]
       .map((country) => country.Name)
       .join(", ");
-    console.log(
-      `Top 10 countries by surface areas: ${qryTopAreaCountries} \n`
-    );
+    console.log(`Top 10 countries by surface areas: ${qryTopAreaCountries} \n`);
 
     // What's the top 10 most populated cities?
     const qryTopPopulation = `SELECT Name FROM city ORDER BY Population DESC LIMIT 10`;
-    const qryTopPopulationPromise = await Promise.all([execQuery(qryTopPopulation)]);
+    const qryTopPopulationPromise = await Promise.all([
+      execQuery(qryTopPopulation),
+    ]);
     const qryTopPopulationCities = qryTopPopulationPromise[0]
       .map((city) => city.Name)
       .join(", ");
-    console.log(
-      `Top 10 most populated cities: ${qryTopPopulationCities} \n`
-    );
+    console.log(`Top 10 most populated cities: ${qryTopPopulationCities} \n`);
 
     // What is the population number of the world?
     const qryTotalPop = `SELECT SUM(Population) AS TotalPopulation FROM country`;
     const qryTotalPopPromise = await Promise.all([execQuery(qryTotalPop)]);
     const qryTotalPopWorld = qryTotalPopPromise[0][0].TotalPopulation;
-    console.log(
-      `Total population of the world: ${qryTotalPopWorld} \n`
-    );
+    console.log(`Total population of the world: ${qryTotalPopWorld} \n`);
   } catch (error) {
     console.error(error);
   }
