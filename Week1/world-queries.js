@@ -22,9 +22,7 @@ async function worldDb() {
       .map((country) => country.Name)
       .join(", ");
     console.log(
-      `Countries with population greater than 8 million: ${JSON.stringify(
-        qryPopulationCountries
-      )} \n`
+      `Countries with population greater than 8 million: ${qryPopulationCountries} \n`
     );
 
     // What are the names of countries that have “land” in their names?
@@ -34,9 +32,7 @@ async function worldDb() {
       .map((country) => country.Name)
       .join(", ");
     console.log(
-      `Countries with "land" in their names: ${JSON.stringify(
-        qryLandCountries
-      )} \n`
+      `Countries with "land" in their names: ${qryLandCountries} \n`
     );
 
     // What are the names of the cities with population in between 500,000 and 1 million?
@@ -48,9 +44,7 @@ async function worldDb() {
       .map((city) => city.Name)
       .join(", ");
     console.log(
-      `Names of the cities with population between 500,000 and 1 million: ${JSON.stringify(
-        qryCityPopulationCities
-      )} \n`
+      `Names of the cities with population between 500,000 and 1 million: ${qryCityPopulationCities} \n`
     );
 
     // What's the name of all the countries on the continent ‘Europe’?
@@ -60,9 +54,7 @@ async function worldDb() {
       .map((city) => city.Name)
       .join(", ");
     console.log(
-      `Names of all the countries on the continent 'Europe': ${JSON.stringify(
-        qryContEuropeCountries
-      )} \n`
+      `Names of all the countries on the continent 'Europe': ${qryContEuropeCountries} \n`
     );
 
     // List all the countries in the descending order of their surface areas.
@@ -72,9 +64,7 @@ async function worldDb() {
       .map((country) => country.Name)
       .join(", ");
     console.log(
-      `All countries in the descending order of their surface areas: ${JSON.stringify(
-        qryAreaCountries
-      )} \n`
+      `All countries in the descending order of their surface areas: ${qryAreaCountries} \n`
     );
 
     // What are the names of all the cities in the Netherlands?
@@ -84,7 +74,7 @@ async function worldDb() {
       .map((city) => city.Name)
       .join(", ");
     console.log(
-      `All cities in the Netherlands: ${JSON.stringify(qryNdrlndCities)} \n`
+      `All cities in the Netherlands: ${qryNdrlndCities} \n`
     );
 
     // What is the population of Rotterdam?
@@ -92,7 +82,7 @@ async function worldDb() {
     const qryRotterdamPromise = await Promise.all([execQuery(qryRotterdam)]);
     const qryRotterdamPopulation = qryRotterdamPromise[0][0].Population;
     console.log(
-      `Population of Rotterdam: ${JSON.stringify(qryRotterdamPopulation)} \n`
+      `Population of Rotterdam: ${qryRotterdamPopulation} \n`
     );
 
     // What's the top 10 countries by Surface Area?
@@ -102,9 +92,7 @@ async function worldDb() {
       .map((country) => country.Name)
       .join(", ");
     console.log(
-      `Top 10 countries by surface areas: ${JSON.stringify(
-        qryTopAreaCountries
-      )} \n`
+      `Top 10 countries by surface areas: ${qryTopAreaCountries} \n`
     );
 
     // What's the top 10 most populated cities?
@@ -114,9 +102,7 @@ async function worldDb() {
       .map((city) => city.Name)
       .join(", ");
     console.log(
-      `Top 10 most populated cities: ${JSON.stringify(
-        qryTopPopulationCities
-      )} \n`
+      `Top 10 most populated cities: ${qryTopPopulationCities} \n`
     );
 
     // What is the population number of the world?
@@ -124,7 +110,7 @@ async function worldDb() {
     const qryTotalPopPromise = await Promise.all([execQuery(qryTotalPop)]);
     const qryTotalPopWorld = qryTotalPopPromise[0][0].TotalPopulation;
     console.log(
-      `Total population of the world: ${JSON.stringify(qryTotalPopWorld)} \n`
+      `Total population of the world: ${qryTotalPopWorld} \n`
     );
   } catch (error) {
     console.error(error);
