@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
 connection.connect();
 
 //drop DB meetup 
-connection.query("DROP DATABASE IF NOT EXISTS meetup", (error, results, fields) => {
+connection.query("DROP DATABASE IF EXISTS meetup", (error, results, fields) => {
     if (error) {
          throw error;
      }
@@ -28,9 +28,9 @@ connection.query(("USE meetup"), (error, results, fields) => {
 });
  
 
-const createTableInvitee = "create table Invitee (invitee_no int, invitee_name varchar(20), invited_by varchar(20), PRIMARY kEY(invitee_no))";
-const createTableRoom = "create table Room (room_no int, room_name varchar(20), floor_number int, PRIMARY kEY(room_no))";
-const createTableMeeting = "create table Meeting (meeting_no int, meeting_title varchar(10), starting_time datetime, ending_time datetime, room_no int, PRIMARY kEY(meeting_no))";
+const createTableInvitee = "create table Invitee (invitee_no int PRIMARY KEY , invitee_name varchar(20), invited_by varchar(20))";
+const createTableRoom = "create table Room (room_no int PRIMARY KEY, room_name varchar(20), floor_number int)";
+const createTableMeeting = "create table Meeting (meeting_no int PRIMARY KEY, meeting_title varchar(10), starting_time datetime, ending_time datetime, room_no int)";
 
 function createTable(createTableQuery){
     connection.query(createTableQuery, function (error, results, fields) {
@@ -49,7 +49,7 @@ const insertTableInvitee = [
     "INSERT INTO Invitee  values (20, 'mohammed', 'manal')",
     "INSERT INTO Invitee  values (32, 'hashim', 'ziad')",
     "INSERT INTO Invitee  values (12, 'tom', 'david')",
-    "INSERT INTO Invitee  values (20, 'khaled', 'manal')",
+    "INSERT INTO Invitee  values (23, 'khaled', 'manal')",
     "INSERT INTO Invitee  values (40, 'sami', 'ziad')"
     ];
 const insertTableRoom = [
