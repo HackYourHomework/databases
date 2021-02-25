@@ -13,12 +13,9 @@ connection.connect(function (err) {
   console.log("Connected!");
 });
 
-//creating the DB
-query("CREATE DATABASE IF NOT EXISTS world", "World DB created!");
+//I used CLI to restore the data dump since I tried restoring it using a query with no luck.
 
 query("USE world", "world DB selected");
-
-//I used CLI to restore the data dump since I tried restoring it using a query with no luck.
 
 //1.query for countries with population over 8 Mil
 const countriesPopulationQuer =

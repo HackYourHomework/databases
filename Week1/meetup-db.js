@@ -21,13 +21,13 @@ connection.connect(function (err) {
 });
 
 //create and use meetup DB
-query("CREATE DATABASE meetup", "Database created!");
+query("CREATE DATABASE IF NOT EXISTS meetup", "Database created!");
 query("USE meetup", "Database selected");
 
 //create Invitee table
-const inviteeTableQer =
+const inviteeTableQuer =
   "CREATE TABLE Invitee (invitee_no int, invitee_name VARCHAR(100), invited_by VARCHAR(100))";
-query(inviteeTableQer, "Invitee Table Created!");
+query(inviteeTableQuer, "Invitee Table Created!");
 
 //create Room table
 const roomTableQuer =
