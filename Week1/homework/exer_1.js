@@ -8,8 +8,8 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-//drop DB mmetup 
-connection.query("DROP DATABASE meetup", (error, results, fields) => {
+//drop DB meetup 
+connection.query("DROP DATABASE IF NOT EXISTS meetup", (error, results, fields) => {
     if (error) {
          throw error;
      }
@@ -28,9 +28,9 @@ connection.query(("USE meetup"), (error, results, fields) => {
 });
  
 
-const createTableInvitee = "create table Invitee (invitee_no int, invitee_name varchar(20), invited_by varchar(20))";
-const createTableRoom = "create table Room (room_no int, room_name varchar(20), floor_number int)";
-const createTableMeeting = "create table Meeting (meeting_no int, meeting_title varchar(10), starting_time datetime, ending_time datetime, room_no int)";
+const createTableInvitee = "create table Invitee (invitee_no int, invitee_name varchar(20), invited_by varchar(20), PRIMARY kEY(invitee_no))";
+const createTableRoom = "create table Room (room_no int, room_name varchar(20), floor_number int, PRIMARY kEY(room_no))";
+const createTableMeeting = "create table Meeting (meeting_no int, meeting_title varchar(10), starting_time datetime, ending_time datetime, room_no int, PRIMARY kEY(meeting_no))";
 
 function createTable(createTableQuery){
     connection.query(createTableQuery, function (error, results, fields) {
