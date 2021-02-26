@@ -12,7 +12,7 @@ connection.connect(err => {
   console.log("Connected!");
 });
 
-const answerQuestions = (query, question) => {
+const answerQuestions = (question, query) => {
   const sql = query;
   connection.query(sql, (err, result) => {
     if (err) throw err;
@@ -26,54 +26,54 @@ const answerQuestions = (query, question) => {
 };
 
 answerQuestions(
-  "SELECT name FROM city WHERE population > 8000000",
-  "What are the names of countries with population greater than 8 million?"
+  "What are the names of countries with population greater than 8 million?",
+  "SELECT name FROM country WHERE population > 8000000"
 );
 
 answerQuestions(
-  "SELECT name FROM country WHERE name LIKE '%land%'",
-  "What are the names of countries that have “land” in their names?"
+  "What are the names of countries that have “land” in their names?",
+  "SELECT name FROM country WHERE name LIKE '%land%'"
 );
 
 answerQuestions(
-  "SELECT name FROM city WHERE population BETWEEN 500000 AND 1000000",
-  "What are the names of the cities with population in between 500,000 and 1 million?"
+  "What are the names of the cities with population in between 500,000 and 1 million?",
+  "SELECT name FROM city WHERE population BETWEEN 500000 AND 1000000"
 );
 
 answerQuestions(
-  "SELECT name FROM country WHERE continent = 'Europe'",
-  "What's the name of all the countries on the continent ‘Europe’?"
+  "What's the name of all the countries on the continent ‘Europe’?",
+  "SELECT name FROM country WHERE continent = 'Europe'"
 );
 
 answerQuestions(
-  "SELECT name, SurfaceArea FROM country ORDER BY SurfaceArea DESC",
-  "List all the countries in the descending order of their surface areas."
+  "List all the countries in the descending order of their surface areas.",
+  "SELECT name, SurfaceArea FROM country ORDER BY SurfaceArea DESC"
 );
 
 answerQuestions(
-  "SELECT name FROM city WHERE CountryCode = 'NLD'",
-  "What are the names of all the cities in the Netherlands?"
+  "What are the names of all the cities in the Netherlands?",
+  "SELECT name FROM city WHERE CountryCode = 'NLD'"
 );
 
 answerQuestions(
-  "SELECT population FROM city WHERE name = 'Rotterdam'",
-  "What is the population of Rotterdam?"
+  "What is the population of Rotterdam?",
+  "SELECT population FROM city WHERE name = 'Rotterdam'"
 );
 
 answerQuestions(
-  "SELECT name, SurfaceArea FROM country ORDER BY SurfaceArea DESC LIMIT 10",
-  "What's the top 10 countries by Surface Area?"
+  "What's the top 10 countries by Surface Area?",
+  "SELECT name, SurfaceArea FROM country ORDER BY SurfaceArea DESC LIMIT 10"
 );
 
 answerQuestions(
-  "SELECT name, population FROM city ORDER BY population DESC LIMIT 10",
-  "What's the top 10 most populated cities?"
+  "What's the top 10 most populated cities?",
+  "SELECT name, population FROM city ORDER BY population DESC LIMIT 10"
 );
 
 //not sure if have done this correctly, as population number should be around 7billions and I get 6078749450. So I lost 1bil of humans...
 answerQuestions(
-  "SELECT SUM (population) FROM country",
-  "What is the population number of the world?"
+  "What is the population number of the world?",
+  "SELECT SUM (population) FROM country"
 );
 
 connection.end();
