@@ -12,8 +12,11 @@ connection.connect(err => {
   console.log("Connected!");
 });
 
-//create a new database, if it not already existing => https://stackoverflow.com/questions/23837151/sql-mysql-cant-create-database
-connection.query("CREATE DATABASE IF NOT EXISTS meetup", (err, result) => {
+//dropping the database if it exsists
+tableManipulation("DROP DATABASE IF EXISTS meetup");
+
+//creating a databsae for meetup
+connection.query("CREATE DATABASE meetup", (err, result) => {
   if (err) throw err;
   console.log("Database created!");
 });
