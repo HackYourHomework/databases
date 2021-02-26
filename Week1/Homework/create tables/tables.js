@@ -12,6 +12,15 @@ connection.connect(err => {
   console.log("Connected!");
 });
 
+//general purpose function, for easier creation of tables and data insertion or deleting tables:
+const tableManipulation = parameters => {
+  const sql = parameters;
+  connection.query(sql, (err, result) => {
+    if (err) throw err;
+    console.log("Everything went okay!");
+  });
+};
+
 //dropping the database if it exsists
 tableManipulation("DROP DATABASE IF EXISTS meetup");
 
@@ -22,14 +31,6 @@ connection.query("CREATE DATABASE meetup", (err, result) => {
 });
 //to check list of databases inside mySQL CLI - show databases;
 
-//general purpose function, for easier creation of tables and data insertion or deleting tables:
-const tableManipulation = parameters => {
-  const sql = parameters;
-  connection.query(sql, (err, result) => {
-    if (err) throw err;
-    console.log("Everything went okay!");
-  });
-};
 
 //check if table already exists, if so - remove it, in order to recreate them again:
 tableManipulation("DROP TABLE IF EXISTS Invitee, Room, Meeting");
