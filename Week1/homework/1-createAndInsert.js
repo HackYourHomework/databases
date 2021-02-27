@@ -25,7 +25,7 @@ function insertRow(queryString, data) {
 }
 
 // Create a database called meetup
-sqlQuery('CREATE DATABASE [IF NOT EXISTS] meetup', 'Database created');
+sqlQuery('CREATE DATABASE IF NOT EXISTS meetup', 'Database created');
 // use the created database
 sqlQuery('use meetup', 'we are in the database');
 // Create a table called Invitee with the following fields (invitee_no, invitee_name and invited_by).
