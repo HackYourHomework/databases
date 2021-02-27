@@ -29,11 +29,11 @@ connection.query(("USE meetup"), (error, results, fields) => {
 });
 
 
-const create_Invitee = "create table Invitee (invitee_no int, invitee_name varchar(50),  invited_by varchar(50))";
+const create_Invitee = "create table Invitee (invitee_no int PRIMARY KEY, invitee_name varchar(50),  invited_by varchar(50))";
 
-const create_Room  = "create table Room (room_no int, room_name varchar(50), floor_number int)";
+const create_Room  = "create table Room (room_no int PRIMARY KEY, room_name varchar(50), floor_number int)";
 
-const create_Meeting  = "create table Meeting (meeting_no int, meeting_title varchar(50),  starting_time date , ending_time date)";
+const create_Meeting  = "create table Meeting (meeting_no int PRIMARY KEY, meeting_title varchar(50),  starting_time date , ending_time date)";
 
 function tables(create_query){
   connection.query(create_query, function (error, results, fields) {
