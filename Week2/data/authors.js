@@ -1,6 +1,5 @@
 const authors = [
   {
-    author_no: 101,
     author_name: "Ronald C Kessler",
     university: "Harvard University",
     date_of_birth: "1960-05-12",
@@ -8,7 +7,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 102,
     author_name: "Graham Colditz",
     university: "Washington University in Saint Louis",
     date_of_birth: "1980-08-05",
@@ -16,7 +14,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 103,
     author_name: "JoAnn E Manson",
     university: "Brigham and Women's Hospital Harvard Medical School",
     date_of_birth: "1955-11-13",
@@ -24,7 +21,6 @@ const authors = [
     gender: "f",
   },
   {
-    author_no: 104,
     author_name: "Eric Lander",
     university: "Broad Institute Harvard MIT",
     date_of_birth: "1967-04-02",
@@ -32,7 +28,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 105,
     author_name: "Shizuo Akira",
     university: "Osaka University",
     date_of_birth: "1967-02-22",
@@ -40,7 +35,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 106,
     author_name: "Robert Langer",
     university: "Harvard University	",
     date_of_birth: "1975-03-23",
@@ -48,7 +42,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 107,
     author_name: "Salim Yusuf",
     university: "University of Toronto",
     date_of_birth: "1957-05-19",
@@ -56,7 +49,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 108,
     author_name: "Rusty Gage",
     university: "Ohio State University",
     date_of_birth: "1962-07-23",
@@ -64,7 +56,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 109,
     author_name: "Yi Cui",
     university: "ETH Zürich",
     date_of_birth: "1974-11-09",
@@ -72,7 +63,6 @@ const authors = [
     gender: "f",
   },
   {
-    author_no: 110,
     author_name: "Carol Brayne",
     university: "Stanford University",
     date_of_birth: "1965-10-29",
@@ -80,7 +70,6 @@ const authors = [
     gender: "f",
   },
   {
-    author_no: 111,
     author_name: "Jian Kang Zhu",
     university: "Yale University",
     date_of_birth: "1973-11-06",
@@ -88,7 +77,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 112,
     author_name: "Rodney S Ruoff",
     university: "University of Washington",
     date_of_birth: "1979-10-14",
@@ -96,7 +84,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 113,
     author_name: "Frits R Rosendaal",
     university: "Harvard Medical School",
     date_of_birth: "1981-04-16",
@@ -104,7 +91,6 @@ const authors = [
     gender: "m",
   },
   {
-    author_no: 114,
     author_name: "Kai Simons",
     university: "Rutgers University",
     date_of_birth: "1976-06-20",
@@ -112,7 +98,6 @@ const authors = [
     gender: "f",
   },
   {
-    author_no: 115,
     author_name: "Nico van Rooijen",
     university: "Boston University",
     date_of_birth: "1986-12-15",

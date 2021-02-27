@@ -19,18 +19,21 @@ async function seedDatabase() {
 
   const createAuthorsTable = `
   CREATE TABLE IF NOT EXISTS authors (
-    author_no INT,
+    author_no int(11) NOT NULL AUTO_INCREMENT,
     author_name VARCHAR(50),
     university VARCHAR(100),
     date_of_birth DATE,
-    h_index INT,
+    h_index INTEGER,
     gender ENUM('m', 'f'),
-    PRIMARY KEY (author_no)
+    CONSTRAINT pk_authors PRIMARY KEY (author_no)
   );`;
 
-  const addMentorColumn = `ALTER TABLE authors
-  ADD mentor INT,
-  ADD CONSTRAINT FOREIGN KEY(mentor) REFERENCES authors(author_no)`;
+  const addMentorColumn = `
+  ALTER TABLE authors
+  ADD mentor INTEGER,
+  ADD CONSTRAINT fk_mentor
+  FOREIGN KEY (mentor)
+  REFERENCES authors(author_no)`;
 
   connection.connect();
 

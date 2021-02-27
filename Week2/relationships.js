@@ -1,27 +1,28 @@
 "use strict";
-
+//NPM pacjages
 const util = require("util");
 const mysql = require("mysql");
 
-//authors data
+//Authors and research paper data
 const authors = require("./data/authors");
+const papers = require("./data/research-papers");
+
 const connection = mysql.createConnection({
   host: "localhost",
   user: "hyfuser",
   password: "hyfpassword",
+  database: "academy",
   port: 3306,
 });
 
 const execQuery = util.promisify(connection.query.bind(connection));
 
 async function seedDatabase() {
-  const useDatabase = "use academy";
-
   const createResearchPapersTable = `
   CREATE TABLE IF NOT EXISTS research_papers (
     paper_id INT,
-    paper_title VARCHAR(50),
-    conference VARCHAR(50),
+    paper_title VARCHAR(150),
+    conference VARCHAR(150),
     publish_date DATE,
     PRIMARY KEY (paper_id)
   );`;
@@ -36,20 +37,46 @@ async function seedDatabase() {
     FOREIGN KEY (paper_id) REFERENCES research_papers(paper_id)
   );`;
 
+  const mentorData = `
+  UPDATE authors
+    SET mentor = CASE
+    WHEN author_no = '1' THEN '15'
+    WHEN author_no = '2' THEN '4'
+    WHEN author_no = '3' THEN '14'
+    WHEN author_no = '4' THEN '7'
+    WHEN author_no = '5' THEN '3'
+    WHEN author_no = '6' THEN '9'
+    WHEN author_no = '7' THEN '6'
+    WHEN author_no = '8' THEN '13'
+    WHEN author_no = '9' THEN '2'
+    WHEN author_no = '10' THEN '12'
+    WHEN author_no = '11' THEN '5'
+    WHEN author_no = '12' THEN '8'
+    WHEN author_no = '13' THEN '10'
+    WHEN author_no = '14' THEN '1'
+    WHEN author_no = '15' THEN '11'
+    ELSE mentor
+    END
+    WHERE author_no IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)`;
+
   connection.connect();
 
   try {
-    await Promise.all[
-      (execQuery(useDatabase),
-      execQuery(createResearchPapersTable),
-      execQuery(createAuthorPapersTable))
-    ];
+    await Promise.all(
+      (execQuery(createResearchPapersTable),
+      execQuery(createAuthorPapersTable),
+      authors.map((author) => execQuery("INSERT INTO authors SET ?", author))),
+      execQuery(mentorData)
+      // mentors.map((mentor) => execQuery("update authors SET ?", mentor))
+    );
 
     await Promise.all(
-      authors.map((author) => execQuery("INSERT INTO authors SET ?", author))
+      papers.map((paper) =>
+        execQuery("INSERT INTO research_papers SET ?", paper)
+      )
     );
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
   }
 
   connection.end();
