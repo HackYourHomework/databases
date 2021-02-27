@@ -72,6 +72,7 @@ const array_invitee = [
  "INSERT INTO Room VALUES (5, 'asmaa', 40)"
 ];
 
+
  const array_meeting = [
    "INSERT INTO Meeting VALUES (1, 'html', '2020-01-01 10:10:10','2020-01-01 10:10:10')","INSERT INTO Meeting VALUES (2, 'css', '2020-01-01 10:10:10','2020-01-01 10:10:10')","INSERT INTO Meeting VALUES (3, 'js1', '2020-01-01 10:10:10','2020-01-01 10:10:10')","INSERT INTO Meeting VALUES (4, 'JS2', '2020-01-01 10:10:10','2020-01-01 10:10:10')","INSERT INTO Meeting VALUES (5, 'js3', '2020-01-01 10:10:10','2020-01-01 10:10:10')"
   ];

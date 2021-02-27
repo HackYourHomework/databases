@@ -10,7 +10,6 @@ const connection = mysql.createConnection({
   port : 3306
 });
 
-
 connection.connect(err => {
   if (err) throw err;
   console.log(" DB world IS connected..");
