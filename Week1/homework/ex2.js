@@ -17,7 +17,7 @@ connection.connect(err => {
 });
 
 
-var select_query = [
+const select_query = [
   "SELECT Name FROM country WHERE Population > 8000000",
   "SELECT Name FROM country WHERE Name LIKE '%land%'",
   "SELECT Name FROM city WHERE Population BETWEEN 500000 AND 1000000",
