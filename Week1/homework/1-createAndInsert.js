@@ -25,22 +25,22 @@ function insertRow(queryString, data) {
 }
 
 // Create a database called meetup
-sqlQuery('CREATE DATABASE meetup', 'Database created');
+sqlQuery('CREATE DATABASE [IF NOT EXISTS] meetup', 'Database created');
 // use the created database
 sqlQuery('use meetup', 'we are in the database');
 // Create a table called Invitee with the following fields (invitee_no, invitee_name and invited_by).
 sqlQuery(
-  'CREATE TABLE Invitee (invitee_no INT(10) AUTO_INCREMENT, invitee_name VARCHAR(50), invited_by VARCHAR(50), PRIMARY KEY(invitee_no))',
+  'CREATE TABLE IF NOT EXISTS Invitee (invitee_no INT(10) AUTO_INCREMENT, invitee_name VARCHAR(50), invited_by VARCHAR(50), PRIMARY KEY(invitee_no))',
   'table created'
 );
 //Create a table called Room with the following fields (room_no, room_name and floor_number)
 sqlQuery(
-  'CREATE TABLE Room (room_no INT(5) AUTO_INCREMENT, room_name VARCHAR(20),floor_number INT(10),PRIMARY KEY(room_no))',
+  'CREATE TABLE IF NOT EXISTS Room (room_no INT(5) AUTO_INCREMENT, room_name VARCHAR(50),floor_number INT(10),PRIMARY KEY(room_no))',
   'table created'
 );
 // Create a table called Meeting with the following fields (meeting_no, meeting_title, starting_time, ending_time,room_no)
 sqlQuery(
-  'CREATE TABLE Meeting (meeting_no INT(5) AUTO_INCREMENT, meeting_title VARCHAR(30), starting_time DATETIME, ending_time DATETIME,room_no INT(10),PRIMARY KEY(meeting_no))',
+  'CREATE TABLE IF NOT EXISTS Meeting (meeting_no INT(5) AUTO_INCREMENT, meeting_title VARCHAR(250), starting_time DATETIME, ending_time DATETIME,room_no INT(10),PRIMARY KEY(meeting_no))',
   'table created'
 );
 
