@@ -48,8 +48,10 @@ async function seedDatabase() {
     const authors = JSON.parse(authorsData);
     const researchPapers = JSON.parse(researchPapersData);
     const authorsResearchPapers = JSON.parse(authorsResearchPapersData);
-
+    
+    execQuery('SET FOREIGN_KEY_CHECKS=0');
     const authorPromise = authors.map(author => execQuery('INSERT INTO authors SET ?', author));
+    execQuery('SET FOREIGN_KEY_CHECKS=1');
     const researchPapersPromise = researchPapers.map(researchPaper => execQuery('INSERT INTO research_papers SET ?', researchPaper));
     const authorsResearchPapersPromise = authorsResearchPapers.map(authorResearchPaper => execQuery('INSERT INTO authors_research_papers SET ?', authorResearchPaper));
  
