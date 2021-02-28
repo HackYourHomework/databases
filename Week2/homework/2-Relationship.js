@@ -32,21 +32,21 @@ const INSERT_INTO_AUTHORS_TABLE = `
 INSERT INTO authors (author_name, university, date_of_birth, h_index, gender, mentor)
 VALUES (${data.authorName}, ${data.universityName}, ${data.dateOfBirth}, ${data.hIndex}, ${data.gender}, ${data.mentorNo});
 `;
-const INSERT_INTO_RESEARCH_TABLE = `
-INSERT INTO research_papers (paper_title, conference, publish_data)
-VALUES (${data.paperTitle}, ${data.conferenceName}, ${data.publishDate});
-`;
-const INSERT_INTO_AUTHORS_AND_RESEARCH_TABLE = `
-INSERT INTO author_research (author_no, research_id)
-VALUES (${data.authorNo}, ${data.researchId});
-`;
+// const INSERT_INTO_RESEARCH_TABLE = `
+// INSERT INTO research_papers (paper_title, conference, publish_data)
+// VALUES (${data.paperTitle}, ${data.conferenceName}, ${data.publishDate});
+// `;
+// const INSERT_INTO_AUTHORS_AND_RESEARCH_TABLE = `
+// INSERT INTO author_research (author_no, research_id)
+// VALUES (${data.authorNo}, ${data.researchId});
+// `;
 async function seedDatabase() {
   const execQuery = util.promisify(connection.query.bind(connection));
 
   try {
     await execQuery(CREATE_TABLE_RESEARCH_PAPERS);
     await execQuery(CREATE_TABLE_AUTHOR_RESEARCH_RELATIONSHIP);
-    // await execQuery(INSERT_INTO_AUTHORS_TABLE);
+
     // await execQuery(INSERT_INTO_RESEARCH_TABLE);
     // await execQuery(INSERT_INTO_AUTHORS_AND_RESEARCH_TABLE);
   } catch (err) {
