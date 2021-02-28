@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS author_research(
 
 const INSERT_INTO_AUTHORS_TABLE = `
 INSERT INTO authors (author_name, university, date_of_birth, h_index, gender)
+VALUES ()
 `;
 const INSERT_INTO_RESEARCH_TABLE = `
 
