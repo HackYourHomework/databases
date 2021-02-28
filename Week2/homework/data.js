@@ -72,6 +72,23 @@ for (i = 0; i < 15; i++) {
   }
 }
 
+const authorNo = [];
+for (i = 0; i < 30; i++) {
+  while (authorNo.length < 30) {
+    let randomAuthorNumber = Math.floor(Math.random() * 15) + 1;
+    authorNo.push(randomAuthorNumber);
+  }
+}
+
+const researchId = [];
+for (i = 0; i < 30; i++) {
+  while (researchId.length < 30) {
+    let randomResearchId = Math.floor(Math.random() * 30) + 1;
+    if (researchId.indexOf(randomResearchId) === -1)
+      researchId.push(randomResearchId);
+  }
+}
+
 module.exports.authorName = authorName;
 module.exports.universityName = universityName;
 module.exports.dateOfBirth = dateOfBirth;
@@ -82,3 +99,6 @@ module.exports.mentorNo = mentorNo;
 module.exports.paperTitle = paperTitle;
 module.exports.conferenceName = conferenceName;
 module.exports.publishDate = publishDate;
+
+module.exports.authorNo = authorNo;
+module.exports.researchId = researchId;
