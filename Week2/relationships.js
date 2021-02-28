@@ -24,6 +24,8 @@ async function seedDatabase() {
     paper_title VARCHAR(150),
     conference VARCHAR(150),
     publish_date DATE,
+    author_no INT,
+    FOREIGN KEY (author_no) REFERENCES authors(author_no),
     PRIMARY KEY (paper_id)
   );`;
 
