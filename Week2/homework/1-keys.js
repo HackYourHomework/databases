@@ -7,11 +7,11 @@ const connection = mysql.createConnection({
   password: 'hyfpassword',
   database: 'userdb',
 });
-const CREAT_TABLE_AUTHOR = `
+const CREATE_TABLE_AUTHOR = `
 CREATE TABLE IF NOT EXISTS authors(
     author_no INT AUTO_INCREMENT,
-    author_name VARCHAR(250),
-    university VARCHAR(250),
+    author_name constCHAR(250),
+    university constCHAR(250),
     date_of_birth DATE,
     h_index FLOAT,
     gender ENUM('m','f'),
@@ -23,7 +23,6 @@ ALTER TABLE authors ADD mentor INT,ADD CONSTRAINT fk_mentor FOREIGN KEY (mentor)
 `;
 
 async function seedDatabase() {
-  //   const connection = mysql.createConnection(CONNECTION_CONFIG);
   const execQuery = util.promisify(connection.query.bind(connection));
 
   try {
