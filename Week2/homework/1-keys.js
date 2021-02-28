@@ -10,8 +10,8 @@ const connection = mysql.createConnection({
 const CREATE_TABLE_AUTHOR = `
 CREATE TABLE IF NOT EXISTS authors(
     author_no INT AUTO_INCREMENT,
-    author_name constCHAR(250),
-    university constCHAR(250),
+    author_name VARCHAR(250),
+    university VARCHAR(250),
     date_of_birth DATE,
     h_index FLOAT,
     gender ENUM('m','f'),
@@ -26,7 +26,7 @@ async function seedDatabase() {
   const execQuery = util.promisify(connection.query.bind(connection));
 
   try {
-    await execQuery(CREAT_TABLE_AUTHOR);
+    await execQuery(CREATE_TABLE_AUTHOR);
     await execQuery(ADD_MENTOR);
   } catch (err) {
     console.error(err.message);
