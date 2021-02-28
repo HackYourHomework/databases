@@ -40,28 +40,20 @@ for (i = 0; i < 15; i++) {
   gender.push(genderRandom);
 }
 
-const mentorNo = [];
-for (i = 0; i < 15; i++) {
-  while (mentorNo.length < 15) {
-    let randomNumber = Math.floor(Math.random() * 14) + 1;
-    if (mentorNo.indexOf(randomNumber) === -1) mentorNo.push(randomNumber);
-  }
-}
-
 const paperTitle = [];
-for (i = 0; i < 15; i++) {
+for (i = 0; i < 30; i++) {
   const paperTitleRandom = faker.name.title();
   paperTitle.push(paperTitleRandom + ' Research');
 }
 
 const conferenceName = [];
-for (i = 0; i < 15; i++) {
+for (i = 0; i < 30; i++) {
   const conferenceRandom = faker.name.title();
   conferenceName.push(conferenceRandom + ' Conference');
 }
 
 const publishDate = [];
-for (i = 0; i < 15; i++) {
+for (i = 0; i < 30; i++) {
   function randomDate(start, end) {
     return new Date(
       start.getTime() + Math.random() * (end.getTime() - start.getTime())
@@ -70,6 +62,14 @@ for (i = 0; i < 15; i++) {
       .slice(0, 10);
   }
   publishDate.push(randomDate(new Date(2010, 0, 1), new Date(2021, 0, 1)));
+}
+
+const mentorNo = [];
+for (i = 0; i < 15; i++) {
+  while (mentorNo.length < 15) {
+    let randomNumber = Math.floor(Math.random() * 15) + 1;
+    if (mentorNo.indexOf(randomNumber) === -1) mentorNo.push(randomNumber);
+  }
 }
 
 module.exports.authorName = authorName;
