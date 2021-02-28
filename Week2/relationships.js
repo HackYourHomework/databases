@@ -67,7 +67,6 @@ async function seedDatabase() {
       execQuery(createAuthorPapersTable),
       authors.map((author) => execQuery("INSERT INTO authors SET ?", author))),
       execQuery(mentorData)
-      // mentors.map((mentor) => execQuery("update authors SET ?", mentor))
     );
 
     await Promise.all(
