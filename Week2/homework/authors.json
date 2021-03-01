@@ -1,0 +1,17 @@
+[
+        { "author_name":"Dexter Lesch", "university":"Mallowpond Technical College", "date_of_birth":"1965-01-29T23", "h_index":103, "gender":"M", "mentor":5 }, 
+        { "author_name":"Sandrine Kuhn", "university":"Bluemeadow University", "date_of_birth":"1982-03-01T23", "h_index":156, "gender":"M", "mentor":11 }, 
+        { "author_name":"Alicia Trantow", "university":"Mallowtown University", "date_of_birth":"1989-11-08T23", "h_index":10, "gender":"M", "mentor":6 }, 
+        { "author_name":"Ayana Emard", "university":"Falconholt University", "date_of_birth":"2002-11-06T23", "h_index":167, "gender":"F", "mentor":1 }, 
+        { "author_name":"Ignatius Weissnat", "university":"Falconholt Technical College", "date_of_birth":"1970-07-16T23", "h_index":67, "gender":"F", "mentor":11 }, 
+        { "author_name":"Trace Frami", "university":"Lakeacre College", "date_of_birth":"1957-04-03T23", "h_index":58, "gender":"M", "mentor":14 }, 
+        { "author_name":"Ozella Parisian", "university":"Clearcourt Technical College", "date_of_birth":"1976-05-05T23", "h_index":115, "gender":"F", "mentor":1 }, 
+        { "author_name":"Albertha Nicolas", "university":"Marblewald TAFE", "date_of_birth":"2002-12-22T23", "h_index":31, "gender":"F", "mentor":13 }, 
+        { "author_name":"Aglae Johns", "university":"Ostbarrow TAFE", "date_of_birth":"1983-05-13T22", "h_index":77, "gender":"F", "mentor":15 }, 
+        { "author_name":"Zakary Fay", "university":"Vertapple TAFE", "date_of_birth":"1970-06-08T23", "h_index":64, "gender":"M", "mentor":9 }, 
+        { "author_name":"Margarita Conroy", "university":"Brookville TAFE", "date_of_birth":"1971-10-23T23", "h_index":93, "gender":"M", "mentor":3 },
+        { "author_name":"Tristin Turcotte", "university":"Marblewald University", "date_of_birth":"1968-03-18T23", "h_index":132, "gender":"F", "mentor":4 },
+        { "author_name":"Abner Schimmel", "university":"Ironston College", "date_of_birth":"1969-02-13T23", "h_index":31, "gender":"M", "mentor":9 }, 
+        { "author_name":"Dagmar D'Amore", "university":"Flowerlake Technical College", "date_of_birth":"1963-01-18T23", "h_index":123, "gender":"M", "mentor":9 }, 
+        { "author_name":"Joanny Beier", "university":"Marblewald Technical College", "date_of_birth":"1964-01-01T23", "h_index":167, "gender":"F", "mentor":5 }
+]
