@@ -1,0 +1,122 @@
+[
+  {
+    "author_name": "Jane Doe",
+    "university": "University of Oxford",
+    "date_of_birth": "1972-05-22",
+    "h_index": "3",
+    "gender": "f",
+    "mentor": "2"
+  },
+  {
+    "author_name": "John Moe",
+    "university": "University of Oxford",
+    "date_of_birth": "1961-01-09",
+    "h_index": "12",
+    "gender": "m",
+    "mentor": "5"
+  },
+  {
+    "author_name": "Monica Geller",
+    "university": "The University of Manchester",
+    "date_of_birth": "1969-04-22",
+    "h_index": "2",
+    "gender": "f",
+    "mentor": "4"
+  },
+  {
+    "author_name": "Ross Geller",
+    "university": "University of St Andrews",
+    "date_of_birth": "1965-02-10",
+    "h_index": "10",
+    "gender": "m",
+    "mentor": "9"
+  },
+  {
+    "author_name": "Chandler Bing",
+    "university": "University of Exeter",
+    "date_of_birth": "1970-04-15",
+    "h_index": "5",
+    "gender": "m",
+    "mentor": "8"
+  },
+  {
+    "author_name": "Phoebe Buffay",
+    "university": "University of Exeter",
+    "date_of_birth": "1972-04-04",
+    "h_index": "1",
+    "gender": "f",
+    "mentor": "7"
+  },
+  {
+    "author_name": "Joey Tribbiani",
+    "university": "University of Amsterdam",
+    "date_of_birth": "1989-05-18",
+    "h_index": "1",
+    "gender": "m",
+    "mentor": "6"
+  },
+  {
+    "author_name": "Rachel Green",
+    "university": "University of St Andrews",
+    "date_of_birth": "1980-01-03",
+    "h_index": "2",
+    "gender": "f",
+    "mentor": "3"
+  },
+  {
+    "author_name": "Wanda Maximoff",
+    "university": "University of Amsterdam",
+    "date_of_birth": "1980-05-06",
+    "h_index": "6",
+    "gender": "f",
+    "mentor": "14"
+  },
+  {
+    "author_name": "Agatha Harkness",
+    "university": "University of Oxford",
+    "date_of_birth": "1965-08-18",
+    "h_index": "12",
+    "gender": "f",
+    "mentor": "15"
+  },
+  {
+    "author_name": "Stephen Strange",
+    "university": "University of Exeter",
+    "date_of_birth": "1970-09-19",
+    "h_index": "9",
+    "gender": "m",
+    "mentor": "15"
+  },
+  {
+    "author_name": "Steven Rogers",
+    "university": "University of Bath",
+    "date_of_birth": "1985-10-11",
+    "h_index": "5",
+    "gender": "m",
+    "mentor": "1"
+  },
+  {
+    "author_name": "Tony Stark",
+    "university": "University of Bath",
+    "date_of_birth": "1980-11-12",
+    "h_index": "8",
+    "gender": "m",
+    "mentor": "5"
+  },
+  {
+    "author_name": "Pepper Potts",
+    "university": "University of Strathclyde",
+    "date_of_birth": "1982-05-16",
+    "h_index": "4",
+    "gender": "f",
+    "mentor": "1"
+  },
+  {
+    "author_name": "Nick Fury",
+    "university": "University of Strathclyde",
+    "date_of_birth": "1968-08-18",
+    "h_index": "12",
+    "gender": "m",
+    "mentor": "2"
+  }
+]
