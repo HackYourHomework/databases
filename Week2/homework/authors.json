@@ -1,0 +1,122 @@
+[
+    {
+        "author_name": "William Shakespeare",
+        "university": "University Of A",
+        "date_of_birth": "1995-04-26",
+        "h_index": "312",
+        "gender": "m",
+        "mentor": "3"
+    },
+    {
+        "author_name": "Emily Dickinson",
+        "university": "University Of B",
+        "date_of_birth": "1975-02-21",
+        "h_index": "222",
+        "gender": "f",
+        "mentor": "7"
+    },
+    {
+        "author_name": "H. P. Lovecraft",
+        "university": "University Of C",
+        "date_of_birth": "1945-09-26",
+        "h_index": "198",
+        "gender": "m",
+        "mentor": "8"
+    },
+    {
+        "author_name": "Arthur Conan Doyle",
+        "university": "University Of A",
+        "date_of_birth": "1965-11-12",
+        "h_index": "203",
+        "gender": "m",
+        "mentor": "14"
+    },
+    {
+        "author_name": "Leo Tolstoy",
+        "university": "University Of D",
+        "date_of_birth": "1887-12-23",
+        "h_index": "287",
+        "gender": "m",
+        "mentor": "12"
+    },
+    {
+        "author_name": "Edgar Allan Poe",
+        "university": "University Of B",
+        "date_of_birth": "1945-09-08",
+        "h_index": "241",
+        "gender": "m",
+        "mentor": "3"
+    },
+    {
+        "author_name": "Robert Ervin Howard",
+        "university": "University Of C",
+        "date_of_birth": "1992-07-18",
+        "h_index": "301",
+        "gender": "m",
+        "mentor": "1"
+    },
+    {
+        "author_name": "Rabindranath Tagore",
+        "university": "University Of E",
+        "date_of_birth": "1962-09-02",
+        "h_index": "274",
+        "gender": "m",
+        "mentor": "2"
+    },
+    {
+        "author_name": "Rudyard Kipling",
+        "university": "University Of A",
+        "date_of_birth": "1914-10-26",
+        "h_index": "200",
+        "gender": "m",
+        "mentor": "9"
+    },
+    {
+        "author_name": "Toni Morrison",
+        "university": "University Of B",
+        "date_of_birth": "1931-01-14",
+        "h_index": "239",
+        "gender": "f",
+        "mentor": "10"
+    },
+    {
+        "author_name": "John Donne",
+        "university": "University Of D",
+        "date_of_birth": "1924-07-11",
+        "h_index": "288",
+        "gender": "m",
+        "mentor": "11"
+    },
+    {
+        "author_name": "Sarah Williams",
+        "university": "University Of E",
+        "date_of_birth": "1964-03-19",
+        "h_index": "205",
+        "gender": "f",
+        "mentor": "10"
+    },
+    {
+        "author_name": "Oscar Wilde",
+        "university": "University Of B",
+        "date_of_birth": "1926-06-16",
+        "h_index": "199",
+        "gender": "m",
+        "mentor": "8"
+    },
+    {
+        "author_name": "Alfred Tennyson",
+        "university": "University Of A",
+        "date_of_birth": "1873-04-22",
+        "h_index": "157",
+        "gender": "m",
+        "mentor": "6"
+    },
+    {
+        "author_name": "Virginia Woolf",
+        "university": "University Of C",
+        "date_of_birth": "1882-11-10",
+        "h_index": "286",
+        "gender": "f",
+        "mentor": "3"
+    }
+]
