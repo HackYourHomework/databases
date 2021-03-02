@@ -60,15 +60,15 @@ async function seedDatabase() {
     END
     WHERE author_no IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)`;
 
-  const authorsResearchPaper = `
-SELECT authors.author_no, authors.author_name, authors.university,
-authors.date_of_birth,
-authors.h_index,
-authors.gender,
-research_papers.paper_title
-from authors
-left join research_papers on authors.author_no = author_research_papers.paperID
-`;
+  //   const authorsResearchPaper = `
+  // SELECT authors.author_no, authors.author_name, authors.university,
+  // authors.date_of_birth,
+  // authors.h_index,
+  // authors.gender,
+  // research_papers.paper_title
+  // from authors
+  // left join research_papers on authors.author_no = author_research_papers.paperID
+  // `;
 
   connection.connect();
 

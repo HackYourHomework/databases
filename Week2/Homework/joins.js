@@ -1,8 +1,6 @@
 "use strict";
-const util = require("util");
 const mysql = require("mysql");
 
-const authors = require("./data/authors");
 const connection = mysql.createConnection({
   host: "localhost",
   user: "hyfuser",
@@ -10,8 +8,6 @@ const connection = mysql.createConnection({
   database: "academy",
   port: 3306,
 });
-
-const execQuery = util.promisify(connection.query.bind(connection));
 
 connection.connect(function (err) {
   if (err) throw err;
