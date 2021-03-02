@@ -19,13 +19,13 @@ CREATE TABLE IF NOT EXISTS authors (
     author_name VARCHAR(100),
     university VARCHAR(100),
     date_of_birth DATE,
-    h_index int,
+    h_index INT,
     gender ENUM('m', 'f')
 );`;
 
-const ALTER_AUTHORS_TABLE = `ALTER TABLE authors add column mentor int,
-                                add constraint fk_mentor foreign key (mentor)
-                                references authors(author_no);`;
+const ALTER_AUTHORS_TABLE = `ALTER TABLE authors ADD COLUMN mentor INT,
+                                ADD CONSTRAINT fk_mentor FOREIGN KEY (mentor)
+                                REFERENCES authors(author_no);`;
 
 
 

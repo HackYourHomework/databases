@@ -14,16 +14,16 @@ const CONNECTION_CONFIG = {
 const SELECT_NUMBER_AUTHORS_PAPERS = `
     SELECT research_papers.paper_title AS research_papers, COUNT(authors.author_name) AS authors_number
     FROM research_papers
-    LEFT JOIN authors_research_papers ON research_paper_no = research_papers.paper_id
-    LEFT JOIN authors ON authors_research_papers.author_no = authors.author_no
+    INNER JOIN authors_research_papers ON research_paper_no = research_papers.paper_id
+    INNER JOIN authors ON authors_research_papers.author_no = authors.author_no
     GROUP BY paper_title;
     `;
 
 const SUM_PAPERS_FEMALE = `
     SELECT COUNT(research_papers.paper_title) AS females_papers
     FROM research_papers
-    LEFT JOIN authors_research_papers ON research_paper_no = research_papers.paper_id
-    LEFT JOIN authors ON authors_research_papers.author_no = authors.author_no
+    INNER JOIN authors_research_papers ON research_paper_no = research_papers.paper_id
+    INNER JOIN authors ON authors_research_papers.author_no = authors.author_no
     WHERE gender = 'f';
     `;
 
@@ -36,8 +36,8 @@ const AVERAGE_H_INDEX= `
 const SUM_PAPERS_UNIVERSITY = `
     SELECT university,COUNT(research_papers.paper_title) AS research_papers
     FROM research_papers
-    LEFT JOIN authors_research_papers ON research_paper_no = research_papers.paper_id
-    LEFT JOIN authors on authors_research_papers.author_no = authors.author_no
+    INNER JOIN authors_research_papers ON research_paper_no = research_papers.paper_id
+    INNER JOIN authors on authors_research_papers.author_no = authors.author_no
     GROUP BY university;
     `;
 

@@ -12,7 +12,7 @@ const CONNECTION_CONFIG = {
 
 const CREATE_RESEARCH_PAPERS_TABLE = `
     CREATE TABLE IF NOT EXISTS research_papers(
-        paper_id INT auto_increment PRIMARY KEY,
+        paper_id INT AUTO_INCREMENT PRIMARY KEY,
         paper_title VARCHAR(255),
         conference VARCHAR(255),
         publish_date DATE
@@ -20,11 +20,11 @@ const CREATE_RESEARCH_PAPERS_TABLE = `
 
 const CREATE_AUTHORS_RESEARCH_TABLE = `
     CREATE TABLE authors_research_papers(
-        author_no int not null,
-        research_paper_no int not null,
-        constraint fk_author foreign key(author_no) references authors(author_no),
-        constraint fk_paper foreign key(research_paper_no) references research_papers(paper_id),
-        primary key(author_no,research_paper_no)
+        author_no INT NOT NULL,
+        research_paper_no INT NOT NULL,
+        CONSTRAINT fk_author FOREIGN KEY(author_no) REFERENCES authors(author_no),
+        CONSTRAINT fk_paper FOREIGN KEY(research_paper_no) REFERENCES research_papers(paper_id),
+        PRIMARY KEY(author_no,research_paper_no)
     );`;
 
 
@@ -48,7 +48,13 @@ async function seedDatabase() {
     const authors = JSON.parse(authorsData);
     const researchPapers = JSON.parse(researchPapersData);
     const authorsResearchPapers = JSON.parse(authorsResearchPapersData);
-    
+    // I have to stop checking foreign keys to fill in the data on mentor column, since it reference to author_no column 
+    // I cant's give the author (which has author_no = 3 as an example) a mentor as author has number 9 (author number 9 is not exists yet) and so on....
+    //I have to stop checking foreign keys to fill in the data on the mentor column, since it refers to author_no column, I can't give the author (which has author_no = 3 as an example) a mentor as an author has number 9 (author number 9 does not exist yet) and so on...
+    //Or
+    //Fill in the data manual and give the first author a mentor NULL, second author a mentor 1, third author a mentor 2, and so on...
+    //Or
+    //Fill all mentor NULL and then UPDATE the mentor column with exists authors numbers. 
     execQuery('SET FOREIGN_KEY_CHECKS=0');
     const authorPromise = authors.map(author => execQuery('INSERT INTO authors SET ?', author));
     execQuery('SET FOREIGN_KEY_CHECKS=1');
