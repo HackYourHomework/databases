@@ -1,0 +1,182 @@
+[
+    {
+        "paper_id": 101,
+        "paper_title":"Is college education in line with the job market?",
+        "conference":"Online, Netherlands",
+        "publish_date":"2020-04-01"
+    },
+    {
+        "paper_id": 102,
+        "paper_title":"Should colleges be faith-based institutions?",
+        "conference":"The Hague, Netherlands",
+        "publish_date":"2020-03-06"
+    },
+    {
+        "paper_id": 103,
+        "paper_title":"How did cloud technologies change data storing?",
+        "conference":"Erasmus Rotterdam",
+        "publish_date":"2020-02-21"
+    },
+    {
+        "paper_id": 104,
+        "paper_title":"How marriage changed in the postmodern world?",
+        "conference":"Grand Hotel Krasnapolsky • Amsterdam",
+        "publish_date":"2020-05-23"
+    },
+    {
+        "paper_id": 105,
+        "paper_title": "Is there a difference between a man and a woman’s heart?",
+        "conference": "The Hague, Netherlands",
+        "publish_date": "2020-04-16"
+    },
+    {
+        "paper_id": 106,
+        "paper_title":"What are the health benefits of childbearing and parenting?",
+        "conference": "Beurs van Berlage, Netherlands",
+        "publish_date":"2020-11-11"
+    },
+    {
+        "paper_id": 107,
+        "paper_title":"Exploring unfair child labor in the workplace.",
+        "conference":"NH Hotel Amsterdam",
+        "publish_date":"2020-01-02"
+    },
+    {
+        "paper_id": 108,
+        "paper_title":"The significance of ethics to business",
+        "conference":"Erasmus Rotterdam",
+        "publish_date":"2020-01-21"
+    },
+    {
+        "paper_id": 109,
+        "paper_title":"How is cross-border BPO affecting the gross domestic product in your country?",
+        "conference":"Beurs van Berlage, Netherlands",
+        "publish_date":"2020-12-01"
+    },
+    {
+        "paper_id": 110,
+        "paper_title":"Which companies will make it to the top 5 best in the next decade?",
+        "conference":"NH Hotel Amsterdam",
+        "publish_date":"2020-01-04"
+    },
+    {
+        "paper_id": 111,
+        "paper_title":"Terrorism and how it affects businesses.",
+        "conference":"Grand Hotel Huis ter Duin, Netherlands",
+        "publish_date":"2020-11-24"
+    },  {
+        "paper_id": 112,
+        "paper_title":"Are universities becoming business-driven?",
+        "conference":"B.Amsterdam",
+        "publish_date":"2020-10-10"
+    },
+    {
+        "paper_id": 113,
+        "paper_title":"Causes of data rape and how to prevent it.",
+        "conference":"Grand Hotel Huis ter Duin, Netherlands",
+        "publish_date":"2020-09-09"
+    },  
+    {
+        "paper_id": 114,
+        "paper_title":"Should licensed gun holders be allowed to carry their weapons to school?",
+        "conference":"Hyatt Place Amsterdam",
+        "publish_date":"2020-02-04"
+    },
+    {
+        "paper_id": 115,
+        "paper_title":"Ex-convicts and job searching. Is it difficult finding employment?",
+        "conference":"De Doelen, Netherlands",
+        "publish_date":"2020-09-07"
+    },
+    {
+        "paper_id": 116,
+        "paper_title":" Should colleges pay student-athletes and how should they do it?",
+        "conference":"The Hague Conference Centre New Babylon, Netherlands",
+        "publish_date":"2020-06-21"
+    },
+    {
+        "paper_id": 117,
+        "paper_title":"How do regular people influence technological progress?",
+        "conference":"Online, Netherlands",
+        "publish_date":"2021-01-02"
+    },
+    {
+        "paper_id": 118,
+        "paper_title":"The significance of search engine optimization on businesses today.",
+        "conference":"De Doelen, Netherlands",
+        "publish_date":"2020-04-27"
+    },
+    {
+        "paper_id": 119,
+        "paper_title":"Should women be allowed into extreme sports?",
+        "conference":"Online, Netherlands",
+        "publish_date":"2020-11-22"
+    },
+    {
+        "paper_id": 120,
+        "paper_title":"Is feminism changing American society?",
+        "conference":"Grand Hotel Huis ter Duin, Netherlands",
+        "publish_date":"2020-11-24"
+    },
+    {
+        "paper_id": 121,
+        "paper_title":"Leadership training in high school.",
+        "conference":"Amsterdam UMC, locatie VUmc, Netherlands",
+        "publish_date":"2020-12-04"
+    },
+    {
+        "paper_id": 122,
+        "paper_title":"Explore Plato’s philosophy of mathematics.",
+        "conference":"Grand Hotel Krasnapolsky • Amsterdam",
+        "publish_date":"2020-04-29"
+    },
+    {
+        "paper_id": 123,
+        "paper_title":"Analyze cognitive development in children.",
+        "conference":"Online, Netherlands",
+        "publish_date":"2020-02-01"
+    },
+    {
+        "paper_id": 124,
+        "paper_title":"How did Bill Gates and Steve Jobs change the world?",
+        "conference":"Grand Hotel Krasnapolsky • Amsterdam",
+        "publish_date":"2020-10-11"
+    },
+    {
+        "paper_id": 125,
+        "paper_title": "What is the future of the internet?",
+        "conference":"Amsterdam UMC, locatie VUmc, Netherlands",
+        "publish_date":"2020-11-22"
+    },  {
+        "paper_id": 126,
+        "paper_title": "How did climate change in the last 30 years?",
+        "conference": "The Hague Conference Centre New Babylon, Netherlands",
+        "publish_date": "2020-01-05"
+    },
+    {
+        "paper_id": 127,
+        "paper_title": "Ocean pollution: Unseen tragedies.",
+        "conference": "Online, Netherlands",
+        "publish_date": "2020-11-02"
+    },  
+    {
+        "paper_id": 128,
+        "paper_title":"How can creative marketing increase your sales?",
+        "conference": "The Hague, Netherlands",
+        "publish_date":"2020-10-21"
+    },
+    {
+        "paper_id": 129,
+        "paper_title": "Does taxation aim to kill small businesses?",
+        "conference": "The Hague Conference Centre New Babylon, Netherlands",
+        "publish_date":"2020-09-08"
+    },  
+    {
+        "paper_id": 130,
+        "paper_title": "Recycling. What did you do to make the world a better place?",
+        "conference": "The Hague, Netherlands",
+        "publish_date": "2020-08-08"
+    }
+
+
+]
