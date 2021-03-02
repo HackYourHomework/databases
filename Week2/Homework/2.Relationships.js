@@ -64,7 +64,6 @@ async function seedDatabase() {
   connection.connect();
 
   try {
-    //
     await Promise.all(
       (execQuery(createResearchPapersTable),
       execQuery(createAuthorPapersTable),
