@@ -24,7 +24,6 @@ const researchPapers = [
     paper_title: "The Six Steps of the Scientific Method",
     conference: "Google I/O",
     publish_date: "2011-07-04",
-    author_no: 2,
   },
   {
     paper_id: 1005,
@@ -38,7 +37,6 @@ const researchPapers = [
     paper_title: "An Overview on Data Transfer in Computer Network",
     conference: "DDB Con",
     publish_date: "2015-02-12",
-    author_no: 10,
   },
   {
     paper_id: 1007,
@@ -51,21 +49,18 @@ const researchPapers = [
     paper_title: "Civil Rights Movement Rediscovered",
     conference: "GDC",
     publish_date: "2011-09-23",
-    author_no: 4,
   },
   {
     paper_id: 1009,
     paper_title: "The Issues Surrounding Editorial Departments",
     conference: "Startup Camp",
     publish_date: "2017-01-22",
-    author_no: 14,
   },
   {
     paper_id: 1010,
     paper_title: "The Advancements of Technology in Films Over the Years",
     conference: "Interaction 18",
     publish_date: "2018-06-09",
-    author_no: 9,
   },
   {
     paper_id: 1011,
@@ -90,7 +85,6 @@ const researchPapers = [
     paper_title: "A Definition and Uses of 3D Model Printing",
     conference: "Universal Technology Management Conference",
     publish_date: "2017-12-01",
-    author_no: 8,
   },
   {
     paper_id: 1015,
@@ -103,21 +97,18 @@ const researchPapers = [
     paper_title: "The Effects of Pesticides: What Are the Alternatives?",
     conference: "NEMOA",
     publish_date: "2015-09-26",
-    author_no: 3,
   },
   {
     paper_id: 1017,
     paper_title: "Creationist View of the Origin of Life and Evolution",
     conference: "TEDx",
     publish_date: "2004-08-14",
-    author_no: 5,
   },
   {
     paper_id: 1018,
     paper_title: "An Overview of Luxembourg's Economy and Society",
     conference: "The Data Science Conference",
     publish_date: "2016-07-14",
-    author_no: 11,
   },
   {
     paper_id: 1019,
@@ -125,7 +116,6 @@ const researchPapers = [
       "A Report on the American, Australian, and Chinese Sign Languages",
     conference: "International Conference on Oncology and Radiology",
     publish_date: "2018-03-28",
-    author_no: 12,
   },
   {
     paper_id: 1020,
@@ -152,7 +142,6 @@ const researchPapers = [
     paper_title: "An Analysis of Autonomy and benevolent Lies",
     conference: "The International Society For Antiviral Research",
     publish_date: "2015-03-16",
-    author_no: 6,
   },
   {
     paper_id: 1024,
@@ -165,21 +154,18 @@ const researchPapers = [
     paper_title: "The Problem of Increasing Population Growth",
     conference: "I.C.O 2016",
     publish_date: "2019-11-20",
-    author_no: 13,
   },
   {
     paper_id: 1026,
     paper_title: "An Introduction to the Research-Based on Persuasive Speech",
     conference: "NextGen Pharma",
     publish_date: "2016-09-27",
-    author_no: 15,
   },
   {
     paper_id: 1027,
     paper_title: "The Importance of Integrity in the Workplace",
     conference: "FcRn-Targeted",
     publish_date: "2017-06-06",
-    author_no: 7,
   },
   {
     paper_id: 1028,
@@ -198,7 +184,6 @@ const researchPapers = [
     paper_title: "Computerizing Business Accounts",
     conference: "World Cloud Show",
     publish_date: "2019-11-06",
-    author_no: 1,
   },
 ];
 

@@ -52,3 +52,9 @@ async function seedDatabase() {
 }
 
 seedDatabase();
+
+
+select authors.author_no, authors.author_name, research_papers.paper_title
+from authors
+left outer join author_research_papers
+on  authors.author_no = author_research_papers.paperID

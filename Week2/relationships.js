@@ -6,6 +6,7 @@ const mysql = require("mysql");
 //Authors and research paper data
 const authors = require("./data/authors");
 const papers = require("./data/research-papers");
+const authorResearchPapers = require("./data/author-researchpapers");
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -24,8 +25,6 @@ async function seedDatabase() {
     paper_title VARCHAR(150),
     conference VARCHAR(150),
     publish_date DATE,
-    author_no INT,
-    FOREIGN KEY (author_no) REFERENCES authors(author_no),
     PRIMARY KEY (paper_id)
   );`;
 
@@ -33,10 +32,10 @@ async function seedDatabase() {
   //between the authors and research_papers tables
   const createAuthorPapersTable = `
   CREATE TABLE IF NOT EXISTS author_research_papers (
-    author_no INT,
-    paper_id INT,
-    FOREIGN KEY (author_no) REFERENCES authors(author_no),
-    FOREIGN KEY (paper_id) REFERENCES research_papers(paper_id)
+    authorNO INT,
+    paperID INT,
+    FOREIGN KEY (authorNO) REFERENCES authors(author_no),
+    FOREIGN KEY (paperID) REFERENCES research_papers(paper_id)
   );`;
 
   const mentorData = `
@@ -61,6 +60,16 @@ async function seedDatabase() {
     END
     WHERE author_no IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)`;
 
+  const authorsResearchPaper = `
+SELECT authors.author_no, authors.author_name, authors.university,
+authors.date_of_birth,
+authors.h_index,
+authors.gender,
+research_papers.paper_title
+from authors
+left join research_papers on authors.author_no = author_research_papers.paperID
+`;
+
   connection.connect();
 
   try {
@@ -74,6 +83,12 @@ async function seedDatabase() {
     await Promise.all(
       papers.map((paper) =>
         execQuery("INSERT INTO research_papers SET ?", paper)
+      )
+    );
+
+    await Promise.all(
+      authorResearchPapers.map((author) =>
+        execQuery(`INSERT INTO author_research_papers SET ?`, author)
       )
     );
   } catch (err) {

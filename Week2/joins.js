@@ -1,7 +1,7 @@
 "use strict";
 const util = require("util");
 const mysql = require("mysql");
-const authorResearchPapers = require("./data/author-researchpapers");
+
 const authors = require("./data/authors");
 const connection = mysql.createConnection({
   host: "localhost",
@@ -28,28 +28,17 @@ ON a.author_no = m.mentor
 
 query(authorsMentors, "Authors and their correspondant mentors printed!");
 
-//reusuable function to add data to tables
-async function addDataQuery() {
-  const quer = `INSERT INTO author_research_papers SET ?`;
-
-  try {
-    await Promise.all(
-      authorResearchPapers.map((author) => execQuery(quer, author))
-    );
-  } catch (err) {
-    console.log(err);
-  }
-
-  connection.end();
-}
-
 const authorsResearchPaper = `
-Select authors.author_name, research_papers.paper_title
-from authors
-left join research_papers on authors.author_no = research_papers.author_no
-`;
+SELECT authors.author_name, research_papers.paper_title
+FROM authors
+LEFT JOIN author_research_papers ON authors.author_no = author_research_papers.authorNO
+LEFT JOIN research_papers ON author_research_papers.paperID = research_papers.paper_id
+ORDER BY authors.author_name`;
 
-query(authorsMentors, "Authors and their correspondant mentors printed!");
+query(
+  authorsResearchPaper,
+  "Authors and their correspondant researchpapers printed!"
+);
 
 //reusuable funtion to perform query
 function query(query, queryMessage) {
@@ -60,4 +49,4 @@ function query(query, queryMessage) {
   });
 }
 
-addDataQuery();
+connection.end();

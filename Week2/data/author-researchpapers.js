@@ -1,63 +1,64 @@
 const authorResearchPapers = [
   {
-    author_no: 1,
-    paper_id: 1030,
+    authorNO: 1,
+    paperID: 1030,
   },
   {
-    author_no: 2,
-    paper_id: 1004,
+    authorNO: 2,
+    paperID: 1004,
   },
   {
-    author_no: 3,
-    paper_id: 1016,
+    authorNO: 3,
+    paperID: 1016,
   },
   {
-    author_no: 4,
-    paper_id: 1008,
+    authorNO: 4,
+    paperID: 1004,
   },
   {
-    author_no: 5,
-    paper_id: 1017,
+    authorNO: 5,
+    paperID: 1017,
   },
   {
-    author_no: 6,
-    paper_id: 1023,
+    authorNO: 6,
+    paperID: 1023,
   },
   {
-    author_no: 7,
-    paper_id: 1027,
+    authorNO: 7,
+    paperID: 1027,
   },
   {
-    author_no: 8,
-    paper_id: 1014,
+    authorNO: 8,
+    paperID: 1030,
   },
   {
-    author_no: 9,
-    paper_id: 1010,
+    authorNO: 9,
+    paperID: 1010,
   },
   {
-    author_no: 10,
-    paper_id: 1006,
+    authorNO: 10,
+    paperID: 1023,
+  },
+
+  {
+    authorNO: 11,
+    paperID: 1017,
   },
   {
-    author_no: 11,
-    paper_id: 1018,
+    authorNO: 12,
+    paperID: 1017,
   },
   {
-    author_no: 12,
-    paper_id: 1019,
+    authorNO: 13,
+    paperID: 1030,
   },
   {
-    author_no: 13,
-    paper_id: 1025,
+    authorNO: 14,
+    paperID: 1009,
   },
   {
-    author_no: 14,
-    paper_id: 1009,
-  },
-  {
-    author_no: 15,
-    paper_id: 1026,
+    authorNO: 15,
+    paperID: 1016,
   },
 ];
 
