@@ -1,5 +1,5 @@
 "use strict";
-//NPM pacjages
+//NPM packages
 const util = require("util");
 const mysql = require("mysql");
 
@@ -19,6 +19,7 @@ const connection = mysql.createConnection({
 const execQuery = util.promisify(connection.query.bind(connection));
 
 async function seedDatabase() {
+  //reseach paper table
   const createResearchPapersTable = `
   CREATE TABLE IF NOT EXISTS research_papers (
     paper_id INT,
@@ -60,19 +61,10 @@ async function seedDatabase() {
     END
     WHERE author_no IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)`;
 
-  //   const authorsResearchPaper = `
-  // SELECT authors.author_no, authors.author_name, authors.university,
-  // authors.date_of_birth,
-  // authors.h_index,
-  // authors.gender,
-  // research_papers.paper_title
-  // from authors
-  // left join research_papers on authors.author_no = author_research_papers.paperID
-  // `;
-
   connection.connect();
 
   try {
+    //
     await Promise.all(
       (execQuery(createResearchPapersTable),
       execQuery(createAuthorPapersTable),
@@ -80,12 +72,14 @@ async function seedDatabase() {
       execQuery(mentorData)
     );
 
+    //insert research paper data
     await Promise.all(
       papers.map((paper) =>
         execQuery("INSERT INTO research_papers SET ?", paper)
       )
     );
 
+    //feed the intermediary table representing the m-to-m relationship
     await Promise.all(
       authorResearchPapers.map((author) =>
         execQuery(`INSERT INTO author_research_papers SET ?`, author)

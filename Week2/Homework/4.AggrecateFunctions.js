@@ -32,24 +32,24 @@ async function seedDatabase() {
     `;
 
   const hIndexPerUniversity = `
-  SELECT university, AVG (h_index) AS average_h_index
-  FROM authors
-  GROUP BY university;
+    SELECT university, AVG (h_index) AS average_h_index
+    FROM authors
+    GROUP BY university;
     `;
 
   const paperSumPerUniversity = `
-  SELECT university, COUNT (research_papers.paper_title) AS research_papers
-  FROM research_papers
-  INNER JOIN author_research_papers ON paperID = research_papers.paper_id
-  INNER JOIN authors on author_research_papers.authorNO = authors.author_no
-  GROUP BY university;
+    SELECT university, COUNT (research_papers.paper_title) AS research_papers
+    FROM research_papers
+    INNER JOIN author_research_papers ON paperID = research_papers.paper_id
+    INNER JOIN authors on author_research_papers.authorNO = authors.author_no
+    GROUP BY university;
     `;
 
   const hIndexMinMaxPerUniversity = `
-  SELECT university, MIN(h_index) AS minimum_h_index,
-  MAX(h_index) AS maximum_h_index
-  FROM authors
-  GROUP BY university;
+    SELECT university, MIN(h_index) AS minimum_h_index,
+    MAX(h_index) AS maximum_h_index
+    FROM authors
+    GROUP BY university;
     `;
 
   try {

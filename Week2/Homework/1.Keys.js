@@ -1,7 +1,8 @@
 "use strict";
-
+//NPM packages
 const util = require("util");
 const mysql = require("mysql");
+
 const connection = mysql.createConnection({
   host: "localhost",
   user: "hyfuser",
@@ -17,6 +18,7 @@ async function seedDatabase() {
 
   const useDatabase = "use academy";
 
+  //authors info table
   const createAuthorsTable = `
   CREATE TABLE IF NOT EXISTS authors (
     author_no int(11) NOT NULL AUTO_INCREMENT,
@@ -28,6 +30,7 @@ async function seedDatabase() {
     CONSTRAINT pk_authors PRIMARY KEY (author_no)
   );`;
 
+  //mentor column
   const addMentorColumn = `
   ALTER TABLE authors
   ADD mentor INTEGER,
