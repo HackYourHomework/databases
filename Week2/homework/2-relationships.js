@@ -11,17 +11,17 @@ const connectionConfig = {
 
 const createResearchPaperTable = `
   CREATE TABLE IF NOT EXISTS research_papers (
-    paper_id INT AUTO_INCREMENT PRIMARY KEY,
-    paper_title VARCHAR(250),
-    conference VARCHAR(250),
-    publish_date DATE
+    paper_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    paper_title VARCHAR(250) NOT NULL,
+    conference VARCHAR(250) NOT NULL,
+    publish_date DATE NOT NULL
   );`;
 
 //as this is many to many relationship - author can write many papers and many papers can have many authors, we can create a third table that will hold that data
-const createResearchInfoTable = `
+const authorResearchTable = `
 CREATE TABLE IF NOT EXISTS research (
-author_no INT,
-paper_id INT,
+author_no INT NOT NULL,
+paper_id INT NOT NULL,
 FOREIGN KEY (author_no) REFERENCES authors(author_no),
 FOREIGN KEY (paper_id) REFERENCES research_papers(paper_id)
 )`;
@@ -39,7 +39,7 @@ const seedDatabase = async () => {
   try {
     //create two tables and remove constrain
     await execQuery(createResearchPaperTable);
-    await execQuery(createResearchInfoTable);
+    await execQuery(authorResearchTable);
     await execQuery(removeConstraintCheck);
 
     //turn json data into js object, to populate tables

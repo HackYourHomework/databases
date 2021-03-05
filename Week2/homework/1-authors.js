@@ -10,16 +10,16 @@ const connectionConfig = {
 
 const createAuthorsTable = `
   CREATE TABLE IF NOT EXISTS authors (
-    author_no INT AUTO_INCREMENT PRIMARY KEY,
-    author_name VARCHAR(50),
-    university VARCHAR(50),
-    date_of_birth DATE,
-    h_index INT,
+    author_no INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    author_name VARCHAR(50) NOT NULL,
+    university VARCHAR(50) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    h_index INT NOT NULL,
     gender ENUM('m', 'f')
   );`;
 
 const alterAuthorsTable = `
-  ALTER TABLE authors ADD COLUMN mentor INT,
+  ALTER TABLE authors ADD COLUMN mentor INT NOT NULL,
   ADD CONSTRAINT fk_mentor
   FOREIGN KEY (mentor) REFERENCES authors(author_no)
   `;
