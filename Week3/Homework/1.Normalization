@@ -1,0 +1,21 @@
+# What columns violate 1NF?
+
+    Columns that violate the 1NF are: dinner_date, food_code, food_description
+
+## What entities do you recognize that could be extracted?
+
+    member, dinner, venue, food
+
+## Name all the tables and columns that would make a 3NF compliant solutionm
+
+[Members]
+**Member_id -PK** **member_name** **member_address** **dinner_id -FK**
+
+[Dinner]
+**dinner_id -PK** **dinner_date**
+
+[Venue]
+**venue_code -PK** **venue_description** **dinner_id -FK**
+
+[Food]
+**code -PK** **description** **dinner_id -FK**
