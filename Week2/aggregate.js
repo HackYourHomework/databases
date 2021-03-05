@@ -51,18 +51,23 @@ async function aggregateData() {
   connection.connect();
 
   try {
+    // All research papers and the number of authors that wrote that paper.
     const papers_count_authors = await execQuery(ALL_PAPERS_COUNT_AUTHORS);
     console.table(papers_count_authors);
 
+    // Sum of the research papers published by all female authors.
     const female_papers_count = await execQuery(ALL_FEMALE_PAPERS_COUNT);
     console.table(female_papers_count);
 
+    // Average of the h-index of all authors per university.
     const avrg_hindx_university = await execQuery(AVRG_HINDX_PER_UNIVERSITY);
     console.table(avrg_hindx_university);
 
+    // Sum of the research papers of the authors per university.
     const papers_per_university = await execQuery(COUNT_PAPERS_PER_UNIVERSITY);
     console.table(papers_per_university);
 
+    // Minimum and maximum of the h-index of all authors per university.
     const min_max_hindx_university = await execQuery(MIN_MAX_HINDX_PER_UNIVERSITY);
     console.table(min_max_hindx_university);
   } catch (error) {

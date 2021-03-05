@@ -28,6 +28,8 @@ async function defineRelationships() {
       FOREIGN KEY (paper) REFERENCES research_Papers(paper_id)
     );
   `;
+
+  // Authors data
   const authors = [
     {
       author_name: "Matt Andrews",
@@ -148,6 +150,7 @@ async function defineRelationships() {
     },
   ];
 
+  // Papers data
   const research_papers = [
     {
       paper_title: "Priming Psychology in HCI",
@@ -168,8 +171,24 @@ async function defineRelationships() {
       conference: "A.I. Conference for NLP Pioneers 2020",
       publish_date: "2018-07-22",
     },
+    {
+      paper_title: "Mainstreaming A.I. in Education",
+      conference: "A.I. for Educators Conference",
+      publish_date: "2013-12-29",
+    },
+    {
+      paper_title: "Community Ecommerce Catalysts for Growing Markets",
+      conference: "Global Ecommerce Forum Berlin",
+      publish_date: "2016-02-02",
+    },
+    {
+      paper_title: "Healthcare Forecast Formations with Big Data",
+      conference: "Internation Healthcare Tech Chicago Chapter",
+      publish_date: "2015-01-20",
+    },
   ];
 
+  // Authors/Papers junction data
   const authors_papers = [
     {
       author: 1,
@@ -198,7 +217,35 @@ async function defineRelationships() {
     {
       author: 15,
       paper: 4,
-    }
+    },
+    {
+      author: 6,
+      paper: 5,
+    },
+    {
+      author: 8,
+      paper: 5,
+    },
+    {
+      author: 8,
+      paper: 6,
+    },
+    {
+      author: 14,
+      paper: 6,
+    },
+    {
+      author: 12,
+      paper: 6,
+    },
+    {
+      author: 7,
+      paper: 7,
+    },
+    {
+      author: 2,
+      paper: 7,
+    },
   ];
 
   connection.connect();
