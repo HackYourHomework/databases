@@ -16,18 +16,18 @@ async function seedDatabase() {
   connection.connect();
 
   const researchPapersNumberOfAuthors = `
-  SELECT research_papers.paper_title AS research_papers, COUNT(authors.author_name) AS authors_number
+  SELECT research_papers.paper_title AS research_papers, COUNT(DISTINCT authors.author_name) AS authors_number
     FROM research_papers
     INNER JOIN author_research_papers ON paperID = research_papers.paper_id
-    INNER JOIN authors ON author_research_papers.authorNO = authors.author_no
+    INNER JOIN authors ON author_research_papers.author_no = authors.author_no
     GROUP BY paper_title;
   `;
 
   const sumOfPapersWrittenByFemale = `
-    SELECT COUNT(research_papers.paper_title) AS papers_by_female_authors
+    SELECT COUNT(DISTINCT research_papers.paper_title) AS papers_by_female_authors
     FROM research_papers
     INNER JOIN author_research_papers ON paperID = research_papers.paper_id
-    INNER JOIN authors ON author_research_papers.authorNO = authors.author_no
+    INNER JOIN authors ON author_research_papers.author_no = authors.author_no
     WHERE gender = 'f';
     `;
 
@@ -38,10 +38,10 @@ async function seedDatabase() {
     `;
 
   const paperSumPerUniversity = `
-    SELECT university, COUNT (research_papers.paper_title) AS research_papers
+    SELECT university, COUNT (DISTINCT research_papers.paper_title) AS research_papers
     FROM research_papers
     INNER JOIN author_research_papers ON paperID = research_papers.paper_id
-    INNER JOIN authors on author_research_papers.authorNO = authors.author_no
+    INNER JOIN authors on author_research_papers.author_no = authors.author_no
     GROUP BY university;
     `;
 

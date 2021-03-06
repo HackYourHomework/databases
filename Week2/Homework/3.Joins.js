@@ -28,7 +28,7 @@ async function seedDatabase() {
   const authorsResearchPaper = `
   SELECT authors.author_name, research_papers.paper_title
   FROM authors
-  LEFT JOIN author_research_papers ON authors.author_no = author_research_papers.authorNO
+  LEFT JOIN author_research_papers ON authors.author_no = author_research_papers.author_no
   LEFT JOIN research_papers ON author_research_papers.paperID = research_papers.paper_id
   ORDER BY authors.author_name`;
 

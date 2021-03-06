@@ -33,9 +33,9 @@ async function seedDatabase() {
   //between the authors and research_papers tables
   const createAuthorPapersTable = `
   CREATE TABLE IF NOT EXISTS author_research_papers (
-    authorNO INT,
+    author_no INT NOT NULL,
     paperID INT,
-    FOREIGN KEY (authorNO) REFERENCES authors(author_no),
+    FOREIGN KEY (author_no) REFERENCES authors(author_no),
     FOREIGN KEY (paperID) REFERENCES research_papers(paper_id)
   );`;
 
