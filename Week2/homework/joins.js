@@ -10,7 +10,7 @@ const CONNECTION_CONFIG = {
 
 // Query for the names of all authors and their mentors
 const QUERY_AUTHORS_AND_MENTORS = `
-  SELECT author_name, mentor FROM authors;
+  SELECT A.author_name, B.author_name AS mentor_name FROM authors A JOIN authors B ON A.mentor = B.author_no;
 `;
 
 // Query for all columns of authors and their published paper_title
