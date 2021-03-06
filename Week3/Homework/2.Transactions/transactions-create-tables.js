@@ -32,7 +32,7 @@ async function seedDatabase() {
     change_number INT(11) NOT NULL AUTO_INCREMENT,
     account_number INT(14),
     amount DECIMAL(10,2),
-    change_date DATE,
+    changed_date DATE,
     remark VARCHAR(100),
     CONSTRAINT pk_change PRIMARY KEY (change_number),
     CONSTRAINT FK_account_number FOREIGN KEY (account_number)

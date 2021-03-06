@@ -5,6 +5,7 @@ const mysql = require("mysql");
 
 //data
 const accountData = require("./data/Accounts");
+const accountChanges = require("./data/accountChanges");
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -14,21 +15,27 @@ const connection = mysql.createConnection({
   port: 3306,
 });
 
+connection.connect();
+
 const execQuery = util.promisify(connection.query.bind(connection));
 
 async function insertData() {
-  //Account change table
+  //Account data table
   const accountDataQuery = accountData.map((account) =>
-    execQuery(`INSERT INTO account SET ?`, account)
+    execQuery(`INSERT IGNORE INTO account SET ?`, account)
+  );
+  //Account change table
+  const accountChangesQuery = accountChanges.map((change) =>
+    execQuery(`INSERT IGNORE INTO account_change SET ?`, change)
   );
 
   try {
-    await Promise.all(accountDataQuery);
+    await Promise.all[(accountDataQuery, accountChangesQuery)];
   } catch (error) {
     console.error(error);
   }
 
-  process.exit(0);
+  connection.end();
 }
 
 insertData();
