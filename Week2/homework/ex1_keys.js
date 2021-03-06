@@ -20,8 +20,8 @@ const useDatabase = `USE homework_week2`
 const CREATE_AUTHORS_TABLE = `
     CREATE TABLE IF NOT EXISTS authors (
         author_no       INT auto_increment PRIMARY KEY,
-        author_name     VARCHAR(100),
-        university       VARCHAR(100),
+        author_name     VARCHAR(100) NOT NULL,
+        university       VARCHAR(100) NOT NULL,
         date_of_birth    DATE,
         h_index           INT,
         gender          ENUM('m', 'f')

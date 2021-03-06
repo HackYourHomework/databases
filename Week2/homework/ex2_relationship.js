@@ -15,8 +15,8 @@ const CONNECTION_CONFIG = {
 const CREATE_RES_PAPERS_TABLE = `
     CREATE TABLE IF NOT EXISTS research_papers(
         paper_id        INT auto_increment PRIMARY KEY,
-        paper_title     VARCHAR(255),
-        conference      VARCHAR(255),
+        paper_title     VARCHAR(255) NOT NULL,
+        conference      VARCHAR(255) NOT NULL,
         publish_date    DATE
     );`;
 

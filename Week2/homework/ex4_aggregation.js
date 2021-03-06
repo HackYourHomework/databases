@@ -12,7 +12,7 @@ const CONNECTION_CONFIG = {
 
 
 const SELECT_PAPERS_AUTHORS_NO= `
-    SELECT research_papers.paper_title , COUNT(authors.author_name ) 
+    SELECT research_papers.paper_title , COUNT(DISTINCT authors.author_name ) 
     FROM research_papers 
     JOIN authors_research_papers ON research_papers.paper_id = authors_research_papers.res_paper_id
     JOIN authors ON authors_research_papers.author_no = authors.author_no
@@ -20,7 +20,7 @@ const SELECT_PAPERS_AUTHORS_NO= `
 `;
 
 const SUM_FEMALE_PAPERS = `
-    SELECT  authors.gender ,count(research_papers.paper_title)
+    SELECT  authors.gender ,count(DISTINCT research_papers.paper_title)
     FROM authors 
     JOIN authors_research_papers ON authors.author_no =authors_research_papers.author_no 
     JOIN research_papers ON research_papers.paper_id = authors_research_papers.res_paper_id
@@ -35,7 +35,7 @@ const SUM_FEMALE_PAPERS = `
         `;
 
         const SUM_PAPERS_UNIVERSITY = `
-        SELECT authors.university , COUNT( research_papers.paper_title) AS SUM
+        SELECT authors.university , COUNT( DISTINCT research_papers.paper_title) AS SUM
         FROM research_papers 
         JOIN authors_research_papers ON research_papers.paper_id = authors_research_papers.res_paper_id
         JOIN authors ON authors_research_papers.author_no = authors.author_no
