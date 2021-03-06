@@ -11,26 +11,26 @@ const connection = mysql.createConnection({
 
 const execQuery = util.promisify(connection.query.bind(connection));
 
-async function seedDatabase() {
-  const createTableAuthors = `
+async function create_table() {
+  const create_table_authors = `
     CREATE TABLE IF NOT EXISTS authors (
       author_no INT PRIMARY KEY,
       author_name VARCHAR(50),
       university VARCHAR(100),
       date_of_birth DATE,
-      h_index INT,
+      h_index SMALLINT,
       gender ENUM('m', 'f')
       );`;
    
-  const AddColumnMentor ="ALTER TABLE authors ADD COLUMN mentor INT,ADD constraint fk_mentor FOREIGN KEY (mentor) references authors(author_no)";
+  const add_column_mentor ="ALTER TABLE authors ADD COLUMN mentor INT,ADD constraint fk_mentor FOREIGN KEY (mentor) REFERENCES authors(author_no)";
 
 
   connection.connect();
 
   try {
     // call the function that returns promise
-    await execQuery(createTableAuthors);
-    await execQuery(AddColumnMentor);
+    await execQuery(create_table_authors);
+    await execQuery(add_column_mentor);
    
   } catch (error) {
     console.error(error);
@@ -40,7 +40,7 @@ async function seedDatabase() {
   connection.end();
 }
 
-seedDatabase();
+create_table();
 
 
 
