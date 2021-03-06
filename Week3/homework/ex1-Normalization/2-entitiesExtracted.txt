@@ -1,0 +1,9 @@
+To make the table follow 1NF rules, I have to extracting these entities:
+    (member_address,food_code,food_description,dinner_date)
+
+1- member_address: Extract this column into 2 column (building_no hold integer data type, building_name hold varchar data type).
+2- food_code: To avoid insert multiple data, we can extract this column into multiple columns (food_code1,food_code2,food_code3,.....).
+3- food_description: To avoid insert multiple data, we can extract this column into multiple columns (food_description1,food_description2,food_description3,.....).
+ or: To solve columns food_code,food_description, we can repeat rows for members which has multiple food_code and food_description and keep only 1 value in column.
+ or: We can use packages for choose the date form like: Carbon for Laravel and Dateformat for Node.js  
+4- dinner_date: To avoid inset data in different domains, we can extract this column into 3 columns (dinner_day hold integer data type,dinner_month hold integer data type,dinner_year hold integer data type[we can make it default = current year]).
