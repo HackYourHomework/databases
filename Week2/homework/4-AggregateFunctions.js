@@ -22,7 +22,7 @@ function sqlQuery(queryString) {
 
 // All research papers and the number of authors that wrote that paper.
 sqlQuery(
-  `SELECT research_papers.paper_title, COUNT(author_research.author_no) AS total_authors FROM research_papers join author_research ON research_papers.paper_id = author_research.research_id GROUP BY research_papers.paper_title;`
+  `SELECT research_papers.paper_title, COUNT(author_research.research_id) AS total_authors FROM research_papers join author_research ON research_papers.paper_id = author_research.research_id GROUP BY author_research.research_id;`
 );
 
 // Sum of the research papers published by all female authors.
