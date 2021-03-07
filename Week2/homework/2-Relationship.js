@@ -46,17 +46,16 @@ async function seedDatabase() {
       data.authorDetails
     );
 
-    await executeQuery(`UPDATE authors SET mentor = 4 WHERE author_no = 1 `);
-    await executeQuery(`UPDATE authors SET mentor = 15 WHERE author_no = 2 `);
+    await executeQuery(`UPDATE authors SET mentor = 1 WHERE author_no = 2 `);
     await executeQuery(`UPDATE authors SET mentor = 13 WHERE author_no = 3 `);
     await executeQuery(`UPDATE authors SET mentor = 12 WHERE author_no = 4 `);
     await executeQuery(`UPDATE authors SET mentor = 7 WHERE author_no = 5 `);
     await executeQuery(`UPDATE authors SET mentor = 11 WHERE author_no = 6 `);
     await executeQuery(`UPDATE authors SET mentor = 14 WHERE author_no = 7 `);
-    await executeQuery(`UPDATE authors SET mentor = 13 WHERE author_no = 8 `);
+    await executeQuery(`UPDATE authors SET mentor = 1 WHERE author_no = 8 `);
     await executeQuery(`UPDATE authors SET mentor = 2 WHERE author_no = 9 `);
     await executeQuery(`UPDATE authors SET mentor = 6 WHERE author_no = 10 `);
-    await executeQuery(`UPDATE authors SET mentor = 1 WHERE author_no = 11 `);
+    await executeQuery(`UPDATE authors SET mentor = 4 WHERE author_no = 11 `);
     await executeQuery(`UPDATE authors SET mentor = 7 WHERE author_no = 12 `);
     await executeQuery(`UPDATE authors SET mentor = 8 WHERE author_no = 13 `);
     await executeQuery(`UPDATE authors SET mentor = 2 WHERE author_no = 14 `);

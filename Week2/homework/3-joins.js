@@ -22,7 +22,7 @@ function sqlQuery(queryString) {
 
 // Write a query that prints names of all authors and their corresponding mentors.
 sqlQuery(
-  'SELECT author1.author_name AS author_name, author2.author_name AS mentor_name FROM authors AS author1 JOIN authors AS author2 ON author1.author_no = author2.mentor '
+  'SELECT author.author_name AS author_name, mentor.author_name AS mentor_name FROM authors AS author JOIN authors AS mentor ON mentor.author_no = author.mentor '
 );
 
 // Write a query that prints all columns of authors and their published paper_title. If there is an author without any research_Papers, print the information of that author too.
