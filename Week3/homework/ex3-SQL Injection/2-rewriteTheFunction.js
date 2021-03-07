@@ -47,15 +47,15 @@ async function getPopulation() {
        
         // 3. Using a question mark syntax to do the escaping 
         // This query will not print all countries populations, even if I write s' OR '1'='1 as country name or country code or both of them!!!
-        // So the query will be: SELECT Population FROM country WHERE Name = 's\' OR \'1\'=\'1' AND Code = ?;
-        // And if I try to run multi statements (as an injection) it won't work! the query will be: SELECT Population FROM country WHERE Name = 's\' OR \'1\'=\'1' AND Code = ?;
+        // So the query will be: SELECT Population FROM country WHERE Name = ? AND Code = ?;
+        // And if I try to run multi statements (as an injection) it won't work! the query will be: SELECT Population FROM country WHERE Name = ? AND Code = ?;
 
-        // const select_query = `SELECT Population FROM ${connection.escape(input_table_name).replace(/'/g,"")} WHERE Name = ${connection.escape(input_country_name)} AND Code = ?;`;
+        const select_query = `SELECT Population FROM ${connection.escape(input_table_name).replace(/'/g,"")} WHERE Name = ? AND Code = ?;`;
         
 
         connection.connect();
         console.log(select_query);
-        const results = await execQuery(select_query,input_country_code);
+        const results = await execQuery(select_query,[input_country_name,input_country_code]);
         for (r of results) {
             console.log(r);
         }
