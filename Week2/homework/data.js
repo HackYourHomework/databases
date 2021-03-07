@@ -16,7 +16,6 @@ for (i = 0; i < 15; i++) {
   const hIndexRandom = faker.random.float();
   const maleOrFemale = ['m', 'f'];
   const genderRandom = faker.random.arrayElement(maleOrFemale);
-  const randomMentorNumber = Math.floor(Math.random() * 15) + 1;
 
   authorDetails.push([
     firstNameRandom + ' ' + lastNameRandom,
@@ -24,9 +23,15 @@ for (i = 0; i < 15; i++) {
     randomDate(new Date(1950, 0, 1), new Date(2000, 0, 1)),
     hIndexRandom,
     genderRandom,
-    randomMentorNumber,
   ]);
 }
+
+// const mentorDetails = [];
+// for (i = 0; i < 15; i++) {
+//   const randomMentorNumber = Math.floor(Math.random() * 15) + 1;
+
+//   mentorDetails.push([randomMentorNumber]);
+// }
 
 const researchDetails = [];
 for (i = 0; i < 30; i++) {
@@ -50,5 +55,6 @@ for (i = 0; i < 30; i++) {
 }
 
 module.exports.authorDetails = authorDetails;
+// module.exports.mentorDetails = mentorDetails;
 module.exports.researchDetails = researchDetails;
 module.exports.authorResearchRelation = authorResearchRelation;
