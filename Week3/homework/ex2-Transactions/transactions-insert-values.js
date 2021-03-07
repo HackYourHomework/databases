@@ -22,16 +22,12 @@ async function seedDatabase() {
 
     const accountsData = await readFile(__dirname + '/account.json', 'utf8');
     const accountChangesData = await readFile(__dirname + '/accountChanges.json', 'utf8');
-
-
+    
     const accounts = JSON.parse(accountsData);
     const accountChanges = JSON.parse(accountChangesData);
-   
     
     const accountPromise = accounts.map(account => execQuery('INSERT INTO account SET ?', account));
-    execQuery('SET FOREIGN_KEY_CHECKS=0');
     const accountChangesPromise = accountChanges.map(accountChange => execQuery('INSERT INTO account_changes SET ?', accountChange));
-    execQuery('SET FOREIGN_KEY_CHECKS=1');
 
     await Promise.all(accountPromise,accountChangesPromise);
     connection.end();

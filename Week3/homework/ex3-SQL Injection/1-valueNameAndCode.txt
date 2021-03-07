@@ -1,0 +1,14 @@
+1- Give an example of a value that can be passed as name and code that would take advantage of SQL-injection 
+  and (fetch all the records in the database)
+
+- We can passed s' OR '3'='3 (which is always true) as name and b' OR '2'='2 as code (which is always true).
+- We can passed (anyName' OR '5'='5) as name and (anyName' OR '7'='7) as code.
+- If we want to run multiple Statements we have to set [multipleStatements: true;]
+
+2- To fetch all the Population records in the database the query would be:
+`SELECT Population FROM ${Country} WHERE Name = ('${name}' OR '5'='5) AND (code = '${code}' OR '5'='5);`
+
+3- If we want to fetch all records from Country table after fetch Population records the query would be:
+`SELECT Population FROM ${Country} WHERE Name = (`${name}` OR '1'='1) AND (code = `${code}` OR '1'='1); SELECT * FROM  Country;`
+
+4- In rewriteTheFunction.js file I explained all cases!
