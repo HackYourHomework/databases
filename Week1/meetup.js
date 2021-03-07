@@ -23,17 +23,17 @@ async function meetupDb() {
   const DROP_DATABASE = `DROP DATABASE IF EXISTS ${dbName}`;
   const CREATE_DATABASE = `CREATE DATABASE IF NOT EXISTS ${dbName}`;
   const CREATE_TABLE_INVITEE = `CREATE TABLE IF NOT EXISTS ${tblInvitee} (
-    invitee_no INT NOT NULL PRIMARY KEY,
+    invitee_no INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     invitee_name VARCHAR(50),
     invited_by VARCHAR(50)
   )`;
   const CREATE_TABLE_ROOM = `CREATE TABLE IF NOT EXISTS ${tblRoom} (
-    room_no INT NOT NULL PRIMARY KEY,
+    room_no INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     room_name VARCHAR(50),
     floor_number INT
   )`;
   const CREATE_TABLE_MEETING = `CREATE TABLE IF NOT EXISTS ${tblMeeting} (
-    meeting_no INT NOT NULL PRIMARY KEY,
+    meeting_no INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     meeting_title VARCHAR(255) NOT NULL,
     starting_time DATETIME,
     ending_time DATETIME,

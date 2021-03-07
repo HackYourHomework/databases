@@ -34,7 +34,7 @@ async function worldDb() {
     console.log(`Countries with "land" in their names: ${qryLandCountries} \n`);
 
     // What are the names of the cities with population in between 500,000 and 1 million?
-    const qryCityPopulation = `SELECT Name FROM city WHERE POPULATION > 500000 AND POPULATION < 1000000`;
+    const qryCityPopulation = `SELECT Name FROM city WHERE POPULATION BETWEEN 500000 AND 1000000`;
     const qryCityPopulationPromise = await Promise.all([
       execQuery(qryCityPopulation),
     ]);
