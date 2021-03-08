@@ -13,8 +13,8 @@ const connection = mysql.createConnection({
   multipleStatements: true
 });
 
-const execQuery = util.promisify(connection.query.bind(connection))
-const input = util.promisify(prompt.get.bind(this))
+const execQuery = util.promisify(connection.query.bind(connection));
+const input = util.promisify(prompt.get.bind(this));
 
 async function getPopulation() {
 

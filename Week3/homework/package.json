@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "mongodb": "^3.6.4",
     "mysql": "^2.18.1",
     "prompt": "^1.1.0"
   }

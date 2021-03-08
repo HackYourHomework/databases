@@ -1,0 +1,49 @@
+1- I extract the tables (city,country,countrylanguage) from world mysql database into three .csv files (city.csv,country.csv,countrylanguage.csv).
+   I added the header also so the data will be better while I insert the keys and values in MongoDB.
+   And Union will merge them on top of each other.
+
+    - This query to extract city table, I don't have to extract the ID column from city table (MongoDB will generate ID for each document),
+      The delimiter here is comma.
+
+        SELECT 'Name', 'CountryCode', 'District', 'Population'
+        UNION ALL
+        select Name, CountryCode, District, Population into outfile 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\city.csv'
+        FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' 
+        from city;
+
+    - This query to extract country table, The delimiter here is semicolon, because I have rows have multiple values with comma between them!
+
+        SELECT 'Code', 'Name', 'Continent', 'Region', 'SurfaceArea', 'IndepYear', 'Population', 'LifeExpectancy', 'GNP', 'GNPOld', 'LocalName', 'GovernmentForm', 'HeadOfState', 'Capital', 'Code2'
+        UNION ALL
+        select * into outfile 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\country.csv'
+        FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' 
+        from country;
+
+    - This query to extract countrylanguage table, The delimiter here is comma.
+        
+        SELECT 'CountryCode', 'Language', 'IsOfficial', 'Percentage'
+        UNION ALL
+        select * into outfile 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\countrylanguage.csv'
+        FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' 
+        from countrylanguage;
+
+
+2- Create account on Atlas, install Compass from MongoDB website, test the connection:
+    - Create account on Atlas, setup the ip address (using current ip address), create a user (with a password), and choose type of connection (with Shell, Compass or Application).
+    - Install Compass and create a new Connection with Atlas (use the correct connection string from Atlas) : mongodb+srv://KholiO-Atlas:<password>@cluster0.vylqe.mongodb.net/test
+    - Create a connection with Command Prompt Shell: mongo "mongodb+srv://cluster0.vylqe.mongodb.net/myFirstDatabase" --username KholiO-Atlas
+        In this step you have to make sure that your system environment properties path has the path of your mongodb Shell.
+
+    - Test the connection between Shell, Compass and Atlas:
+        - Create a database (contain collections) in Atlas and do operations on it
+        - Any change on Atlas should reflect on Shell and Compass  and vice versa.
+
+3- Create world database on Atlas contain 3 collections (city,country,countrylanguage)
+    - Create world database on Compass and city collection (you have to create a collection also, otherwise you couldn't see the database)
+    - Import city.csv as data to fill in city collection: choose comma delimiter and correct data type for fields.
+    - Import country.csv as data to fill in country collection: choose semicolon delimiter and correct data type for fields.
+    - Import countrylanguage.csv as data to fill in countrylanguage collection: choose comma delimiter and correct data type for fields.
+
+4- Test by type db.city.find().pretty on Shell, it will print all documents in city collection.
+
+
