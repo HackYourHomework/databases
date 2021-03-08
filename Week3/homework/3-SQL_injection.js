@@ -1,15 +1,3 @@
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'hyfuser',
-  password: 'hyfpassword',
-  database: 'new_world',
-});
-connection.connect(function (err) {
-  if (err) throw err;
-  console.log('Node.js connected to MySQl!');
-});
-
 // 1- Give an example of a value that can be passed as name and code that would take advantage of SQL-injection and (fetch all the records in the database)
 /*
  the value that  can be passed and take advantage of SQL-injection is the following for example :
@@ -49,5 +37,3 @@ function getPopulation(country, name, code) {
 getPopulation('country', 'India', 'IND');
 ```
 */
-
-connection.end();
