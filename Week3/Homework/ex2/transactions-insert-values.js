@@ -51,10 +51,10 @@ async function seedDatabase() {
 
     try {
         // call the function that returns promise
-        await execQuery("SET FOREIGN_KEY_CHECKS=0");
+        
         const account_data_promise = account_data.map(data => execQuery('INSERT INTO account SET ?', data));
         const changes_data_promise = changes_data.map(data => execQuery('INSERT INTO account_changes SET ?', data));
-        await execQuery("SET FOREIGN_KEY_CHECKS=1");
+        
         await Promise.all(account_data_promise,changes_data_promise);
 
     } catch (error) {
