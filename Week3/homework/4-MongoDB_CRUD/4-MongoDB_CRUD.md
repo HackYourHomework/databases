@@ -1,4 +1,4 @@
-1- Make an acount with Mongodb Atlas.
+1- Make an account with Mongodb Atlas.
 
 2- Create a cluster .
 
