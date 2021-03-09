@@ -1,0 +1,27 @@
+1- creating an account in atlas mongodb.
+2- creating a free cluster 
+3- adding a user with admin's rol.
+4- setting the ip adress to allow access from anywhere.
+
+5- connect to my cluster selecting Connect your application option 
+
+
+
+(mongodb+srv://Tarek-Aljabr:<password>@mongodb-world.9aj28.mongodb.net/<dbname>?retryWrites=true&w=majority) 
+
+6- after connecting to mongoDB database, i used those commands to export the 3 files as csv
+
+
+select * into outfile 'city.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from city;
+
+select * into outfile 'country.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from country;
+
+select * into outfile 'countrylanguage.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from countrylanguage;
+
+7- then i used mongodb compass after connecting i imported the three files .    
+
+8- then i create a new mongodb client using const client = new MongoClient(url, { useUnifiedTopology: true }); to be able to perform crud operations on my database
+9 - creating connect()function which will connect the client to the server .
+
+
+now i have the database in atlas.

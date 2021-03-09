@@ -1,0 +1,15 @@
+  
+1- What columns violate 1NF?
+
+   dinner_date : The data is not in the same type in this column . all records should have the same formaat.
+   food_code , food_ description   : more than one value in the same column.
+
+2- What entities do you recognize that could be extracted? 
+
+   member, dinner, venue, food.
+
+3- Name all the tables and columns that would make a 3NF compliant solution.
+members : member_id pk, member_name varchar(55), member_address varchar(55).
+dinners : dinner_id pk, dinner_date date, member_id pk, venue_code int
+venue : venue_code int, venue_description varchar(55).
+food : food_code int, food_description varchar(55).
