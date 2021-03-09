@@ -15,41 +15,6 @@ const execQuery = util.promisify(connection.query.bind(connection));
 
 connection.connect();
 
-// connection.beginTransaction((err) => {
-//   if (err) {
-//     throw err;
-//   }
-//   connection.query(
-//     "UPDATE account SET balance = balance - 1000 WHERE account_number = 101",
-//     (error, results, fields) => {
-//       if (error) {
-//         return connection.rollback(() => {
-//           throw error;
-//         });
-//       }
-
-//       connection.query(
-//         "UPDATE account SET balance = balance + 1000 WHERE account_number = 102",
-//         (error, results, fields) => {
-//           if (error) {
-//             return connection.rollback(() => {
-//               throw error;
-//             });
-//           }
-//           connection.commit((err) => {
-//             if (err) {
-//               return connection.rollback(() => {
-//                 throw err;
-//               });
-//             }
-//             console.log("success!");
-//           });
-//         }
-//       );
-//     }
-//   );
-// });
-
 async function transation() {
   const autoCommit = `SET AUTOCOMMIT = 0`;
   const startTransaction = `start transaction`;
