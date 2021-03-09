@@ -1,0 +1,21 @@
+By tring to extract from mysql the world databases into mongo, I ran into differnet errors while trying to fix it unfortunatly MYSQL crashed. We tried to fix it with rob and others to help but didnt work.
+
+So I took and shared the extracted files from a collegue into my local to finish my work.
+I installed mongoDB compass and atlas.
+I impotred the .csv files into mongo using the mongoDB compass
+frist by creating world database and then the collection city, country, countrylanguage and then start importing data into them:
+city collection: I had to fix the correct data type here for each column
+country collection: changed the delimiter into semicolon and data types for some columns
+countrylanguage: changed  and fixed some data types as well
+
+Creating an account on Atlas and creating a cluster also (creating a databases access and set an IP) 
+-inside the cluster then collection I created also (world) database containing three collections (city, country, countrylanguage).
+
+-I made a connection by clicking connect for with both mongoDB compass and mongo shell
+---mongoDB compass (mongodb+srv://<username>:<password>@testcluster1.cuuzy.mongodb.net/test)
+---mongo shell. (mongo "mongodb+srv://testcluster1.cuuzy.mongodb.net/myFirstDatabase" --username <username>)
+
+finaly tested the connection between the atlas and the compass
+and run test inside the mogoshell as well by typing db.city.find() 
+
+connection worked successfully.
