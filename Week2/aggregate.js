@@ -29,6 +29,11 @@ async function aggregateData() {
     WHERE a.gender = "f"
     ;
   `;
+  /* 
+  Take female ids
+  Take ids to junction table
+  count distinct paper ids
+  */
   const AVRG_HINDX_PER_UNIVERSITY = `
     SELECT university, AVG(h_index) AS average_h_index
     FROM authors
