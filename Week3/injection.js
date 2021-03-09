@@ -1,4 +1,4 @@
-// Old function with SQL-injection proofing
+// Old function without SQL-injection proofing
 function getPopulation(Country, name, code, cb) {
   // assuming that connection to the database is established and stored as conn
   conn.query(
@@ -18,8 +18,8 @@ function getPopulation(Country, name, code, cb) {
 // Answer: New function with SQL-injection proofing and ASYNC/AWAIT
 async function getPopulation(table, name, code, cb) {
   try {
-    name = connection.escape(name);
-    code = connection.escape(code);
+    name = conn.escape(name);
+    code = conn.escape(code);
     const result = await execQuery(
       `SELECT Population FROM ${table} WHERE Name = ${name} and code = ${code}`
     );
