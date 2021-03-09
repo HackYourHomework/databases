@@ -13,6 +13,7 @@ connection.connect(function (err) {
 /*
  the value that  can be passed and take advantage of SQL-injection is the following for example :
 getPopulation(`country`, `India`, `IND  'OR'  1=1 `);
+Where instead of retrieving the required data, it will retrieve the whole table population data.
 
 code example : 
 ```
