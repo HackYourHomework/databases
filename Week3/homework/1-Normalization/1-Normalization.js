@@ -22,7 +22,7 @@ The manager of the dinner club would like to manage the information system that 
 The columns that violate 1NF are : 
 - member_id => there is a duplicate records and primary key is not applied. 
 - member_address => the data is not atomic because we should have only single value in a column. 
-- dinner_data => the data are date type but not the same kind, sometimes will not be easy to retrieve data by dinner_date because the format of each record is different and not unique.
+- dinner_data => the data are date type but not the same kind and domains, sometimes will not be easy to retrieve data by dinner_date because the format of each record is different and not unique.
 - food_code => the data is not atomic and the column has multiple values which even we split them to different tables it will violating 1NF.
 - food_description => the data is not atomic and the column has multiple values.
 */
@@ -38,10 +38,10 @@ I think the entities that could be extracted in my opinion are :
 /*
 We would make many tables like : 
 
-- Table members => member_id(primary key), member_name, member_house_number, member_street_name.
-- Table venues => venue_code(primary key), venue_description. 
-- Table foods => food_code(primary key), food_description.
-- Table dinners => 
+- Table (members) => member_id(primary key), member_name, member_house_number, member_street_name.
+- Table (venues) => venue_code(primary key), venue_description. 
+- Table (foods) => food_code(primary key), food_description.
+- Table (dinners) => 
     dinner_id(primary key),
     dinner_date, 
     member_id(foreign key References members.member_id),
