@@ -1,0 +1,29 @@
+1- What columns violate 1NF?
+
+First These columns (member_address,food_code,food_description) was violated the rule  of (every column should only contain a single value) but they have multiple values.
+Secondly This column (dinner_date) violate the rule of (the domain should not change).
+
+////////////////////////////////////////////////////////////////
+
+We can solve this design by extracting columns (Next exercise).
+
+We have to extracting these entities:
+
+(member_address,food_code,food_description,dinner_date).
+** member_address: Extract this column into 2 column (building_no hold integer data type, building_name hold varchar data type).
+**  food_code: To avoid insert multiple data, we can extract this column into multiple columns (food_code1,food_code2,food_code3,.....).
+**  food_description: To avoid insert multiple data, 
+    we can extract this column into multiple columns (food_description1,food_description2,food_description3).
+**  dinner_date: To avoid inset data in different domains, 
+    we can extract this column into 3 columns (dinner_day ,dinner_month ,dinner_year)
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+Name all the tables and columns that would make a 3NF compliant solution.
+
+    the tables and columns that would make a 3NF compliant solution., we have to create 4 extra tables:
+
+    1- building table : has 2 columns: building_no(primary key)     , building_name.
+    2- dinner table   : has 2 columns: dinner_id(primary key)       , dinner_date.
+    3- venue table    : has 2 columns: venue_code(primary key)  , venue_description.
+    4- food table     : has 2 columns: food_code(primary key)   , food_description.

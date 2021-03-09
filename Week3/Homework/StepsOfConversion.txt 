@@ -1,0 +1,45 @@
+1-  Extract the tables 
+I tried to  extract the tables (city,country,countrylanguage) from world mysql database into three .csv files (city.csv,country.csv,countrylanguage.csv).
+but  i faced the problem every time i get this error (he MySQL server is running with the — secure-file-priv option so it cannot execute this statement)
+i tried to use these commands
+mysql> SHOW VARIABLES LIKE 'secure_file_priv';
+mysql> set @@secure_file_priv = '';
+$vi ~/.my.cnf
+[mysqld]
+secure_file_priv               = ''
+$sudo /usr/local/mysql/support-files/mysql.server restart
+
+it worked with my friends.  but it still not working for me .so i found way to extract using MYSQLWorkBench .
+1- I opened the world database on workbench and opened tables  then select city table and right click then select table data export then Select columns you'd like to export
+then Table Data Export allows you to easily export data into CSV, JSON datafiles.
+I did the same steps on other two tables.
+
+2 - Create account on Atlas, install Compass from MongoDB website, test the connection:
+    - Create account on Atlas, setup the ip address (using ip from any where a0.0.0.0/0   IP address) ), 
+    - create a user (with a password), and choose type of connection (with Shell, Compass or Application).
+    - Install Compass and create a new Connection with Atlas (use the correct connection string from Atlas) : mongodb+srv://hyfuser:<password>@cluster0.izlhw.mongodb.net/test"
+    - Create a connection with Command Prompt Shell: mongo "mongo "mongodb+srv://cluster0.izlhw.mongodb.net/myFirstDatabase" --username hyfuser"
+        In this step you have to make sure that your system environment properties path has the path of your mongodb Shell.
+
+    - Test the connection between Shell, Compass and Atlas:
+        - Create a database (contain collections) in Atlas and do operations on it using file.js and connect use application link 
+            const MongoClient = require('mongodb').MongoClient;
+            const uri = "mongodb+srv://hyfuser:<password>@cluster0.izlhw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+            const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+            client.connect(err => {
+            const collection = client.db("test").collection("devices");
+            // perform actions on the collection object
+            client.close();
+            });
+
+        - Any change on Atlas should reflect on Shell and Compass  and vice versa.
+
+3- Create world database on Atlas contain 3 collections (city,country,countrylanguage)
+    - Create world database on Compass and city collection,country,countrylanguage
+    - Import city.csv as data to fill in city collection: choose comma delimiter and correct data type for fields.
+    - Import country.csv as data to fill in country collection: choose semicolon delimiter and correct data type for fields.
+    - Import countrylanguage.csv as data to fill in countrylanguage collection: choose comma delimiter and correct data type for fields.
+
+4- Test on Shell, it will print all documents in  collections.
+
+
