@@ -1,63 +1,63 @@
 const authorResearchPapers = [
   {
-    authorNO: 1,
+    author_no: 1,
     paperID: 1030,
   },
   {
-    authorNO: 2,
+    author_no: 2,
     paperID: 1004,
   },
   {
-    authorNO: 3,
+    author_no: 3,
     paperID: 1016,
   },
   {
-    authorNO: 4,
+    author_no: 4,
     paperID: 1004,
   },
   {
-    authorNO: 5,
+    author_no: 5,
     paperID: 1017,
   },
   {
-    authorNO: 6,
+    author_no: 6,
     paperID: 1023,
   },
   {
-    authorNO: 7,
+    author_no: 7,
     paperID: 1027,
   },
   {
-    authorNO: 8,
+    author_no: 8,
     paperID: 1030,
   },
   {
-    authorNO: 9,
+    author_no: 9,
     paperID: 1010,
   },
   {
-    authorNO: 10,
+    author_no: 10,
     paperID: 1023,
   },
 
   {
-    authorNO: 11,
+    author_no: 11,
     paperID: 1017,
   },
   {
-    authorNO: 12,
+    author_no: 12,
     paperID: 1017,
   },
   {
-    authorNO: 13,
+    author_no: 13,
     paperID: 1030,
   },
   {
-    authorNO: 14,
+    author_no: 14,
     paperID: 1009,
   },
   {
-    authorNO: 15,
+    author_no: 15,
     paperID: 1016,
   },
 ];
