@@ -1,0 +1,17 @@
+[
+  {"author_name": "author 1", "university": "Maastricht", "date_of_birth": "1970-01-01", "h_index": 100,"gender": "m","mentor": 15},
+  {"author_name": "author 2", "university": "Maastricht", "date_of_birth": "1970-02-02", "h_index": 101,"gender": "m","mentor": null},
+  {"author_name": "author 3", "university": "Utrecht", "date_of_birth": "1970-03-03", "h_index": 102,"gender": "m","mentor": 1},
+  {"author_name": "author 4", "university": "Utrecht", "date_of_birth": "1970-04-04", "h_index": 103,"gender": "f","mentor": 2},
+  {"author_name": "author 5", "university": "Maastricht", "date_of_birth": "1970-05-05", "h_index": 104,"gender": "m","mentor": 3},
+  {"author_name": "author 6", "university": "London", "date_of_birth": "1970-06-06", "h_index": 105,"gender": "m","mentor": null},
+  {"author_name": "author 7", "university": "Maastricht", "date_of_birth": "1970-07-07", "h_index": 106,"gender": "f","mentor": 4},
+  {"author_name": "author 8", "university": "Utrecht", "date_of_birth": "1970-08-08", "h_index": 107,"gender": "m","mentor": 2},
+  {"author_name": "author 9", "university": "Maastricht", "date_of_birth": "1970-09-09", "h_index": 108,"gender": "m","mentor": null},
+  {"author_name": "author 10", "university": "London", "date_of_birth": "1970-10-10", "h_index": 109,"gender": "m","mentor": 6},
+  {"author_name": "author 11", "university": "Maastricht", "date_of_birth": "1970-11-11", "h_index": 110,"gender": "f","mentor": 8},
+  {"author_name": "author 12", "university": "London", "date_of_birth": "1970-12-12", "h_index": 111,"gender": "f","mentor": null},
+  {"author_name": "author 13", "university": "Maastricht", "date_of_birth": "1980-01-01", "h_index": 112,"gender": "f","mentor": 10},
+  {"author_name": "author 14", "university": "London", "date_of_birth": "1980-02-02", "h_index": 113,"gender": "f","mentor": 11},
+  {"author_name": "author 15", "university": "Maastricht", "date_of_birth": "1980-03-03", "h_index": 114,"gender": "f","mentor": 2}
+]
