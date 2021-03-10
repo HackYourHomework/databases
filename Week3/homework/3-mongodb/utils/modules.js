@@ -33,12 +33,10 @@ export async function findCityByName(client, cityName) {
   const db = await connection(client);
   const result = await db.findOne({ city: cityName });
   if (result) {
-    console.log(
-      `Found a listing in the collection with the name '${cityName}':`
-    );
+    console.log(`Here is information about: '${cityName}':`);
     console.log(result);
   } else {
-    console.log(`No listings found with the name '${cityName}'`);
+    console.log(`'${cityName}' was not found on our database`);
   }
 }
 
@@ -47,10 +45,10 @@ export async function findByCountryCode(client, code) {
   const db = await connection(client);
   const result = await db.findOne({ countryCode: code });
   if (result) {
-    console.log(`Found a listing in the collection with the name '${code}':`);
+    console.log(`Cities that where found using country code '${code}':`);
     console.log(result);
   } else {
-    console.log(`No listings found with the name '${code}'`);
+    console.log(`No cities where found with '${code}' country code`);
   }
 }
 

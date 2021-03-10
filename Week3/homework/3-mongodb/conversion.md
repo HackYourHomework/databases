@@ -12,6 +12,7 @@ from city;
 
 After that I followed steps to create a free cluster for connection with Atlas.
 But I was not able to connect my mongoDB to Atlas, if I try to connect via mongo Compass - it shows "loading connection", it doesn`t connect, it doesn`t give any errors. It does absolutly nothing. I searched for solutions which offered me to disconnect my DNS, which I did but it still didn`t help.
+Small note: only later I realized that disconnecting DNS sounds weird, but what I meant is disabling my VPN, which has DNS in name of it :))
 
 Eventually I found out that I can`t connect with admin user and had to create new user inside my cluster and then was finally able to connect to compass.
 
