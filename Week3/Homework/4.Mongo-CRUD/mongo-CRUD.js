@@ -14,35 +14,44 @@ async function crudTheWorld() {
     await client.connect();
 
     const db = client.db("World");
-    const city = await db.collection("City").find({}).toArray();
-    console.log(city);
+    const cityCollection = await db.collection("City");
 
-    //insert new city
-    // const newCity = {
-    //   Name: "Name",
-    //   CountryCode: "Country Code",
-    //   District: "District",
-    //   Population: 4350000,
-    // };
+    new city();
+    const newCity = {
+      Name: "Cairo",
+      CountryCode: "EGY",
+      District: "Greater Cairo",
+      Population: 30000000,
+    };
 
-    // create document
-    // await client.db("world").collection("city").insertOne(newCity);
+    // C-  create a new city document
+    await cityCollection.insertOne(newCity);
 
-    // Update Population
-    // await client.db("world").collection("city").updateOne({Name: "city"},{
-    //   $set:{
-    //       Population: 13456889
-    //     }
-    // });
+    // U - Update population
+    const cityToUpdate = { District: "Greater Cairo" };
+    const newPopulation = {
+      $set: {
+        Population: 28900000,
+      },
+    };
+    await cityCollection.updateOne(cityToUpdate, newPopulation);
 
-    // find city name
-    // await client.db("world").collection("city").find({Name:"city"});
+    // R-
+    // by city name
+    const findByCityQuery = { Name: "Cairo" };
+    const foundByCity = await cityCollection.find(findByCityQuery).toArray();
+    console.log(foundByCity);
 
-    // find by country code
-    // await client.db("world").collection("city").find({CountryCode:"Country Code"});
+    // by country code
+    const findByCountryCodeQuery = { CountryCode: "EGY" };
+    const foundByCountryCode = await cityCollection
+      .find(findByCountryCodeQuery)
+      .toArray();
+    console.log(foundByCountryCode);
 
-    // delete city
-    // await client.db("world").collection("city").deleteOne({Name:"City"});
+    // D - delete city
+    const cityToDelete = { District: "Greater Cairo" };
+    await cityCollection.deleteOne(cityToDelete);
   } catch (err) {
     console.error(err);
   } finally {
