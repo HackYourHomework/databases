@@ -1,0 +1,17 @@
+# By this point in the homework and as illustrated during the week, I lost access to MySQL server trying to troubleshoot a MySQL error for extracting the data in CSV. As a result, I couldn't complete ex.4 or refactor the code from the previous exercises as I like to deliver it. As a result the conclusion wss made to get the tables from colleagues who managed to and continue the exercise starting the MongoDB part
+
+## Imported CSV file extracrted from MySQL to Atlas
+
+## Chose the right data type for the columns if required
+
+## Installed and setup Compass
+
+## Created an Atlas account
+
+## Added my IP address to the whitelist
+
+## Created a db user and assigned a password
+
+## Connected to my application using the Application option in the connect tab
+
+### I also tested the connection using the Mongo Shell, Compass and Atlas to see if the updates happen accross the 3
