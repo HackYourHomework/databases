@@ -38,7 +38,7 @@ I can Rewrite the function again using prepared statements that will prevent sql
 function getPopulation(country, name, code) {
   // assuming that connection to the database is established and stored as conn
   connection.query(
-    `SELECT Population FROM ${country} WHERE Name = ? AND code = ?`,
+    `SELECT Population FROM country WHERE Name = ? AND code = ?`,
     [name, code],
     function (err, result) {
       if (err) throw err;
