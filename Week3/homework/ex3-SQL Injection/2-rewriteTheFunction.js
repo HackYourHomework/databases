@@ -50,12 +50,12 @@ async function getPopulation() {
         // So the query will be: SELECT Population FROM country WHERE Name = ? AND Code = ?;
         // And if I try to run multi statements (as an injection) it won't work! the query will be: SELECT Population FROM country WHERE Name = ? AND Code = ?;
 
-        const select_query = `SELECT Population FROM ${connection.escape(input_table_name).replace(/'/g,"")} WHERE Name = ? AND Code = ?;`;
-        
-
+        // const select_query = `SELECT Population FROM ${connection.escape(input_table_name).replace(/'/g,"")} WHERE Name = ?? AND Code = ??;`;
+        // OR  Alternatively, you can use ?? characters as placeholders for identifiers you would like to have escaped like this:
+        const select_query = `SELECT Population FROM ?? WHERE Name = ? AND Code = ?;`;
         connection.connect();
         console.log(select_query);
-        const results = await execQuery(select_query,[input_country_name,input_country_code]);
+        const results = await execQuery(select_query,[input_table_name,input_country_name,input_country_code]);
         for (r of results) {
             console.log(r);
         }
