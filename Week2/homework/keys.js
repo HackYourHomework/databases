@@ -22,7 +22,8 @@ createQueries("CREATE DATABASE IF NOT EXISTS WEEK2");
 createQueries("USE WEEK2");
 // Create a table, called authors. Give it the following fields: (author_no(Primary Key), author_name, university, date_of_birth, h_index, gender)
 createQueries(
-    "CREATE TABLE IF NOT EXISTS authors (author_no INT NOT NULL AUTO_INCREMENT, author_name VARCHAR(55), university VARCHAR(55), date_of_birth DATE, h_index INT, gender ENUM('m','f'), CONSTRAINT pk_author PRIMARY KEY(author_no))"
+   ` CREATE TABLE IF NOT EXISTS authors (author_no INT NOT NULL AUTO_INCREMENT, author_name VARCHAR(55), university VARCHAR(55),
+   date_of_birth DATE, h_index INT, gender ENUM('m','f'), CONSTRAINT pk_author PRIMARY KEY(author_no))`
 );
 // Write a query that adds a column called mentor to authors table that references the column author_no. For integrity add a foreign key on this column.
 
