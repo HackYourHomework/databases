@@ -2,15 +2,12 @@
     No transitive dependency (i.e. no column should depend on non-key column).
 
 To make the table in 3NF, we have to create 4 extra tables:
-    1- building table : has 2 columns: building_no(int primary key)     , building_name(varchar).
-    2- dinner table   : has 2 columns: dinner_id(int primary key)       , dinner_date(date).
-    3- venue table    : has 2 columns: venue_code(varchar primary key)  , venue_description(varchar).
-    4- food table     : has 2 columns: food_code(varchar primary key)   , food_description(varchar).
-
-And we still have member table which has 6 columns:
+    1- dinner table   : has 2 columns: dinner_id(int primary key)       , dinner_date(date).
+    2- venue table    : has 2 columns: venue_code(varchar primary key)  , venue_description(varchar).
+    3- food table     : has 3 columns: food_code(varchar primary key)   , food_description(varchar), venue_code(foreign key from venue table)
+    4- members_dinner : has 3 columns: member_id(foreign key from member table), dinner_id(foreign key from dinner table), food_code(foreign key from food table)
+    
+And we still have member table which has:
     member_id(int primary key),
     member_name(varchar),
-    building_no(int foreign key from building table),
-    dinner_id(int foreign key from dinner table),
-    venue_code(varchar foreign key from venue table),
-    food_code(varchar foreign key from food table)
+    member_address(varchar)

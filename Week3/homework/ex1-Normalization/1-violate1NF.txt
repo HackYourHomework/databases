@@ -3,7 +3,7 @@ What columns violate 1NF?
 1NF (4 rules):
 
     1- Single valued columns (each column should have atomic value, no multiple values):
-    These columns (member_address,food_code,food_description) violate this rule (they have multiple values).
+    These columns (food_code,food_description) violate this rule (they have multiple values).
     2- Column domain (for any column) should not change:
     This column (dinner_date) violate this rule (even it has same data type, but the domain is different).
     3- Unique names for columns:
