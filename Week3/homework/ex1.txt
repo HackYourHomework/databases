@@ -1,8 +1,5 @@
 1 -What columns violate 1NF?
-       
-    column member_address 
-        Attribute domain should not change, as we can see here this column contain different data type (int and charset), the solution for this is to have two separate columns for each data type as memeber_houseNumber( type: int) and member_street_name(type : varchar).
-        
+           
     column dinner_date 
         violates the 1NF, should contain the same Date format and same domain
 
@@ -10,12 +7,9 @@
        the columns here voilates the 1NF rules because each attribute contains two values  (each column should have atomic value no multiple values)
 
 2 - What entities do you recognize that could be extracted?
-    member_address column 
-        has to be extracted into two columns, as member_houseNumber( type: int) and member_street_name(type : varchar).
-
+    
     food_code column and food_description column
         extract the multiple values by creating more columns each column conatins one value to avoid the violation
-
     dinner_date 
         move into different table e.g dinner table because its  a nono-prime attribute that functionally dependent  on a proper subset of a candidate key 
     venue_description
@@ -24,19 +18,13 @@
          move into different table e.g food table because its a nono-prime attribute  that functionally dependent  on a proper subset of a candidate key 
 
 3- Name all the tables and columns that would make a 3NF compliant  solution.    
-    we will have to create 4 tables
+    we will have to create 5 tables
+
+    
     member table
          member_id int primary key
-         member_house_number int
-         member_street_name varchar(50)
-         dinner_id int foreign key references dinner table
-         venue_code varchar(50) foreign key references venue table
-         food_code varchar(50) foreign key references food table
-
-    dinner table
-        dinner_id int primary key
-        dinner_description varchar(50)
-        dinner_date date
+         member_name varchar(50)
+         member_address varchar(50)
 
     venue table
         venue_code varchar(50) primary key
@@ -44,8 +32,14 @@
 
     food table
         food_code varchar(50) primary key
-        food_name varchar(50)
         food_description varchar(50)
+        venue_code varchar(50) foreign key references venue table
 
-
-   
+    dinner table
+        dinner_id int primary key
+        dinner_date date
+      
+    member-dinner table 
+        member-id foreign key references member table
+        dinner_id foreign key references dinner table
+        food_code varchar(50) foreign key references food table
