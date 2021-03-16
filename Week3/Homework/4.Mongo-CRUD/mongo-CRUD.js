@@ -16,7 +16,6 @@ async function crudTheWorld() {
     const db = client.db("World");
     const cityCollection = await db.collection("City");
 
-    new city();
     const newCity = {
       Name: "Cairo",
       CountryCode: "EGY",

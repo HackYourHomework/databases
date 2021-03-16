@@ -1,6 +1,6 @@
 "use strict";
 
-//value passed as name and can take advantage of SQL injection: Mars or 1=1 ; SHOW TABLES
+//value passed as name and can take advantage of SQL injection: 'Mars' or 1=1 ; SHOW TABLES
 //value passed as code and can take advantage of SQL injection: INJCT or 1=1; DROP DATABASE World
 
 const getPopulation = (Country, name, code, cb) => {

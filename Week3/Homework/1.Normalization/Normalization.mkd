@@ -1,6 +1,7 @@
 # What columns violate 1NF?
 
     Columns that violate the 1NF are: dinner_date, food_code, food_description
+     These columns contain multiple values in the same fields which violates 1NF and the column dinner_date also violates  1NF since it contains mixed date formats.
 
 ## What entities do you recognize that could be extracted?
 
@@ -9,13 +10,19 @@
 ## Name all the tables and columns that would make a 3NF compliant solutionm
 
 [Members]
-**Member_id -PK** **member_name** **member_address** **dinner_id -FK**
+**Member_id -PK** **member_name** **member_address**
 
 [Dinner]
 **dinner_id -PK** **dinner_date**
 
-[Venue]
-**venue_code -PK** **venue_description** **dinner_id -FK**
+[Members_dinner]
+**Member_id -FK** **dinner_id -FK**
+
+[Venues]
+**venue_code -PK** **venue_description**
 
 [Food]
-**code -PK** **description** **dinner_id -FK**
+**code -PK** **description**
+
+[Venues_Food]
+**venue_code -FK** **food_code -FK**
