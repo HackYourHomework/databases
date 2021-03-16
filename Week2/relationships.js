@@ -22,8 +22,8 @@ async function defineRelationships() {
   const CREATE_TABLE_AUTHORS_PAPERS = `
     CREATE TABLE IF NOT EXISTS authors_Papers (
       apid INT AUTO_INCREMENT PRIMARY KEY,
-      author INT,
-      paper INT,
+      author INT NOT NULL,
+      paper INT NOT NULL,
       FOREIGN KEY (author) REFERENCES authors(author_no),
       FOREIGN KEY (paper) REFERENCES research_Papers(paper_id)
     );

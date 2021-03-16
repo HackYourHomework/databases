@@ -22,8 +22,8 @@ async function usingJoins() {
     SELECT
     a.author_no, a.author_name, a.university, a.date_of_birth, a.h_index, a.gender, p.paper_title
     FROM authors AS a
-    LEFT JOIN authors_papers AS ap ON a.author_no = ap.author
-    LEFT JOIN research_papers AS p ON ap.paper = p.paper_id;
+    JOIN authors_papers AS ap ON a.author_no = ap.author
+    JOIN research_papers AS p ON ap.paper = p.paper_id;
   `;
 
   connection.connect();

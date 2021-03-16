@@ -20,7 +20,7 @@ async function aggregateData() {
     ORDER BY num_of_authors DESC;
   `;
   const ALL_FEMALE_PAPERS_COUNT = `
-    SELECT COUNT(DISTINCT p.paper_title) AS total_female_papers
+    SELECT COUNT(DISTINCT p.paper_id, p.paper_title) AS total_female_papers
     FROM research_papers AS p
     LEFT JOIN authors_papers AS ap
     ON p.paper_id = ap.paper
@@ -29,11 +29,6 @@ async function aggregateData() {
     WHERE a.gender = "f"
     ;
   `;
-  /* 
-  Take female ids
-  Take ids to junction table
-  count distinct paper ids
-  */
   const AVRG_HINDX_PER_UNIVERSITY = `
     SELECT university, AVG(h_index) AS average_h_index
     FROM authors
@@ -41,7 +36,7 @@ async function aggregateData() {
     ORDER BY average_h_index DESC;
   `;
   const COUNT_PAPERS_PER_UNIVERSITY = `
-    SELECT a.university, COUNT(DISTINCT p.paper_title) AS sum_papers
+    SELECT a.university, COUNT(DISTINCT p.paper_id, p.paper_title) AS sum_papers
     FROM research_papers AS p
     JOIN authors_papers AS ap ON p.paper_id = ap.paper
     JOIN authors AS a ON ap.author = a.author_no
