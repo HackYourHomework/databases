@@ -25,16 +25,19 @@ const ACCOUNT_TABLE_AUTO_INCREMENT = `
 const CREATE_ACCOUNT_CHANGES_TABLE = `
     CREATE TABLE IF NOT EXISTS account_changes (
         change_number INT AUTO_INCREMENT,
-        account_number INT,
+        receiving_account_number INT,
         amount INT,
-        changed_date DATE,
-        remark VARCHAR(100),
+        sending_account_number INT,
+        changed_date DATETIME,
+        remark VARCHAR(255),
         PRIMARY KEY(change_number)
     );
 `;
 
 const ACCOUNT_CHANGES_TABLE_FK = `
-    ALTER TABLE account_changes ADD CONSTRAINT FK_ACCOUNT FOREIGN KEY(account_number) REFERENCES account(account_number);
+    ALTER TABLE account_changes 
+        ADD CONSTRAINT FK_SEND FOREIGN KEY(receiving_account_number) REFERENCES account(account_number), 
+        ADD CONSTRAINT FK_RECEIVE FOREIGN KEY(sending_account_number) REFERENCES account(account_number);
 `;
 
 // Async function for the database connection

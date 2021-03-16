@@ -12,7 +12,6 @@
 +-----------+---------------+----------------+-----------+-------------+------------+-------------------+-----------+------------------+
 
 1. What columns violate 1NF?
-- member_address : This column includes multiple values, not single atomic value. (street number + street name)
 - dinner_date : This column has different types of data.
 - food_code : This column includes multiple values, not single atomic value.
 - food_description : This column includes multiple values, not single atomic value.
@@ -23,8 +22,8 @@ member_id, dinner_id, venue_code, food_code
 3. Name all the tables and columns that would make a 3NF compliant solution.
 TABLE NAME  |   COLUMN NAMES
 ----------------------------------
-members     |   member_id, member_name
-addresses   |   member_id, street_number, street_name
+members     |   member_id, member_name, member_address
 dinners     |   dinner_id, dinner_date
 venues      |   venue_code, venue_description
 foods       |   food_code, food_description
+mems_dinners|   member_id, dinner_id, venue_code, food_code

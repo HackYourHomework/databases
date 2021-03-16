@@ -24,21 +24,24 @@ const accountsData = [
 // Data for inserting to the account_changes table
 const accountChangesData = [
     {
-        account_number: 101,
+        receiving_account_number: 101,
         amount: 300,
-        changed_date: "2020-09-03",
+        sending_account_number: 102,
+        changed_date: "2020-09-03 11:12:01",
         remark: "Shopping"
     },
     {
-        account_number: 102,
+        receiving_account_number: 102,
         amount: 640,
-        changed_date: "2021-01-13",
+        sending_account_number: 103,
+        changed_date: "2021-01-13 13:23:43",
         remark: "Rent fee"
     },
     {
-        account_number: 103,
+        receiving_account_number: 103,
         amount: 2000,
-        changed_date: "2020-12-01",
+        sending_account_number: 101,
+        changed_date: "2020-12-01 17:10:09",
         remark: "Salary"
     }
 ];
