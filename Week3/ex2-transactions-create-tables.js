@@ -33,7 +33,6 @@ async function seedDatabase() {
   } catch (error) {
     console.error(error);
     await execQuery("ROLLBACK");
-    connection.end();
   }
 
   connection.end();
