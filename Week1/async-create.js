@@ -4,8 +4,8 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'hyfuser',
-  password: 'hyfpassword',
-  database: 'class19',
+  password: 'Danilinaelen1',
+  database: 'company',
 });
 
 const execQuery = util.promisify(connection.query.bind(connection));
@@ -47,10 +47,14 @@ async function seedDatabase() {
   connection.connect();
 
   try {
-    await Promise.all[execQuery(CREATE_STUDENTS_TABLE), execQuery(CREATE_TEACHERS_TABLE)];
-    
-    await Promise.all(students.map(student =>
-      execQuery('INSERT INTO students SET ?', student)
+    await Promise.all[
+      (execQuery(CREATE_STUDENTS_TABLE), execQuery(CREATE_TEACHERS_TABLE))
+    ];
+
+    await Promise.all(
+      students.map((student) =>
+        execQuery('INSERT INTO students SET ?', student),
+      ),
     );
   } catch (error) {
     console.error(error);
