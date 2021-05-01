@@ -12,7 +12,7 @@ connection.connect((err) => {
   console.log(`Mysql server is connected.`);
 });
 
-const runQuery = (query) => {
+const addQuery = (query) => {
   connection.query(query, (err, results) => {
     if (err) throw err;
     results.forEach((result) => {
@@ -35,6 +35,6 @@ const queriesList = [
   `SELECT SUM(population) FROM country`,
 ];
 
-queriesList.forEach((query) => runQuery(query));
+queriesList.forEach((query) => addQuery(query));
 
 connection.end();
