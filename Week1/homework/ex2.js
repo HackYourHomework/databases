@@ -1,26 +1,9 @@
 import { createConnection } from 'mysql';
+import { execSync } from 'child_process';
 
-const connection = createConnection({
-  host: `localhost`,
-  user: `hyfuser`,
-  password: `123hYf!@#`,
-  database: `new_world`,
-});
+const newDB = `world`;
 
-connection.connect((err) => {
-  if (err) throw err;
-  console.log(`Mysql server is connected.`);
-});
-
-const addQuery = (query) => {
-  connection.query(query, (err, results) => {
-    if (err) throw err;
-    results.forEach((result) => {
-      const value = Object.values(result).toString();
-      console.log(value);
-    });
-  });
-};
+const dumpFile = `../world.sql`;
 
 const queriesList = [
   `SELECT name FROM country WHERE population > 8000000`,
@@ -35,6 +18,52 @@ const queriesList = [
   `SELECT SUM(population) FROM country`,
 ];
 
-queriesList.forEach((query) => addQuery(query));
+const connectionInfo = {
+  host: `localhost`,
+  user: `hyfuser`,
+  password: `hyfpassword`,
+};
 
-connection.end();
+const connection = createConnection(connectionInfo);
+
+const cmd = `mysql -u${connectionInfo.user} -p'${connectionInfo.password}'`;
+
+const returnErr = (err) => {
+  console.error(err);
+  return;
+};
+
+connection.connect((err) => {
+  if (err) returnErr(err);
+  console.log(`Connection is established.`);
+});
+
+const importDB = (cmd, dumpFile) => {
+  execSync(`${cmd} < '${dumpFile}'`, (err) => {
+    if (err) returnErr(err);
+    console.log(`${dumpFile} is imported.`);
+  });
+};
+const addQuery = (query) => {
+  connection.query(query, (err) => {
+    if (err) returnErr(err);
+  });
+};
+
+const useDB = (dbName) =>
+  addQuery(`USE ${dbName}`, `Database ${dbName} connected.`);
+
+try {
+  importDB(cmd, dumpFile);
+
+  useDB(newDB);
+
+  queriesList.forEach((query) => addQuery(query));
+} catch (err) {
+  console.error(err.message);
+} finally {
+  connection.end((err) => {
+    if (err) returnErr(err);
+    console.log(`Connection is terminated.`);
+  });
+}

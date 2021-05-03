@@ -3,7 +3,7 @@ import { createConnection } from 'mysql';
 const connection = createConnection({
   host: `localhost`,
   user: `hyfuser`,
-  password: `123hYf!@#`,
+  password: `hyfpassword`,
 });
 
 connection.connect((err) => {
@@ -40,7 +40,7 @@ const addDataType = (columnsList) => {
     if (isID) query.push(`${column} INT AUTO_INCREMENT PRIMARY KEY`);
     else if (isNumber) query.push(`${column} INT`);
     else if (isDate) query.push(`${column} DATETIME`);
-    else query.push(`${column} VARCHAR(100)`);
+    else query.push(`${column} VARCHAR(50)`);
   });
 
   return query.toString();
@@ -51,7 +51,7 @@ const createTable = (table) => {
   let query = addDataType(columnsList);
   query = `CREATE TABLE ${name} (${query})`;
 
-  addQuery(query, `Table ${name} is created.`);
+  addQuery(query, `\nTable ${name} is created.`);
 };
 
 const insertRow = (table) => {
