@@ -19,7 +19,7 @@ let sql = [
   `CREATE TABLE Invitee (
       invitee_no INT AUTO_INCREMENT,
       invitee_name VARCHAR(200),
-      invited_by VARCHAR(200),
+      invited_by INT,
       PRIMARY KEY(invitee_no))`,
   `CREATE TABLE Room (
       room_no INT AUTO_INCREMENT,
@@ -43,8 +43,8 @@ let inputs = [
   `INSERT INTO Invitee
   (invitee_name, invited_by)
   values
-  ('Peter', 'Jordan'), ('Will', 'Smith'), ('Watson', 'Sara'),
-  ('Tom', 'Johnson'), ('Jackson', 'Bruin')`,
+  ('Peter', 21), ('Will', 22), ('Watson', 23),
+  ('Tom', 24), ('Jackson', 25)`,
   `INSERT INTO Room 
   (room_name, floor_number)
   values
