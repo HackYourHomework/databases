@@ -33,11 +33,11 @@ const addDataType = (columnsList) => {
   const query = [];
 
   columnsList.forEach((column) => {
-    const isID = column.includes(`no`);
-    const isNumber = column.includes(`number`);
+    const isPriKey = column.includes(`no`);
+    const isNumber = column.includes(`by`) || column.includes(`number`);
     const isDate = column.includes(`time`);
 
-    if (isID) query.push(`${column} INT AUTO_INCREMENT PRIMARY KEY`);
+    if (isPriKey) query.push(`${column} INT AUTO_INCREMENT PRIMARY KEY`);
     else if (isNumber) query.push(`${column} INT`);
     else if (isDate) query.push(`${column} DATETIME`);
     else query.push(`${column} VARCHAR(50)`);
@@ -75,11 +75,11 @@ const inviteeTable = {
   name: `Invitee`,
   columnsList: [`invitee_no`, `invitee_name`, `invited_by`],
   valuesList: [
-    [`'John'`, `'Mary'`],
-    [`'Bob'`, `'Sofia'`],
-    [`'Johnny'`, `'Will'`],
-    [`'Sara'`, `'George'`],
-    [`'Lisa'`, `'Kyle'`],
+    [`'John'`, 5],
+    [`'Bob'`, 4],
+    [`'Johnny'`, 3],
+    [`'Sara'`, 2],
+    [`'Lisa'`, 1],
   ],
 };
 
