@@ -8,6 +8,7 @@ const connection = mysql.createConnection({
   database: `world`,
 });
 
+
 // Connect
 connection.connect((err) => {
   if (err) throw err;
