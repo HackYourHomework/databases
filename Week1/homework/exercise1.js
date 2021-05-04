@@ -3,24 +3,23 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'hyfuser',
-  password: 'Password',
-  database: 'class31',
+  password: 'hyfpassword',
 });
 
-connection.query('CREATE DATABASE  meetup ;', handleError);
+connection.query('CREATE DATABASE IF  NOT EXISTS meetup ;', handleError);
 
 connection.query('USE meetup;', handleError);
 
 connection.query(
-  'CREATE TABLE Invitee ( invitee_no int , invitee_name varchar(20), invited_by varchar(20));',
+  'CREATE TABLE IF  NOT EXISTS Invitee ( invitee_no int , invitee_name varchar(20), invited_by varchar(20));',
   handleError,
 );
 connection.query(
-  'CREATE TABLE Room ( room_no int, room_name varchar(20), floor_number int);',
+  'CREATE TABLE IF  NOT EXISTS Room ( room_no int, room_name varchar(20), floor_number int);',
   handleError,
 );
 connection.query(
-  'CREATE TABLE Meeting ( meeting_no int, meeting_title varchar(50), starting_time datetime, ending_time datetime, room_no int);',
+  'CREATE TABLE  IF  NOT EXISTS Meeting ( meeting_no int, meeting_title varchar(50), starting_time datetime, ending_time datetime, room_no int);',
   handleError,
 );
 connection.query(
