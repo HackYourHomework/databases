@@ -7,6 +7,7 @@ const connection = mysql.createConnection({
   password: "hyfpassword",
 });
 
+
 // Connect
 connection.connect((err) => {
   if (err) throw err;
