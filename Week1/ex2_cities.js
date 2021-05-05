@@ -40,7 +40,7 @@ const questionsList = [
   "SELECT SUM(population) FROM country",
 ];
 
-const getTheAnswers = (arrayOfQuestions) => {
+const printAnswers = (arrayOfQuestions) => {
   arrayOfQuestions.forEach((query) => {
     db.query(query, (error, results) => {
       if (error) throw error;
@@ -49,4 +49,4 @@ const getTheAnswers = (arrayOfQuestions) => {
   });
 };
 
-getTheAnswers(questionsList);
+printAnswers(questionsList);
