@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "hyfpassword",
+  password: "Giresun3428@",
 });
 
 // Connect
@@ -34,7 +34,7 @@ addQuery(useDb, `Connected.`);
 const queries = [
   "CREATE TABLE Invitee (invitee_no INT AUTO_INCREMENT PRIMARY KEY, invitee_name  VARCHAR(50), invited_by  VARCHAR(50))",
   "CREATE TABLE Room (room_no INT AUTO_INCREMENT PRIMARY KEY, room_name   VARCHAR(50), floor_number  INT)",
-  "CREATE TABLE Meeting (meeting_no INT AUTO_INCREMENT PRIMARY KEY, meeting_title   VARCHAR(50), starting_time  TIME, ending_time TIME, room_no INT)",
+  "CREATE TABLE Meeting (meeting_no INT AUTO_INCREMENT PRIMARY KEY, meeting_title   VARCHAR(50), starting_time  DATETIME, ending_time DATETIME, room_no INT)",
 ];
 queries.forEach((query) => addQuery(query, `Table is created`));
 
