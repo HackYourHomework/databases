@@ -39,4 +39,4 @@ addQuery(alterTable, `Column is added.`);
 addQuery(assignFK, `FK is added and referenced from author_no`);
 
 // queries.forEach((query) => addQuery(query, `Table is created`));
-connection.end(); 
+connection.end();
