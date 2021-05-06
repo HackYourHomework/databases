@@ -13,7 +13,7 @@ connection.connect(err => {
 });
 
 // To execute select query
-function tableQuery(queryString) {
+function executeQuery(queryString) {
   connection.query(queryString, (err, results) => {
     if (err) throw err;
     console.log(results);
@@ -21,24 +21,24 @@ function tableQuery(queryString) {
 }
 
 // countries with population greater than 8 million
-tableQuery('SELECT name FROM country WHERE population > 8000000')
+executeQuery('SELECT name FROM country WHERE population > 8000000')
 // countries that have “land” in their names
-tableQuery("SELECT name FROM country WHERE name LIKE '%land%'");
+executeQuery("SELECT name FROM country WHERE name LIKE '%land%'");
 // cities with population in between 500,000 and 1 million
-tableQuery('SELECT name FROM city WHERE population BETWEEN 500000 AND 1000000');
+executeQuery('SELECT name FROM city WHERE population BETWEEN 500000 AND 1000000');
 // all the countries on the continent ‘Europe’
-tableQuery('SELECT name FROM country WHERE continent = "Europe"');
+executeQuery('SELECT name FROM country WHERE continent = "Europe"');
 // countries in the descending order of their surface areas
-tableQuery('SELECT name FROM country ORDER BY surfaceArea desc');
+executeQuery('SELECT name FROM country ORDER BY surfaceArea desc');
 // names of all the cities in the Netherlands?
-tableQuery('SELECT name FROM city WHERE countryCode = "NLD"');
+executeQuery('SELECT name FROM city WHERE countryCode = "NLD"');
 // population of Rotterdam
-tableQuery('SELECT population FROM city WHERE name = "Rotterdam"');
+executeQuery('SELECT population FROM city WHERE name = "Rotterdam"');
 // top 10 countries by Surface Area
-tableQuery('SELECT name, surfaceArea FROM country ORDER BY SurfaceArea desc LIMIT 10');
+executeQuery('SELECT name, surfaceArea FROM country ORDER BY SurfaceArea desc LIMIT 10');
 // top 10 most populated cities
-tableQuery('SELECT name, population FROM city ORDER BY population desc LIMIT 10');
+executeQuery('SELECT name, population FROM city ORDER BY population desc LIMIT 10');
 // population number of the world
-tableQuery('SELECT SUM(population) AS populationOfTheWorld FROM country');
+executeQuery('SELECT SUM(population) AS populationOfTheWorld FROM country');
 
 connection.end();
