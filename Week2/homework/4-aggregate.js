@@ -28,23 +28,51 @@ function addMessage(aggregateQueries, index) {
 
 const aggregateQueries = [
   {
-    statement: `SELECT research_papers.paper_id, COUNT(author_name) FROM research_papers INNER JOIN authors_papers ON authors_papers.paper_id = research_papers.paper_id  INNER JOIN authors  ON authors.author_no = authors_papers.author_no GROUP BY paper_id`,
+    statement: `
+    SELECT r.paper_id, COUNT(author_name)
+    FROM research_papers AS r
+    INNER JOIN authors_papers AS p
+    ON p.paper_id = r.paper_id
+    INNER JOIN authors AS a
+    ON a.author_no = p.author_no
+    GROUP BY paper_id 
+    ORDER by paper_id DESC`,
     message: `All research papers and the number of authors that wrote that paper....`,
   },
   {
-    statement: `SELECT DISTINCT gender, count(paper_title) FROM authors au INNER JOIN authors_papers ap ON au.author_no = ap.author_no  INNER JOIN research_papers rp ON rp.paper_id = ap.paper_id WHERE gender = "f"`,
+    statement: `
+    SELECT DISTINCT gender, count(paper_title)
+    FROM authors AS a
+    INNER JOIN authors_papers AS p
+    ON a.author_no = p.author_no
+    INNER JOIN research_papers AS r
+    ON r.paper_id = p.paper_id
+    WHERE gender = "f"`,
     message: `Sum of the research papers published by all female authors....`,
   },
   {
-    statement: `SELECT university, AVG(h_index) FROM authors GROUP BY university`,
+    statement: `
+    SELECT university, AVG(h_index)
+    FROM authors
+    GROUP BY university
+    ORDER BY h_index DESC`,
     message: `Average of the h-index of all authors per university...`,
   },
   {
-    statement: `SELECT university, COUNT(DISTINCT authors_papers.paper_id) FROM authors LEFT JOIN authors_papers ON authors.author_no = authors_papers.author_no GROUP BY university`,
+    statement: `
+    SELECT university , COUNT(DISTINCT p.paper_id) AS "Total Papers"
+    FROM authors AS a
+    LEFT JOIN authors_papers AS p
+    ON a.author_no = p.author_no
+    GROUP BY university
+    ORDER BY COUNT(DISTINCT p.paper_id) DESC	`,
     message: `Sum of the research papers of the authors per university...`,
   },
   {
-    statement: `SELECT university, MIN(h_index), MAX(h_index) FROM authors GROUP BY university`,
+    statement: `
+    SELECT university, MIN(h_index), MAX(h_index)
+    FROM authors
+    GROUP BY university`,
     message: `Minimum and maximum of the h-index of all authors per university...`,
   },
 ];

@@ -26,13 +26,23 @@ function addMessage(insertQuery, index) {
   return { ...insertQuery, message: `${index} is executed...` };
 }
 
-const insertQueries = [   
+const insertQueries = [
   {
-    statement: `SELECT a.author_no, a.author_name AS "author", m.author_name AS "mentor" FROM authors AS a JOIN authors AS m ON a.mentor = m.author_no`,
+    statement: `
+    SELECT a.author_name AS "author_name", m.author_name AS "mentor_name"
+    FROM authors AS a
+    JOIN authors AS m
+    ON a.mentor = m.author_no`,
     message: `Names of all authors and their corresponding mentors...`,
   },
   {
-    statement: `SELECT author_name, university, date_of_birth, h_index, gender, mentor, paper_title FROM authors LEFT JOIN authors_papers ON authors.author_no = authors_papers.author_no LEFT JOIN research_papers ON authors_papers.paper_id = research_papers.paper_id`,
+    statement: `
+   SELECT a.*, paper_title
+   FROM authors AS a
+   LEFT JOIN authors_papers AS p
+   ON a.author_no = p.author_no
+   LEFT JOIN research_papers AS r
+   ON p.paper_id = r.paper_id`,
     message: `All columns of authors and their published paper_title...`,
   },
 ];
