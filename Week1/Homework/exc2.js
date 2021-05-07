@@ -9,12 +9,12 @@ connection.connect((err) => {if (err)throw err;});
 
 connection.query("USE world", (error) => {
     if (error) throw error;
-  });
+});
 
-  const queryFunc = (err,result)=>{
+const queryFunc = (err,result)=>{
     if (err) throw err;
     console.log(result);
-  }
+}
 
 connection.query('SELECT Name FROM country WHERE Population > 8000000',queryFunc);
 

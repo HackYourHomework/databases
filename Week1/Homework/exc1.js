@@ -42,5 +42,4 @@ connection.query('SELECT * FROM Invitee , Room , Meeting',
   console.table(result);
 });
 
-
 connection.end();
