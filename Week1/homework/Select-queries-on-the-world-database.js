@@ -16,16 +16,16 @@ const checkError = (error) => {
 
 // function Create a database :
 const createDatabase = (dbName) => {
-  let sql = `CREATE DATABASE ${dbName}`;
-  db.query(sql, (err, result) => {
+  const sqlCreate = `CREATE DATABASE ${dbName}`;
+  db.query(sqlCreate, (err, result) => {
     checkError(err);
     console.log(`${dbName} is created as database.`);
   });
 };
 // function to use the database:
 const useDatabase = (dbName) => {
-  let sql = `USE ${dbName}`;
-  db.query(sql, (err, result) => {
+  const sqlUse = `USE ${dbName}`;
+  db.query(sqlUse, (err, result) => {
     checkError(err);
     console.log(`${dbName} is used.`);
   });

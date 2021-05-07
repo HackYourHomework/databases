@@ -15,7 +15,7 @@ const checkError = (error) => {
 };
 
 //Three tables Invitee, Room, Meeting
-let sql = [
+const sqlInputs = [
   `CREATE TABLE Invitee (
       invitee_no INT AUTO_INCREMENT,
       invitee_name VARCHAR(200),
@@ -39,7 +39,7 @@ let sql = [
 ];
 
 //Input for 5 rows into each table with relevant fields
-let inputs = [
+const inputs = [
   `INSERT INTO Invitee
   (invitee_name, invited_by)
   values
@@ -59,16 +59,16 @@ let inputs = [
 
 // function Create a database:
 const createDatabase = (dbName) => {
-  let sql = `CREATE DATABASE ${dbName}`;
-  db.query(sql, (err, result) => {
+  const sqlCreate = `CREATE DATABASE ${dbName}`;
+  db.query(sqlCreate, (err, result) => {
     checkError(err);
     console.log(`${dbName} is created as database.`);
   });
 };
 // function to use the database:
 const useDatabase = (dbName) => {
-  let sql = `USE ${dbName}`;
-  db.query(sql, (err, result) => {
+  const sqlUse = `USE ${dbName}`;
+  db.query(useDatabase, (err, result) => {
     checkError(err);
     console.log(`${dbName} is used.`);
   });
@@ -77,7 +77,7 @@ const useDatabase = (dbName) => {
 // function create the three tables and insert inputs into:
 const createTable = () => {
   for (let i = 0; i < sql.length; i++) {
-    db.query(sql[i], (err, result) => {
+    db.query(sqlInputs[i], (err, result) => {
       checkError(err);
       console.log(`Table ${i++} is created`);
     });
