@@ -7,8 +7,8 @@ const authors_papers = require("./authors_papers");
 // Create connection
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "Giresun3428@",
+  user: "hyfuser",
+  password: "hyfpassword",
   database: "library",
 });
 
