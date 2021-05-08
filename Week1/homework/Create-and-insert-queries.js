@@ -68,7 +68,7 @@ const createDatabase = (dbName) => {
 // function to use the database:
 const useDatabase = (dbName) => {
   const sqlUse = `USE ${dbName}`;
-  db.query(useDatabase, (err, result) => {
+  db.query(sqlUse, (err, result) => {
     checkError(err);
     console.log(`${dbName} is used.`);
   });
