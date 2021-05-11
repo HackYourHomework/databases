@@ -5,7 +5,7 @@ import { readFile } from 'fs';
 const connectionConfig = {
   host: `localhost`,
   user: `hyfuser`,
-  password: ``,
+  password: `hyfpassword`,
   database: `hyf_db`,
   multipleStatements: true,
 };

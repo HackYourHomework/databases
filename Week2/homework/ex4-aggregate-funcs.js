@@ -4,9 +4,8 @@ import { promisify } from 'util';
 const connectionConfig = {
   host: `localhost`,
   user: `hyfuser`,
-  password: ``,
+  password: `hyfpassword`,
   database: `hyf_db`,
-  multipleStatements: true,
 };
 
 const connection = createConnection(connectionConfig);
