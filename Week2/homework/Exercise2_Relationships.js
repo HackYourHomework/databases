@@ -25,6 +25,8 @@ const ADD_FOREIGN_KEY_MENTOR =
   'ALTER TABLE authors ADD CONSTRAINT FK_Mentor FOREIGN KEY(mentor) REFERENCES authors(author_no);';
 const DELETE_AUTHORS_ALL_ROWS = 'DELETE FROM authors;';
 const DELETE_RESEARCH_PAPERS_ALL_ROWS = 'DELETE FROM research_papers;';
+const DELETE_AUTHORS_RESEARCH_PAPERS_ALL_ROWS =
+  'DELETE FROM authors_research_papers;';
 
 const databaseQueries = async () => {
   const connection = mysql.createConnection(CONNECTION_CONFIG);
@@ -40,7 +42,11 @@ const databaseQueries = async () => {
     const researchPapers = JSON.parse(
       fs.readFileSync(path.resolve('data/research_papers.json')),
     );
+    const authorsResearchPapers = JSON.parse(
+      fs.readFileSync(path.resolve('data/authors_research_papers.json')),
+    );
 
+    await execQuery(DELETE_AUTHORS_RESEARCH_PAPERS_ALL_ROWS);
     await execQuery(DROP_FOREIGN_KEY_MENTOR);
     await execQuery(DELETE_AUTHORS_ALL_ROWS);
     await execQuery(DELETE_RESEARCH_PAPERS_ALL_ROWS);
@@ -49,13 +55,21 @@ const databaseQueries = async () => {
       execQuery('INSERT INTO authors SET ?', author),
     );
     await Promise.all(authorsPromises);
+    await execQuery(ADD_FOREIGN_KEY_MENTOR);
 
     const researchPapersPromises = researchPapers.map((researchPaper) =>
       execQuery('INSERT INTO research_papers SET ?', researchPaper),
     );
     await Promise.all(researchPapersPromises);
 
-    await execQuery(ADD_FOREIGN_KEY_MENTOR);
+    const authorsResearchPapersPromises = authorsResearchPapers.map(
+      (authorsResearchPaper) =>
+        execQuery(
+          'INSERT INTO authors_research_papers SET ?',
+          authorsResearchPaper,
+        ),
+    );
+    await Promise.all(authorsResearchPapersPromises);
   } catch (error) {
     console.log('error: ', error);
   }
