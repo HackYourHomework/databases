@@ -8,8 +8,8 @@ Please help the manger by using the knowledge of database normal forms. Save all
 1-) What columns violate 1NF?
 
     Every column should only contain a single value but food_code and food_description columns have multiple answers so 
-    these columns violate 1NF. So we should separate these columns. For the dinner_id, venue_code, and food_code columns, I should switch their data type as INT 
-    then i can use AUTO_INCREMENT Primary key for each of them instead of describe them with letters. So for every rows we will have an unique ID or code. 
+    these columns violate 1NF. So we should separate these columns. Then for the dinner_id, venue_code, and food_code columns, I should switch their data type as INT 
+    then I can use AUTO_INCREMENT Primary key for each of them instead of describe them with letters. So for every rows we will have an unique ID or code. 
 
 2-) What entities do you recognize that could be extracted?
 
