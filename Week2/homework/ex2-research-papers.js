@@ -23,8 +23,8 @@ const fkCheck = (bool) => {
   }
   execQuery(`SET FOREIGN_KEY_CHECKS = 1`);
 };
-
-const createResearchPapersTable = `
+async function seedDatabase() {
+  const createResearchPapersTable = `
   DROP TABLE IF EXISTS research_papers;
 
   CREATE TABLE research_papers (
@@ -36,7 +36,7 @@ const createResearchPapersTable = `
     AUTO_INCREMENT = 100
   `;
 
-const createAuthorResearchesTable = `
+  const createAuthorResearchesTable = `
   DROP TABLE IF EXISTS researches;
 
   CREATE TABLE researches (
@@ -48,42 +48,45 @@ const createAuthorResearchesTable = `
       REFERENCES researches_papers(paper_id)
   )`;
 
-try {
-  fkCheck(false);
+  try {
+    fkCheck(false);
 
-  await execQuery(createResearchPapersTable);
-  await execQuery(createAuthorResearchesTable);
+    await execQuery(createResearchPapersTable);
+    await execQuery(createAuthorResearchesTable);
 
-  const authorsData = await readFilePromise(`./authors-data.json`, `utf8`);
-  const papersData = await readFilePromise(`./papers-data.json`, `utf8`);
-  const researchesData = await readFilePromise(
-    `./researches-data.json`,
-    `utf8`
-  );
+    const authorsData = await readFilePromise(`./authors-data.json`, `utf8`);
+    const papersData = await readFilePromise(`./papers-data.json`, `utf8`);
+    const researchesData = await readFilePromise(
+      `./researches-data.json`,
+      `utf8`
+    );
 
-  const authors = JSON.parse(authorsData);
-  const researchPapers = JSON.parse(papersData);
-  const researchesInfo = JSON.parse(researchesData);
+    const authors = JSON.parse(authorsData);
+    const researchPapers = JSON.parse(papersData);
+    const researchesInfo = JSON.parse(researchesData);
 
-  const authorsPromise = authors.map((author) =>
-    execQuery('INSERT INTO authors SET ?', author)
-  );
-  const researchPapersPromise = researchPapers.map((paper) =>
-    execQuery('INSERT INTO research_papers SET ?', paper)
-  );
-  const researchesInfoPromise = researchesInfo.map((info) =>
-    execQuery('INSERT INTO researches SET ?', info)
-  );
+    const authorsPromise = authors.map((author) =>
+      execQuery('INSERT INTO authors SET ?', author)
+    );
+    const researchPapersPromise = researchPapers.map((paper) =>
+      execQuery('INSERT INTO research_papers SET ?', paper)
+    );
+    const researchesInfoPromise = researchesInfo.map((info) =>
+      execQuery('INSERT INTO researches SET ?', info)
+    );
 
-  await Promise.all(
-    authorsPromise,
-    researchPapersPromise,
-    researchesInfoPromise
-  );
+    await Promise.all(
+      authorsPromise,
+      researchPapersPromise,
+      researchesInfoPromise
+    );
 
-  fkCheck(true);
-} catch (err) {
-  console.error(err.message);
-} finally {
-  connection.end();
+    fkCheck(true);
+  } catch (err) {
+    console.error(err.message);
+  } finally {
+    connection.end();
+  }
 }
+
+seedDatabase();

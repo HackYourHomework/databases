@@ -21,35 +21,39 @@ const fkCheck = (bool) => {
   execQuery(`SET FOREIGN_KEY_CHECKS = 1`);
 };
 
-const createAuthorsTable = `
-  DROP TABLE IF EXISTS authors;
-  
-  CREATE TABLE authors (
-    author_no INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    author_name VARCHAR(50) NOT NULL,
-    university VARCHAR(50) NOT NULL,
-    date_of_birth DATE NOT NULL,
-    h_index INT NOT NULL,
-    gender ENUM ('m', 'f')
-    )`;
+async function seedDatabase() {
+  const createAuthorsTable = `
+    DROP TABLE IF EXISTS authors;
+    
+    CREATE TABLE authors (
+      author_no INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+      author_name VARCHAR(50) NOT NULL,
+      university VARCHAR(50) NOT NULL,
+      date_of_birth DATE NOT NULL,
+      h_index SMALLINT NOT NULL,
+      gender ENUM ('m', 'f')
+      )`;
 
-const alterAuthorsTable = `
-  ALTER TABLE authors
-    ADD COLUMN mentor INT NOT NULL,
-    ADD CONSTRAINT FK_authors
-    FOREIGN KEY (mentor)
-      REFERENCES authors (author_no)
-  `;
+  const alterAuthorsTable = `
+    ALTER TABLE authors
+      ADD COLUMN mentor INT NOT NULL,
+      ADD CONSTRAINT FK_authors
+      FOREIGN KEY (mentor)
+        REFERENCES authors (author_no)
+    `;
 
-try {
-  fkCheck(false);
+  try {
+    fkCheck(false);
 
-  await execQuery(createAuthorsTable);
-  await execQuery(alterAuthorsTable);
+    await execQuery(createAuthorsTable);
+    await execQuery(alterAuthorsTable);
 
-  fkCheck(true);
-} catch (err) {
-  console.error(err.message);
-} finally {
-  connection.end();
+    fkCheck(true);
+  } catch (err) {
+    console.error(err.message);
+  } finally {
+    connection.end();
+  }
 }
+
+seedDatabase();
