@@ -1,0 +1,123 @@
+[
+  {
+    "author_name": "Thierry Brand",
+    "university": "Utrecht University",
+    "date_of_birth": "1933-08-06",
+    "h_index": 16,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_name": "Roselyn Rijpkema",
+    "university": "University of Groningen",
+    "date_of_birth": "1951-01-02",
+    "h_index": 66,
+    "gender": "f",
+    "mentor": 4
+  },
+  {
+    "author_name": "Frederik IJpma",
+    "university": "University of Groningen",
+    "date_of_birth": "1971-05-05",
+    "h_index": 44,
+    "gender": "m",
+    "mentor": 5
+  },
+  {
+    "author_name": "Tonny Kooiman",
+    "university": "Leiden University",
+    "date_of_birth": "1980-07-01",
+    "h_index": 41,
+    "gender": "m",
+    "mentor": 6
+  },
+  {
+    "author_name": "Liona de Gast",
+    "university": "Leiden University",
+    "date_of_birth": "1960-06-17",
+    "h_index": 9,
+    "gender": "f",
+    "mentor": 7
+  },
+  {
+    "author_name": "Ceyhun Brand",
+    "university": "Maastricht University",
+    "date_of_birth": "1977-07-17",
+    "h_index": 7,
+    "gender": "m",
+    "mentor": 8
+  },
+  {
+    "author_name": "Marlies Manders",
+    "university": "Maastricht University",
+    "date_of_birth": "1966-06-07",
+    "h_index": 6,
+    "gender": "f",
+    "mentor": 9
+  },
+  {
+    "author_name": "Kikki van Bree",
+    "university": "Erasmus University Rotterdam",
+    "date_of_birth": "1940-11-11",
+    "h_index": 15,
+    "gender": "f",
+    "mentor": 10
+  },
+  {
+    "author_name": "Emanuelle Kasteel",
+    "university": "Erasmus University Rotterdam",
+    "date_of_birth": "1975-09-08",
+    "h_index": 2,
+    "gender": "f",
+    "mentor": 2
+  },
+  {
+    "author_name": "Geerten Sollie",
+    "university": "Tilburg University",
+    "date_of_birth": "1930-02-03",
+    "h_index": 11,
+    "gender": "m",
+    "mentor": 11
+  },
+
+  {
+    "author_name": "Kamran Sommeren",
+    "university": "Delft University of Technology",
+    "date_of_birth": "1942-12-24",
+    "h_index": 24,
+    "gender": "m",
+    "mentor": 12
+  },
+  {
+    "author_name": "Anisha Verduijn",
+    "university": "Utrecht University",
+    "date_of_birth": "1959-09-01",
+    "h_index": 13,
+    "gender": "f",
+    "mentor": 13
+  },
+  {
+    "author_name": "Ram Verhoef",
+    "university": "University of Amsterdam",
+    "date_of_birth": "1931-05-20",
+    "h_index": 28,
+    "gender": "m",
+    "mentor": 14
+  },
+  {
+    "author_name": "Salima Baron",
+    "university": "Tilburg University",
+    "date_of_birth": "1974-05-02",
+    "h_index": 1,
+    "gender": "f",
+    "mentor": 15
+  },
+  {
+    "author_name": "Christel de Palm",
+    "university": "University of Amsterdam",
+    "date_of_birth": "1962-11-01",
+    "h_index": 91,
+    "gender": "f",
+    "mentor": 1
+  }
+]

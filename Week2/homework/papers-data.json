@@ -1,0 +1,152 @@
+[
+  {
+    "paper_title": "Title 1",
+    "conference": "Conf. 1",
+    "publish_date": "2000-01-01"
+  },
+  {
+    "paper_title": "Title 2",
+    "conference": "Conf. 2",
+    "publish_date": "2001-02-02"
+  },
+  {
+    "paper_title": "Title 3",
+    "conference": "Conf. 3",
+    "publish_date": "2002-03-03"
+  },
+  {
+    "paper_title": "Title 4",
+    "conference": "Conf. 4",
+    "publish_date": "2003-04-04"
+  },
+  {
+    "paper_title": "Title 5",
+    "conference": "Conf. 5",
+    "publish_date": "2004-05-05"
+  },
+  {
+    "paper_title": "Title 6",
+    "conference": "Conf. 6",
+    "publish_date": "2005-06-06"
+  },
+  {
+    "paper_title": "Title 7",
+    "conference": "Conf. 7",
+    "publish_date": "2006-07-07"
+  },
+  {
+    "paper_title": "Title 8",
+    "conference": "Conf. 8",
+    "publish_date": "2007-08-08"
+  },
+  {
+    "paper_title": "Title 9",
+    "conference": "Conf. 9",
+    "publish_date": "2008-09-09"
+  },
+  {
+    "paper_title": "Title 10",
+    "conference": "Conf. 10",
+    "publish_date": "2009-10-10"
+  },
+  {
+    "paper_title": "Title 11",
+    "conference": "Conf. 11",
+    "publish_date": "2010-11-11"
+  },
+  {
+    "paper_title": "Title 12",
+    "conference": "Conf. 12",
+    "publish_date": "2011-12-12"
+  },
+  {
+    "paper_title": "Title 13",
+    "conference": "Conf. 13",
+    "publish_date": "2012-01-01"
+  },
+  {
+    "paper_title": "Title 14",
+    "conference": "Conf. 14",
+    "publish_date": "2013-02-02"
+  },
+  {
+    "paper_title": "Title 15",
+    "conference": "Conf. 15",
+    "publish_date": "2014-03-03"
+  },
+  {
+    "paper_title": "Title 16",
+    "conference": "Conf. 16",
+    "publish_date": "2015-04-04"
+  },
+  {
+    "paper_title": "Title 17",
+    "conference": "Conf. 1",
+    "publish_date": "2016-05-05"
+  },
+  {
+    "paper_title": "Title 18",
+    "conference": "Conf. 18",
+    "publish_date": "2017-06-06"
+  },
+  {
+    "paper_title": "Title 19",
+    "conference": "Conf. 19",
+    "publish_date": "2018-07-07"
+  },
+  {
+    "paper_title": "Title 20",
+    "conference": "Conf. 20",
+    "publish_date": "2019-08-08"
+  },
+  {
+    "paper_title": "Title 21",
+    "conference": "Conf. 21",
+    "publish_date": "2020-09-09"
+  },
+  {
+    "paper_title": "Title 22",
+    "conference": "Conf. 22",
+    "publish_date": "2019-12-12"
+  },
+  {
+    "paper_title": "Title 23",
+    "conference": "Conf. 23",
+    "publish_date": "2018-11-11"
+  },
+  {
+    "paper_title": "Title 24",
+    "conference": "Conf. 24",
+    "publish_date": "2017-10-10"
+  },
+  {
+    "paper_title": "Title 25",
+    "conference": "Conf. 25",
+    "publish_date": "2016-09-09"
+  },
+  {
+    "paper_title": "Title 26",
+    "conference": "Conf. 26",
+    "publish_date": "2015-08-08"
+  },
+  {
+    "paper_title": "Title 27",
+    "conference": "Conf. 27",
+    "publish_date": "2014-07-07"
+  },
+  {
+    "paper_title": "Title 28",
+    "conference": "Conf. 28",
+    "publish_date": "2013-06-06"
+  },
+  {
+    "paper_title": "Title 29",
+    "conference": "Conf. 29",
+    "publish_date": "2012-05-05"
+  },
+  {
+    "paper_title": "Title 30",
+    "conference": "Conf. 30",
+    "publish_date": "2011-04-04"
+  }
+]
