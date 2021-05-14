@@ -72,3 +72,7 @@ You can see all the values from table city from mysql were migrated to your Mong
 
 Repeat the same thing for tables 'country' and 'countrylanguage'.
 
+IMPORTANT NOTE: migrating 'country' table add 'ENCLOSED BY '"'' to the given query
+example:
+'/Users/nizamimursudlu/desktop/country1.csv' FIELDS ENCLOSED BY '"'  TERMINATED BY ',' LINES TERMINATED BY '\n' from country;
+
