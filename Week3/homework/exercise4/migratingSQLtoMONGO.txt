@@ -1,0 +1,78 @@
+Go to https://www.mongodb.com/cloud/atlas and create an account. Accept default settings.
+
+Create cluster. Set up Network Access, add IP address 'allow access from anywhere'(for simplicity).
+
+Create database. Inside Database User add new database user. Inside 'Database user privileges'
+choose option 'Atlas Admin'.
+
+Go to https://www.mongodb.com/try/download/compass download the app run it and follow all the steps
+to make registration.
+
+Go back to your Atlas account. Inside of your cluster press on 'connect' and choose option 'Connect
+using MongoDB Compass' and then option 'I have MongoDB account'.
+
+Copy the collection sting, then go back to MangoDB.
+
+Paste that string under 'Click edit to modify your connection sting' and replace.
+Change <username> and <password> to those you used creating admin account in Atlas.
+Press 'connect'.
+
+Create database 'world' with 3 collections 'city','country','countrylanguage'.
+
+Open mysql in terminal. Select database world by typing 'use world;'
+
+Copy query from the exercise:
+'select * into outfile 'city.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from city;'
+That query should give an error!
+To solve that write:
+mysql> SHOW VARIABLES LIKE "secure_file_priv";
+
+Example of the result:
++------------------+-------------------------------+
+| Variable_name    | Value                         |
++------------------+-------------------------------+
+| secure_file_priv | /Users/hyf-student/Documents/ |
++------------------+-------------------------------+
+Copy the value of 'secure_file_priv' and paste if in the query that gave an error, before 'city.csv'
+Example:
+'select * into outfile '/Users/hyf-student/Documents/city.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from city;'
+
+Following the root find that file and open it in your local editor.
+
+You can see table 'city' displayed as a tab.
+Columns have values, but all columns have no description.
+
+
+Add one row the top of the tab and give every column a name taken from the table 'city'
+according to it's value.
++-------------+
+| Field       |
++-------------+
+| ID          |
+| Name        |
+| CountryCode |
+| District    |
+| Population  | 
++-------------+
+
+Save file, make sure it's in .csv format!
+
+Go to MongoDB Compass choose collection 'city' from database 'world'.
+
+Press 'Import data' => 'cvs' => 'browse'  navigate to 'city.csv' file.
+
+Specify type of every column according to it's value (sting, number,etc...)
+
+Press 'Import'
+
+Now go back to your MongoDB Atlas account 
+
+Choose: clusters => world => collections => city
+You can see all the values from table city from mysql were migrated to your MongoDB Atlas account 
+
+Repeat the same thing for tables 'country' and 'countrylanguage'.
+
+IMPORTANT NOTE: migrating 'country' table add 'ENCLOSED BY '"'' to the given query
+example:
+'/Users/nizamimursudlu/desktop/country1.csv' FIELDS ENCLOSED BY '"'  TERMINATED BY ',' LINES TERMINATED BY '\n' from country;
+

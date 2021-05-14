@@ -1,23 +1,33 @@
-const util = require('util')
 const MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+const ObjectID = require('mongodb').ObjectID;
 
-async function seedDatabase() {
-    const client = new MongoClient(url);
-    try {
-        await client.connect();
-        var emp1 = {Id : 101, Name : "Mohammed Ali", Salary : 4500, department : "Testing"};
-        const result1 = await client.db("company").collection("employees").insertOne(emp1);
-        console.log(result1);
+const dbname = 'crud_mongodb';
+const url = 'mongodb://localhost:27017';
+const mongoOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
-        var emp2 = {Id : 103, Work : "Sell cakes", Salary : 500};
-        const result2 = await client.db("company").collection("employees").insertOne(emp2);
-        console.log(result2);
-    } catch(error) {
-        console.error(error);
-    } finally {
-        await client.close();
-    }
-}
+const state = {
+  db: null,
+};
 
-seedDatabase();
+const connect = (cb) => {
+  if (state.db) cb();
+  else {
+    MongoClient.connect(url, mongoOptions, (err, client) => {
+      if (err) cb(err);
+      else {
+        state.db = client.db(dbname);
+        cb();
+      }
+    });
+  }
+};
+
+const getPrimaryKey = (_id) => {
+  return ObjectID(_id);
+};
+
+const getDB = () => {
+  return state.db;
+};
+
+module.exports = { getDB, connect, getPrimaryKey };
