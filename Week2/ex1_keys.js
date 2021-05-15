@@ -11,9 +11,9 @@ db.connect((err) => {
   console.log("Connected to database...");
 });
 
-db.query("DROP DATABASE IF EXISTS HYFWEEK2;", handleError);
-db.query("CREATE DATABASE HYFWEEK2;", handleError);
-db.query("USE HYFWEEK2;", handleError);
+db.query("DROP DATABASE IF EXISTS hyfweek2;", handleError);
+db.query("CREATE DATABASE hyfweek2;", handleError);
+db.query("USE hyfweek2;", handleError);
 
 db.query(
   `CREATE TABLE IF NOT EXISTS authors(author_no INT AUTO_INCREMENT PRIMARY KEY, author_name VARCHAR(100), university VARCHAR(100), date_of_birth DATE, h_index INT, gender ENUM("m", "f"))`

@@ -4,17 +4,17 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "hyfuser",
   password: "hyfpassword",
-  database: "HYFWEEK2",
+  database: "hyfweek2",
 });
 
 db.connect((err) => {
   if (err) throw err;
   console.log("Connected to the database...");
 });
-function insertQuery(sqlQueries) {
+function execQuery(sqlQueries) {
   db.query(sqlQueries.sql, function (err, result) {
     if (err) throw err;
-    console.log(result);
+    console.log(JSON.parse(JSON.stringify(result)));
   });
 }
 
@@ -22,10 +22,9 @@ const sqlQueries = [
   {
     //All research papers and the number of authors that wrote that paper
     sql: `
-    SELECT research_papers.paper_title, count(authors.author_name) AS number_of_authors
+    SELECT research_papers.paper_title, count(authors_papers.author_no) AS number_of_authors
     FROM research_papers
     LEFT JOIN authors_papers ON authors_papers.paper_id = research_papers.paper_id 
-    LEFT JOIN authors ON authors_papers.author_no = authors.author_no
     GROUP BY paper_title;`,
   },
   {
@@ -57,6 +56,6 @@ const sqlQueries = [
   },
 ];
 
-sqlQueries.forEach((query) => insertQuery(query));
+sqlQueries.forEach((query) => execQuery(query));
 
 db.end();

@@ -1,45 +1,78 @@
-const mysql = require("mysql");
-const dataToInsert = require("./data.js");
+const util = require("util");
 const fs = require("fs");
+const mysql = require("mysql");
 
-const db = mysql.createConnection({
+const CONNECTION_CONFIG = {
   host: "localhost",
   user: "hyfuser",
   password: "hyfpassword",
-  database: "HYFWEEK2",
-});
-
-db.connect((err) => {
-  if (err) throw err;
-  console.log("Connected to database...");
-});
-
-const addQuery = (query) => {
-  db.query(query, (err) => {
-    if (err) throw err;
-  });
+  database: "hyfweek2",
 };
 
-function insertDataIntoTables(dataToInsert) {
-  db.query(dataToInsert.sql, [dataToInsert.data], function (err, result) {
-    if (err) throw err;
-    console.log(result);
-  });
+const create_table_research_papers = `
+  CREATE TABLE IF NOT EXISTS research_papers(
+    paper_id  INT AUTO_INCREMENT PRIMARY KEY, 
+    paper_title TEXT, 
+    conference  VARCHAR(50), 
+    publish_date DATETIME
+  )`;
+const create_table_authors_papers = `
+  CREATE TABLE IF NOT EXISTS authors_papers(
+    PRIMARY KEY(author_no, paper_id), 
+    author_no INT, 
+    paper_id INT, 
+    CONSTRAINT FK_AUTH FOREIGN KEY (author_no) REFERENCES authors(author_no), 
+    CONSTRAINT FK_PAPER FOREIGN KEY(paper_id) REFERENCES research_papers(paper_id)
+  )`;
+
+async function seedDatabase() {
+  const connection = mysql.createConnection(CONNECTION_CONFIG);
+  const readFile = util.promisify(fs.readFile);
+
+  const execQuery = util.promisify(connection.query.bind(connection));
+
+  try {
+    await execQuery(create_table_research_papers);
+    await execQuery(create_table_authors_papers);
+
+    const dataAuthors = await readFile(__dirname + "/authors.json", "utf8");
+    const dataResearchPapers = await readFile(
+      __dirname + "/research_papers.json",
+      "utf8"
+    );
+    const dataAuthorsPapers = await readFile(
+      __dirname + "/authors_papers.json",
+      "utf8"
+    );
+
+    const myAuthors = JSON.parse(dataAuthors);
+    const myResearchPapers = JSON.parse(dataResearchPapers);
+    const myAuthorsPapers = JSON.parse(dataAuthorsPapers);
+
+    execQuery("SET FOREIGN_KEY_CHECKS=0");
+
+    const promise1 = myAuthors.map((author) =>
+      execQuery("INSERT INTO authors SET ?", author)
+    );
+
+    execQuery("SET FOREIGN_KEY_CHECKS=0");
+
+    const promise2 = myResearchPapers.map((paper) =>
+      execQuery("INSERT INTO research_papers SET ?", paper)
+    );
+
+    const promise3 = myAuthorsPapers.map((common) =>
+      execQuery("INSERT INTO authors_papers SET ?", common)
+    );
+
+    await Promise.all(promise1);
+    await Promise.all(promise2);
+    await Promise.all(promise3);
+    connection.end();
+  } catch (err) {
+    console.error(err.message);
+    connection.end();
+  }
 }
 
-const create_table_research_papers = `CREATE TABLE IF NOT EXISTS research_papers(paper_id  INT AUTO_INCREMENT PRIMARY KEY, paper_title TEXT, conference  VARCHAR(50), publish_date DATETIME)`;
-const create_table_authors_papers = `CREATE TABLE IF NOT EXISTS authors_papers(PRIMARY KEY(author_no, paper_id), author_no INT, paper_id INT, CONSTRAINT FK_AUTH FOREIGN KEY (author_no) REFERENCES authors(author_no), CONSTRAINT FK_PAPER FOREIGN KEY(paper_id) REFERENCES research_papers(paper_id))`;
-
-addQuery(create_table_research_papers);
-addQuery(create_table_authors_papers);
-
-const myData = Array.from(dataToInsert);
-console.log(myData);
-
-myData.forEach((query) => insertDataIntoTables(query));
-
-db.end();
-
-//There is an M-M relationship between the 'authors' table and 'research_papers' table.
-//This is because an author may have written more than one paper,
-//or a paper may have been written by more than one author.
+seedDatabase();

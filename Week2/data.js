@@ -147,4 +147,5 @@ const dataToInsert = [
     message: "",
   },
 ];
+
 module.exports = dataToInsert;

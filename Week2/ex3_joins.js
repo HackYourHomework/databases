@@ -4,7 +4,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "hyfuser",
   password: "hyfpassword",
-  database: "HYFWEEK2",
+  database: "hyfweek2",
 });
 
 db.connect((err) => {
@@ -14,7 +14,7 @@ db.connect((err) => {
 function insertQuery(sqlQueries) {
   db.query(sqlQueries.sql, function (err, result) {
     if (err) throw err;
-    console.log(result);
+    console.log(JSON.parse(JSON.stringify(result)));
   });
 }
 
