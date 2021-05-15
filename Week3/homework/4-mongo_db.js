@@ -19,7 +19,6 @@ async function main() {
       District: "Turkish",
       Population: 105120,
     };
-
     await createDocument(client, cityDocument);
 
     // Update that record with a new population
@@ -47,12 +46,21 @@ main().catch(console.error);
 
 async function createDocument(client, newListing) {
  const newDocument = await client.db("world").collection("city").insertOne(newListing);
- console.log(`New listing created with the following id ${newDocument.insertedId}`);
+  if (newDocument) {
+    console.log(`New listing created with the following id ${newDocument.insertedId}`);
+  } else {
+        console.log(`Oops something went wrong...`);
+    }
+ 
 }       
 async function updateDocumentByName(client, nameOfRecord, updatedRecord) {
-    const updatedPopulation = await client.db('world').collection('city').updateOne( { Name: nameOfRecord ,}, { $set: updatedRecord});
+  const updatedPopulation = await client.db('world').collection('city').updateOne({ Name: nameOfRecord, }, { $set: updatedRecord });
+  if (updatedPopulation) {
     console.log(`${updatedPopulation.matchedCount} document(s) matched the query criteria.`);
     console.log(`${updatedPopulation.modifiedCount} document(s) was/were updated.`);
+  } else {
+        console.log(`Oops something went wrong...`);
+    }
 }
 async function readRecord(client, searchedRecord) {
     const findRecord = await client.db('world').collection('city').findOne(searchedRecord);

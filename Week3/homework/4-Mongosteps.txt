@@ -7,4 +7,4 @@
 7. Open mongoDB application and create new collections
 8. Check datatype and import CSV data from  'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/'
 9. Check data in Atlas account in browser. 
-
+10.Run the code in visual studio and check it affects the mongoDB Atlas in browser or not.

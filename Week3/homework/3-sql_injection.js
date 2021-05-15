@@ -10,7 +10,7 @@
     SQL Injection Based on 1=1 is Always True
 
     SELECT Population 
-    FROM ${Country} 
+    FROM ${Country}     
     WHERE Name = username' OR 'a'='a and code = 101 OR 1=1;
 
 
@@ -19,13 +19,13 @@
 */
 
 function getPopulation(Country, name, code, cb) {
-    // assuming that connection to the database is established and stored as conn
-    conn.query(
-        `SELECT Population FROM ? WHERE Name = ? and code = ?`,
-        function (err, result) {
-            if (err) cb(err);
-            if (result.length == 0) cb(new Error("Not found"));
-            cb(null, result[0].name);
-        }
+    // assuming that connection to the database is established and stored as connection
+    connection.query(
+      `SELECT Population FROM ? WHERE Name = ? and code = ?`,
+      function (err, result) {
+        if (err) cb(err);
+        if (result.length == 0) cb(new Error("Not found"));
+        cb(null, result[0].name);
+      }
     );
 }
