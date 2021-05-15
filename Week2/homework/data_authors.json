@@ -1,0 +1,98 @@
+[
+  {
+    "author_name": "Jaap Van Dieen",
+    "university": "VU Amsterdam",
+    "date_of_birth": "1970-01-01 00:00:00",
+    "h_index": 100,
+    "gender": "Male",
+    "mentor": 1
+  },
+  {
+    "author_name": "Sjoerd Bruijn",
+    "university": "VU Amsterdam",
+    "date_of_birth": "1982-04-11 00:00:00",
+    "h_index": 20,
+    "gender": "Male",
+    "mentor": 1
+  },
+  {
+    "author_name": "Maarten Prins",
+    "university": "Military Rehabilitation Center",
+    "date_of_birth": "1985-06-01 00:00:00",
+    "h_index": 16,
+    "gender": "Male",
+    "mentor": 2
+  },
+  {
+    "author_name": "Maher mirali",
+    "university": "VU Amsterdam",
+    "date_of_birth": "1988-10-01 00:00:00",
+    "h_index": 1,
+    "gender": "Male",
+    "mentor": 3
+  },
+  {
+    "author_name": "Evert Verhagen",
+    "university": "Amsterdam University Medical Center",
+    "date_of_birth": "1980-05-21 00:00:00",
+    "h_index": 28,
+    "gender": "Male",
+    "mentor": 1
+  },
+  {
+    "author_name": "Karin Gerrits",
+    "university": "VU Amsterdam",
+    "date_of_birth": "1978-08-12 00:00:00",
+    "h_index": 40,
+    "gender": "Female",
+    "mentor": 5
+  },
+  {
+    "author_name": "Mirjam Pijnappels",
+    "university": "VU Amsterdam",
+    "date_of_birth": "1977-09-27 00:00:00",
+    "h_index": 50,
+    "gender": "Female",
+    "mentor": 6
+  },
+  {
+    "author_name": "Han Houdijk",
+    "university": "University Medical Center Groningen",
+    "date_of_birth": "1975-02-02 00:00:00",
+    "h_index": 80,
+    "gender": "Male",
+    "mentor": 7
+  },
+  {
+    "author_name": "Nadia Dominici",
+    "university": "VU Amsterdam",
+    "date_of_birth": "1981-11-07 00:00:00",
+    "h_index": 22,
+    "gender": "Female",
+    "mentor": 6
+  },
+  {
+    "author_name": "Elvera Overdevest",
+    "university": "Amsterdam University of Applied Sciences",
+    "date_of_birth": "1985-12-12 00:00:00",
+    "h_index": 34,
+    "gender": "Female",
+    "mentor": 5
+  },
+  {
+    "author_name": "Alice Nieuwboer",
+    "university": "KU Leuven",
+    "date_of_birth": "1977-02-12 00:00:00",
+    "h_index": 74,
+    "gender": "Female",
+    "mentor": 8
+  },
+  {
+    "author_name": "Marco Hoozemans",
+    "university": "VU Amsterdam",
+    "date_of_birth": "1979-07-28 00:00:00",
+    "h_index": 60,
+    "gender": "Male",
+    "mentor": 11
+  }
+]
