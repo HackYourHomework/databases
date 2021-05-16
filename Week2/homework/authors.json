@@ -1,0 +1,137 @@
+[
+  {
+    "author_no": 1,
+    "author_name": "Leo Tolstoy",
+    "university": "University of Cambridge",
+    "date_of_birth": "1828-11-19",
+    "h_index": 274,
+    "gender": "f",
+    "mentor": 7
+  },
+  {
+    "author_no": 2,
+    "author_name": "Ernest Hemingway",
+    "university": "University of Oxford",
+    "date_of_birth": "1899-12-28",
+    "h_index": 176,
+    "gender": "m",
+    "mentor": 8
+  },
+  {
+    "author_no": 3,
+    "author_name": "Jane Austen",
+    "university": "University of Cambridge",
+    "date_of_birth": "1899-12-28",
+    "h_index": 92,
+    "gender": "f",
+    "mentor": 11
+  },
+  {
+    "author_no": 4,
+    "author_name": "Charles Dickens",
+    "university": "University of Oxford",
+    "date_of_birth": "1812-05-11",
+    "h_index": 352,
+    "gender": "m",
+    "mentor": 11
+  },
+  {
+    "author_no": 5,
+    "author_name": "Virginia Woolf",
+    "university": "University of Cambridge",
+    "date_of_birth": "1882-02-22",
+    "h_index": 45,
+    "gender": "f",
+    "mentor": 3
+  },
+  {
+    "author_no": 6,
+    "author_name": "George Bernard Shaw",
+    "university": "University of Rotterdam",
+    "date_of_birth": "1856-12-18",
+    "h_index": 413,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_no": 7,
+    "author_name": "Victor Hugo",
+    "university": "University of Rotterdam",
+    "date_of_birth": "1802-04-11",
+    "h_index": 77,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_no": 8,
+    "author_name": "William Shakespeare",
+    "university": "University of Oxford",
+    "date_of_birth": "1564-08-18",
+    "h_index": 22,
+    "gender": "m",
+    "mentor": 10
+  },
+  {
+    "author_no": 9,
+    "author_name": "Abraham Lincoln",
+    "university": "University of Oxford",
+    "date_of_birth": "1809-04-30",
+    "h_index": 123,
+    "gender": "m",
+    "mentor": 4
+  },
+  {
+    "author_no": 10,
+    "author_name": "Margaret Thatcher",
+    "university": "University of Cambridge",
+    "date_of_birth": "1925-06-27",
+    "h_index": 200,
+    "gender": "f",
+    "mentor": 4
+  },
+  {
+    "author_no": 11,
+    "author_name": "Agatha Christie",
+    "university": "University of Edinburgh",
+    "date_of_birth": "1890-09-23",
+    "h_index": 321,
+    "gender": "f",
+    "mentor": null
+  },
+  {
+    "author_no": 12,
+    "author_name": "George Orwell",
+    "university": "University of Harvard",
+    "date_of_birth": "1903-10-01",
+    "h_index": 19,
+    "gender": "m",
+    "mentor": 6
+  },
+  {
+    "author_no": 13,
+    "author_name": "Napoleon Bonaparte",
+    "university": "University of Edinburgh",
+    "date_of_birth": "1769-12-08",
+    "h_index": 188,
+    "gender": "m",
+    "mentor": null
+  },
+  {
+    "author_no": 14,
+    "author_name": "Barbara Cartland",
+    "university": "University of Edinburgh",
+    "date_of_birth": "1901-07-09",
+    "h_index": 211,
+    "gender": "f",
+    "mentor": 11
+  },
+  {
+    "author_no": 15,
+    "author_name": "Nora Roberts",
+    "university": "University of Harvard",
+    "date_of_birth": "1850-10-10",
+    "h_index": 63,
+    "gender": "f",
+    "mentor": 12
+  }
+]

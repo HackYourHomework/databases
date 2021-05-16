@@ -1,0 +1,20 @@
+1- Create an account on Atlas and a new cluster.
+
+2- Make connect [Connect using MongoDB Compass], if you don't have a MongoDB Compass
+then download it and copy the connection string using your password.
+
+3- Open MongoDB Compass and paste the link you copied when creating a new connection.
+
+4- Use these commands to save the data from the tables in csv files:
+
+select * into outfile 'city.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from city;
+
+select * into outfile 'country.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from country;
+
+select * into outfile 'countrylanguage.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from countrylanguage;
+
+5-Create a world database and 3 collections (city, country, countrylanguage) from MongoDB Compass,
+then import data for each table by clicking on the name of the collection then import data and choose
+the file you saved the data in.
+
+6- Make sure to change the type of date while importing them by choosing the right type.
