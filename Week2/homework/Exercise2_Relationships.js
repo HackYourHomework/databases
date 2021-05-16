@@ -11,22 +11,23 @@ const CONNECTION_CONFIG = {
 };
 
 const CREATE_RESEARCH_PAPERS_TABLE =
-  'CREATE TABLE IF NOT EXISTS research_papers(paper_id INT PRIMARY KEY, paper_title VARCHAR(50), conference VARCHAR(50), publish_date DATE);';
+  'CREATE TABLE IF NOT EXISTS research_papers(paper_id INT PRIMARY KEY, paper_title VARCHAR(50), conference VARCHAR(50), publish_date DATE)';
 const CREATE_AUTHORS_RESEARCH_PAPERS_TABLE = `CREATE TABLE IF NOT EXISTS authors_research_papers(
     relation_id INT PRIMARY KEY, 
     author_no INT, 
     paper_id INT,
     CONSTRAINT FK_Author FOREIGN KEY (author_no) REFERENCES authors(author_no),
-    CONSTRAINT FK_Paper FOREIGN KEY (paper_id) REFERENCES research_papers(paper_id)
-    );`;
+    CONSTRAINT FK_Paper FOREIGN KEY (paper_id) REFERENCES research_papers(paper_id),
+    CONSTRAINT UC_Author_Paper UNIQUE (author_no , paper_id)
+    )`;
 const DROP_FOREIGN_KEY_MENTOR =
-  'ALTER TABLE authors DROP FOREIGN KEY FK_Mentor;';
+  'ALTER TABLE authors DROP FOREIGN KEY FK_Mentor';
 const ADD_FOREIGN_KEY_MENTOR =
-  'ALTER TABLE authors ADD CONSTRAINT FK_Mentor FOREIGN KEY(mentor) REFERENCES authors(author_no);';
-const DELETE_AUTHORS_ALL_ROWS = 'DELETE FROM authors;';
-const DELETE_RESEARCH_PAPERS_ALL_ROWS = 'DELETE FROM research_papers;';
+  'ALTER TABLE authors ADD CONSTRAINT FK_Mentor FOREIGN KEY(mentor) REFERENCES authors(author_no)';
+const DELETE_AUTHORS_ALL_ROWS = 'DELETE FROM authors';
+const DELETE_RESEARCH_PAPERS_ALL_ROWS = 'DELETE FROM research_papers';
 const DELETE_AUTHORS_RESEARCH_PAPERS_ALL_ROWS =
-  'DELETE FROM authors_research_papers;';
+  'DELETE FROM authors_research_papers';
 
 const databaseQueries = async () => {
   const connection = mysql.createConnection(CONNECTION_CONFIG);
