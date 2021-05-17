@@ -49,7 +49,7 @@ try {
       });
 
     } catch (err) {
-      if (err) console.log(err);
+      console.log(err);
     }
   
     connection.end();
