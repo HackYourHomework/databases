@@ -32,10 +32,10 @@ async function seedDatabase() {
   try {
     await execQuery(authorsTable);
     await execQuery(mentors);
-
-    connection.end();
+    
   } catch (err) {
     console.log(err);
+    connection.end();
   };
 };
 
