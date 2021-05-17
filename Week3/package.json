@@ -1,0 +1,17 @@
+{
+  "name": "week3",
+  "version": "1.0.0",
+  "description": "These are the topics for week 3:",
+  "main": "async-transaction.js",
+  "dependencies": {
+    "mongodb": "^3.6.6",
+    "mysql": "^2.18.1",
+    "util": "^0.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
