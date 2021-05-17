@@ -17,16 +17,26 @@ const connection = mysql.createConnection({
 const execQuery = util.promisify(connection.query.bind(connection));
 
 async function seedDatabase() {
-  const researchPapersTable = 'CREATE TABLE IF NOT EXISTS research_papers (paper_id INT AUTO_INCREMENT PRIMARY KEY ,paper_title VARCHAR(50),conference VARCHAR(40),publish_date DATE)';
+const research_papers_table = `CREATE TABLE IF NOT EXISTS research_papers(
+ paper_id  INT AUTO_INCREMENT PRIMARY KEY,
+ paper_title  VARCHAR(50),
+ conference  VARCHAR(50),
+ publish_date DATE)`;
 
-  const authorsPapersTable = 'CREATE TABLE IF NOT EXISTS authors_papers(author_no INT, paper_id INT, CONSTRAINT fk_author FOREIGN KEY (author_no) REFERENCES authors(author_no), CONSTRAINT FK_PAPER FOREIGN KEY(paper_id) REFERENCES research_papers(paper_id), PRIMARY KEY(author_no, paper_id))';
-  
-  connection.connect();
+const authors_papers_table = `CREATE TABLE IF NOT EXISTS authors_papers(
+ PRIMARY KEY(author_no, paper_id),
+ author_no INT,
+ paper_id INT,
+ CONSTRAINT FK_AUTH FOREIGN KEY (author_no) REFERENCES authors(author_no),
+ CONSTRAINT FK_PAPER FOREIGN KEY(paper_id) REFERENCES research_papers(paper_id))`;
+
+
+connection.connect();
 
     
 try {
-      await execQuery(researchPapersTable);
-      await execQuery(authorsPapersTable);
+      await execQuery(research_papers_table);
+      await execQuery(authors_papers_table);
 
       authors.forEach(async (author) => {
         await execQuery("INSERT INTO authors SET ?", author);
@@ -39,7 +49,7 @@ try {
       });
 
     } catch (err) {
-      if (err) throw err;
+      if (err) console.log(err);
     }
   
     connection.end();

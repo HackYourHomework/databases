@@ -1,4 +1,4 @@
-const authors_papers = [
+const authorsPapers = [
     {
       "author_no": 4,
       "paper_id": 27,
@@ -48,7 +48,7 @@ const authors_papers = [
       "paper_id": 11,
     },
     {
-      "author_no": 19,
+      "author_no": 4,
       "paper_id": 27,
     },
     {
@@ -56,7 +56,7 @@ const authors_papers = [
       "paper_id": 13,
     },
     {
-      "author_no": 15,
+      "author_no": 2,
       "paper_id": 27,
     },
     {
@@ -72,11 +72,11 @@ const authors_papers = [
       "paper_id": 17,
     },
     {
-      "author_no": 16,
+      "author_no": 1,
       "paper_id": 18,
     },
     {
-      "author_no": 14,
+      "author_no": 8,
       "paper_id": 10,
     },
     {
@@ -121,4 +121,4 @@ const authors_papers = [
     },
   ];
   
-  module.exports = authors_papers;
+  module.exports = authorsPapers;

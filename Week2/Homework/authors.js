@@ -6,7 +6,7 @@ const authors = [
       "date_of_birth": '1977-01-01',
       "h_index": 11,
       "gender": 'FEMALE',
-      "mentor": 2,
+      "mentor": 1,
     },
     {
       "author_no": 2,
@@ -33,7 +33,7 @@ const authors = [
       "date_of_birth": '1978-01-01',
       "h_index": 14,
       "gender": 'MALE',
-      "mentor": 8,
+      "mentor": 4,
     },
     {
       "author_no": 5,
@@ -69,7 +69,7 @@ const authors = [
       "date_of_birth": '1967-01-01',
       "h_index": 3,
       "gender": 'MALE',
-      "mentor": 5,
+      "mentor": 8,
     },
     {
       "author_no": 9,
