@@ -33,7 +33,6 @@ sendQuery(queryTableAuthorPaper);
 
 const rowsForAuthors = [
   {
-    author_no: 1,
     author_name: 'Author1',
     university: 'University1',
     date_of_birth: '1981-05-10',
@@ -41,7 +40,7 @@ const rowsForAuthors = [
     gender: 'm',
   },
   {
-    author_no: 2,
+    
     author_name: 'Author2',
     university: 'University2',
     date_of_birth: '1971-05-10',
@@ -50,7 +49,7 @@ const rowsForAuthors = [
     mentor: 1,
   },
   {
-    author_no: 3,
+    
     author_name: 'Author3',
     university: 'University3',
     date_of_birth: '1982-05-10',
@@ -59,7 +58,7 @@ const rowsForAuthors = [
     mentor: 2,
   },
   {
-    author_no: 4,
+    
     author_name: 'Author4',
     university: 'University1',
     date_of_birth: '1981-03-10',
@@ -68,7 +67,7 @@ const rowsForAuthors = [
     mentor: 1,
   },
   {
-    author_no: 5,
+    
     author_name: 'Author5',
     university: 'University2',
     date_of_birth: '1991-05-10',
@@ -77,7 +76,7 @@ const rowsForAuthors = [
     mentor: 3,
   },
   {
-    author_no: 6,
+    
     author_name: 'Author6',
     university: 'University4',
     date_of_birth: '1982-05-10',
@@ -86,7 +85,7 @@ const rowsForAuthors = [
     mentor: 1,
   },
   {
-    author_no: 7,
+    
     author_name: 'Author7',
     university: 'University2',
     date_of_birth: '1971-05-10',
@@ -95,7 +94,7 @@ const rowsForAuthors = [
     mentor: 1,
   },
   {
-    author_no: 8,
+    
     author_name: 'Author8',
     university: 'University3',
     date_of_birth: '1982-05-10',
@@ -104,7 +103,7 @@ const rowsForAuthors = [
     mentor: 7,
   },
   {
-    author_no: 9,
+    
     author_name: 'Author9',
     university: 'University4',
     date_of_birth: '1981-03-10',
@@ -113,7 +112,7 @@ const rowsForAuthors = [
     mentor: 1,
   },
   {
-    author_no: 10,
+    
     author_name: 'Author10',
     university: 'University5',
     date_of_birth: '1991-05-10',
@@ -122,7 +121,7 @@ const rowsForAuthors = [
     mentor: 3,
   },
   {
-    author_no: 11,
+    
     author_name: 'Author11',
     university: 'University1',
     date_of_birth: '1981-05-10',
@@ -130,7 +129,7 @@ const rowsForAuthors = [
     gender: 'f',
   },
   {
-    author_no: 12,
+   
     author_name: 'Author12',
     university: 'University4',
     date_of_birth: '1971-05-10',
@@ -139,7 +138,7 @@ const rowsForAuthors = [
     mentor: 1,
   },
   {
-    author_no: 13,
+    
     author_name: 'Author13',
     university: 'University3',
     date_of_birth: '1982-05-10',
@@ -148,7 +147,7 @@ const rowsForAuthors = [
     mentor: 2,
   },
   {
-    author_no: 14,
+   
     author_name: 'Author14',
     university: 'University5',
     date_of_birth: '1981-03-10',
@@ -157,7 +156,7 @@ const rowsForAuthors = [
     mentor: 12,
   },
   {
-    author_no: 15,
+    
     author_name: 'Author15',
     university: 'University2',
     date_of_birth: '1991-05-10',

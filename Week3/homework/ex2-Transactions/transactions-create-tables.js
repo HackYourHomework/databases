@@ -21,19 +21,19 @@ function sendQuery(query) {
     console.log(`the reply ${query} is `, results);
   });
 }
-const queryCreateDb = 'CREATE DATABASE IF NOT EXISTS week2';
+const queryCreateDb = 'CREATE DATABASE IF NOT EXISTS week3';
 sendQuery(queryCreateDb);
 
-const querySwitch = 'USE week2';
+const querySwitch = 'USE week3';
 sendQuery(querySwitch);
 
-const queryTableAuthors =
-  'CREATE TABLE IF NOT EXISTS authors (author_no int NOT NULL AUTO_INCREMENT, author_name varchar(50), university varchar(50), date_of_birth datetime, h_index int, gender enum("m","f"), PRIMARY KEY (author_no))';
-sendQuery(queryTableAuthors);
+const queryTableAccount =
+  'CREATE TABLE IF NOT EXISTS account (account_number int NOT NULL, balance float, PRIMARY KEY (account_number))';
+sendQuery(queryTableAccount);
 
-const queryAddColumn =
-  'ALTER TABLE authors ADD COLUMN mentor int, ADD CONSTRAINT fk_mentor FOREIGN KEY (mentor) REFERENCES authors(author_no) ON DELETE CASCADE';
-sendQuery(queryAddColumn);
+const queryTableAccountChanges =
+  'CREATE TABLE IF NOT EXISTS account_changes (change_number int AUTO_INCREMENT, account_number int, amount float, changed_date datetime, remark varchar(50), PRIMARY KEY (change_number), FOREIGN KEY (account_number) REFERENCES account(account_number))';
+sendQuery(queryTableAccountChanges);
 
 connection.end((error) => {
   if (error) {
