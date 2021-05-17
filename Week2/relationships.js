@@ -2,15 +2,16 @@ const mysql = require("mysql");
 const util = require("util");
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "hyfuser",
-  password: "hyfpassword",
-  database: "userdb",
+  user: "root",
+  password: "Alphagama6",
+  database: "company",
 });
 const execQuery = util.promisify(connection.query.bind(connection));
 async function seedDatabase() {
   const CREATE_RESEARCH_PAPERS_TABLE = `
-      CREATE TABLE IF NOT EXISTS research_Papers(paper_id int , paper_title VARCHAR(50), conference VARCHAR(50),publish_date DATE,paper_author_id INT, FOREIGN KEY (paper_author_id) REFERENCES authors(author_no))`;
-  const UPDATE_DATATYPE_PAPER_TITLE = `ALTER TABLE research_papers MODIFY paper_title VARCHAR(255)`;
+      CREATE TABLE IF NOT EXISTS research_Papers(paper_id int PRIMARY KEY , paper_title VARCHAR(255), conference VARCHAR(50),publish_date DATE)`;
+  const CREATE_RESEARCH_AUTHOR_TABLE =
+    "CREATE TABLE IF NOT EXISTS author_research(author_number int,paper_id int,FOREIGN KEY (author_number) REFERENCES authors(author_no),FOREIGN KEY (paper_id) REFERENCES research_papers(paper_id))";
   const mentors = [
     {
       mentor: 2,
@@ -186,14 +187,12 @@ async function seedDatabase() {
       paper_title: "World Scientists’ Warning of a Climate Emergency",
       conference: "a",
       publish_date: "2015-05-06",
-      paper_author_id: 1,
     },
     {
       paper_id: 2,
       paper_title: "Climate tipping points too risky to bet against",
       conference: "b",
       publish_date: "2015-05-06",
-      paper_author_id: 2,
     },
     {
       paper_id: 3,
@@ -201,14 +200,12 @@ async function seedDatabase() {
         "New elevation data triple estimates of global vulnerability to sea-level rise and coastal flooding",
       conference: "c",
       publish_date: "2015-05-06",
-      paper_author_id: 3,
     },
     {
       paper_id: 4,
       paper_title: "The global tree restoration potential",
       conference: "d",
       publish_date: "2015-05-06",
-      paper_author_id: 4,
     },
     {
       paper_id: 5,
@@ -216,7 +213,6 @@ async function seedDatabase() {
         "Health effects of dietary risks in 195 countries', 1990–2017: a systematic analysis for the Global Burden of Disease Study 2017",
       conference: "e",
       publish_date: "2015-05-06",
-      paper_author_id: 5,
     },
     {
       paper_id: 6,
@@ -224,21 +220,18 @@ async function seedDatabase() {
         "Food in the Anthropocene: the EAT-Lancet Commission on healthy diets from sustainable foods",
       conference: "f",
       publish_date: "2015-05-06",
-      paper_author_id: 6,
     },
     {
       paper_id: 7,
       paper_title: "Concerns of young protesters are justified",
       conference: "g",
       publish_date: "2015-05-06",
-      paper_author_id: 7,
     },
     {
       paper_id: 8,
       paper_title: "Concerns of young protesters are justified",
       conference: "a",
       publish_date: "2015-05-06",
-      paper_author_id: 8,
     },
     {
       paper_id: 9,
@@ -246,7 +239,6 @@ async function seedDatabase() {
         "Global warming impairs stock-recruitment dynamics of corals",
       conference: "c",
       publish_date: "2015-05-06",
-      paper_author_id: 9,
     },
     {
       paper_id: 10,
@@ -254,14 +246,12 @@ async function seedDatabase() {
         "Eat less meat: UN climate-change report calls for change to human diet",
       conference: "a",
       publish_date: "2015-05-06",
-      paper_author_id: 10,
     },
     {
       paper_id: 11,
       paper_title: "World Scientists’ Warning of a Climate Emergency",
       conference: "u",
       publish_date: "2015-05-06",
-      paper_author_id: 11,
     },
 
     {
@@ -269,7 +259,6 @@ async function seedDatabase() {
       paper_title: "Climate tipping points too risky to bet against",
       conference: "y",
       publish_date: "2015-05-06",
-      paper_author_id: 12,
     },
     {
       paper_id: 13,
@@ -277,14 +266,12 @@ async function seedDatabase() {
         "New elevation data triple estimates of global vulnerability to sea-level rise and coastal flooding",
       conference: "h",
       publish_date: "2015-05-06",
-      paper_author_id: 13,
     },
     {
       paper_id: 14,
       paper_title: "The global tree restoration potential",
       conference: "o",
       publish_date: "2015-05-06",
-      paper_author_id: 14,
     },
     {
       paper_id: 15,
@@ -292,7 +279,6 @@ async function seedDatabase() {
         "Health effects of dietary risks in 195 countries', 1990–2017: a systematic analysis for the Global Burden of Disease Study 2017",
       conference: "s",
       publish_date: "2015-05-06",
-      paper_author_id: 1,
     },
     {
       paper_id: 16,
@@ -300,21 +286,18 @@ async function seedDatabase() {
         "Food in the Anthropocene: the EAT-Lancet Commission on healthy diets from sustainable foods",
       conference: "g",
       publish_date: "2015-05-06",
-      paper_author_id: 2,
     },
     {
       paper_id: 17,
       paper_title: "Concerns of young protesters are justified",
       conference: "b",
       publish_date: "2015-05-06",
-      paper_author_id: 3,
     },
     {
       paper_id: 18,
       paper_title: "Concerns of young protesters are justified",
       conference: "j",
       publish_date: "2015-05-06",
-      paper_author_id: 4,
     },
     {
       paper_id: 19,
@@ -322,7 +305,6 @@ async function seedDatabase() {
         "Global warming impairs stock-recruitment dynamics of corals",
       conference: "b",
       publish_date: "2015-05-06",
-      paper_author_id: 5,
     },
     {
       paper_id: 20,
@@ -330,21 +312,18 @@ async function seedDatabase() {
         "Eat less meat: UN climate-change report calls for change to human diet",
       conference: "e",
       publish_date: "2015-05-06",
-      paper_author_id: 6,
     },
     {
       paper_id: 21,
       paper_title: "World Scientists’ Warning of a Climate Emergency",
       conference: "s",
       publish_date: "2015-05-06",
-      paper_author_id: 7,
     },
     {
       paper_id: 22,
       paper_title: "Climate tipping points too risky to bet against",
       conference: "g",
       publish_date: "2015-05-06",
-      paper_author_id: 8,
     },
     {
       paper_id: 23,
@@ -352,14 +331,12 @@ async function seedDatabase() {
         "New elevation data triple estimates of global vulnerability to sea-level rise and coastal flooding",
       conference: "d",
       publish_date: "2015-05-06",
-      paper_author_id: 9,
     },
     {
       paper_id: 24,
       paper_title: "The global tree restoration potential",
       conference: "d",
       publish_date: "2015-05-06",
-      paper_author_id: 10,
     },
     {
       paper_id: 25,
@@ -367,7 +344,6 @@ async function seedDatabase() {
         "Health effects of dietary risks in 195 countries', 1990–2017: a systematic analysis for the Global Burden of Disease Study 2017",
       conference: "f",
       publish_date: "2015-05-06",
-      paper_author_id: 11,
     },
     {
       paper_id: 26,
@@ -375,21 +351,18 @@ async function seedDatabase() {
         "Food in the Anthropocene: the EAT-Lancet Commission on healthy diets from sustainable foods",
       conference: "y",
       publish_date: "2015-05-06",
-      paper_author_id: 12,
     },
     {
       paper_id: 27,
       paper_title: "Concerns of young protesters are justified",
       conference: "d",
       publish_date: "2015-05-06",
-      paper_author_id: 13,
     },
     {
       paper_id: 28,
       paper_title: "Concerns of young protesters are justified",
       conference: "f",
       publish_date: "2015-05-06",
-      paper_author_id: 14,
     },
     {
       paper_id: 29,
@@ -397,7 +370,6 @@ async function seedDatabase() {
         "Global warming impairs stock-recruitment dynamics of corals",
       conference: "a",
       publish_date: "2015-05-06",
-      paper_author_id: 1,
     },
     {
       paper_id: 30,
@@ -405,24 +377,37 @@ async function seedDatabase() {
         "Eat less meat: UN climate-change report calls for change to human diet",
       conference: "a",
       publish_date: "2015-05-06",
-      paper_author_id: 6,
     },
   ];
+  const authorResearch = [];
+  for (let s = 0; s < 2; s++) {
+    for (let author_number = 1; author_number <= 15; author_number++) {
+      authorResearch.push(author_number);
+    }
+  }
+
   connection.connect();
   try {
     // call the function that returns promise
+    let i = 0;
     await execQuery(CREATE_RESEARCH_PAPERS_TABLE);
-    await execQuery(UPDATE_DATATYPE_PAPER_TITLE);
+    await execQuery(CREATE_RESEARCH_AUTHOR_TABLE);
     authors.forEach(async (author) => {
       await execQuery("INSERT INTO authors SET ? ", author);
     });
-    let i = 0;
+
     mentors.forEach(async (mentor) => {
       i++;
       await execQuery(`UPDATE authors SET ? WHERE author_no=${i}`, mentor);
     });
     research_papers.forEach(async (research_paper) => {
       await execQuery("INSERT INTO research_Papers SET ?", research_paper);
+    });
+    authorResearch.forEach(async (el) => {
+      i++;
+      await execQuery(
+        `INSERT INTO author_research SET author_number=${el},paper_id=${i} `
+      );
     });
   } catch (error) {
     console.error(error);

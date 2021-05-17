@@ -11,7 +11,7 @@ async function seedDatabase() {
   const SELECT_AUTHORS_MENTOR = `
         SELECT a2.author_name AS author, a1.author_name AS mentor FROM authors AS a2 LEFT JOIN authors AS a1 ON a1.author_no=a2.mentor`;
   const SELECT_AUTHORS_PAPER_TITLE = `
-        SELECT authors.author_no,authors.author_name,authors.university,authors.date_of_birth,authors.h_index,authors.gender ,research_papers.paper_title FROM research_papers  LEFT JOIN authors  ON authors.author_no=research_papers.paper_author_id`;
+        SELECT authors.author_no,authors.author_name,authors.university,authors.date_of_birth,authors.h_index,authors.gender ,research_papers.paper_title FROM authors   JOIN author_research  ON authors.author_no=author_research.author_number JOIN research_papers ON research_papers.paper_id=author_research.paper_id `;
   connection.connect();
   try {
     // call the function that returns promise
