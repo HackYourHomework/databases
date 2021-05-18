@@ -6,6 +6,6 @@ first by creating world database and then the collection city, country, country_
 3-I created an account on Atlas but I cant do a connection between the compass or shell and atlas so I will use the localhost
 
 4-I use these commands:
-select _ into outfile '<path file>city.csv' FIELDS TERMINATED BY ',' LINS TERMINATED BY '\n' from city;
-select _ into outfile '<path file>country.csv' FIELDS TERMINATED BY ',' LINS TERMINATED BY '\n' from country;
-select \* into outfile '<path file>country_language.csv' FIELDS TERMINATED BY ',' LINS TERMINATED BY '\n' from country_language;
+select * into outfile '<path file>city.csv' FIELDS TERMINATED BY ',' LINS TERMINATED BY '\n' from city;
+select * into outfile '<path file>country.csv' FIELDS TERMINATED BY ',' LINS TERMINATED BY '\n' from country;
+select * into outfile '<path file>country_language.csv' FIELDS TERMINATED BY ',' LINS TERMINATED BY '\n' from country_language;
