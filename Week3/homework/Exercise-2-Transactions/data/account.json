@@ -1,0 +1,14 @@
+[
+    {
+      "account_number": 101,
+      "balance": 1001
+    },
+    {
+      "account_number": 102,
+      "balance": 1002
+    },
+    {
+      "account_number": 103,
+      "balance": 1003
+    }
+]
