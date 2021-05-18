@@ -30,7 +30,7 @@ async function mongoQuery() {
     );
     collection.find({ Name: 'Tehran' });
     collection.find({ CountryCode: 'IRN' });
-    //await collection.remove({ Name: 'Tehran' });
+    collection.remove({ Name: 'Tehran' });
   } catch (error) {
     console.log(error);
   } finally {
