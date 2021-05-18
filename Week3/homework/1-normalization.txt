@@ -1,0 +1,31 @@
+
+1. What columns violate 1NF?
+- The data are not atomic: food_code , food_description
+- No Prevent duplicate records (No applying primary keys such one of:  member_id,  dinner_id, venue_code, food_code 
+- The values in a column are not of the same kind or type:  member_address, dinner_date.
+
+2. What entities do you recognize that could be extracted?
+member , dinner , venue , food
+
+3. Name all the tables and columns that would make a 3NF compliant solution.
+members (
+    member_id (primary key)
+    member_name 
+    member_address 
+)
+venues (
+    venue_code (primary key)
+    venue_description 
+)
+food (
+    food_code (primary key)
+    food_description
+)
+
+dinner (
+    dinner_id (primary key)
+    dinner_date 
+    member_id (FOREIGN KEY REFERENCES members(member_id))
+    venue_code (FOREIGN KEY REFERENCES venues(venue_code))
+    food_code (FOREIGN KEY REFERENCES food(food_code))
+)

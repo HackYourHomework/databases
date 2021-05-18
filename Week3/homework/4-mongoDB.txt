@@ -1,0 +1,20 @@
+*1- Conversion the data of world.sql tables into csv files (cities, countries, and countrylanguage)
+- Do the commands with the correct path file:
+select * into outfile '<path file>city.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from city;
+select * into outfile '<path file>country.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from country;
+select * into outfile '<path file>countrylanguage.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from countrylanguage;
+
+- Edit the csv files and add names to the columns same as the columns names of each table.
+#for city.csv: ID	NAME	CountryCode	 DISTRICT	Population
+#for country.csv: Code	Name	Continent	Region	SurfaceArea	IndepYear	Population	LifeExpectancy	GNP	GNPOld	LocalName	GovernmentForm	HeadOfState	Capital	Code2
+#for countrylanguage: CountryCode	language	IsOfficial	Percentage
+
+----------------------------------------------------------------------------------------------------------------
+
+*2- migrate data into Atlas MongoDB account:
+
+- login in MongoDB and create new cluster
+- Create connect to cluster using MongoDB Compass, by using the link with username and password.
+- Using MongoDB Compass to create a new database on the cluster, called world.
+- Create 3 new collections called: cities, countries, and countrylanguage.
+- for each collection import data from its csv file, with give the correct type of column data.
