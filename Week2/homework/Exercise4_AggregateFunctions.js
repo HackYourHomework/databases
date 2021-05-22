@@ -12,22 +12,21 @@ const SELECT_PAPERS_AUTHORS = `SELECT rp.paper_title, COUNT(rp.paper_id) AS coun
                   FROM research_papers AS rp LEFT JOIN authors_research_papers AS ap ON rp.paper_id = ap.paper_id
                   GROUP BY ap.paper_id`;
 
-const SUM_FEMALE_PAPERS = `SELECT SUM(research_papers.paper_id) AS Female_Count, authors.gender
-                  FROM authors INNER JOIN
-                          authors_research_papers ON authors.author_no = authors_research_papers.author_no INNER JOIN
-                          research_papers ON authors_research_papers.paper_id = research_papers.paper_id
-                          WHERE (authors.gender = 'f')
-                    GROUP BY authors.gender`;
+const SUM_FEMALE_PAPERS = `SELECT COUNT(research_papers.paper_id) AS Female_Count, authors.gender
+                            FROM authors INNER JOIN
+                                    authors_research_papers ON authors.author_no = authors_research_papers.author_no INNER JOIN
+                                    research_papers ON authors_research_papers.paper_id = research_papers.paper_id
+                                  WHERE (authors.gender = 'f')`;
 
 const AVERAGE_H_INDEX = `SELECT AVG(authors.h_index) AS Average, authors.university
                   FROM authors
                   GROUP BY authors.university`;
 
-const SUM_PAPERS_AUTHORS_PER_UNIVERSITY = `SELECT SUM(research_papers.paper_id) AS Sum_Papers, authors.author_name, authors.university
-                  FROM authors INNER JOIN
-                         authors_research_papers ON authors.author_no = authors_research_papers.author_no INNER JOIN
-                         research_papers ON authors_research_papers.paper_id = research_papers.paper_id
-                  GROUP BY authors.author_name, authors.university`;
+const SUM_PAPERS_AUTHORS_PER_UNIVERSITY = `SELECT COUNT(research_papers.paper_id) AS Sum_Papers, authors.author_name, authors.university
+                                            FROM authors INNER JOIN
+                                                  authors_research_papers ON authors.author_no = authors_research_papers.author_no INNER JOIN
+                                                  research_papers ON authors_research_papers.paper_id = research_papers.paper_id
+                                            GROUP BY authors.university`;
 
 const MIN_MAX_H_INDEX = `SELECT MIN(authors.h_index) AS Minimum, MAX(authors.h_index) AS Maximum, authors.author_name, authors.university
                   FROM authors INNER JOIN
