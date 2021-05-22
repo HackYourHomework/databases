@@ -1,15 +1,13 @@
-import { MongoClient } from 'mongodb';
+import mongodb from 'mongodb';
 
-const uri = `mongodb+srv://wael:HY938455@newcluster.jdsfg.mongodb.net/world`;
+const MongoClient = mongodb.MongoClient;
+
+const uri = `mongodb+srv://hyfuser:hyfpassword@cluster0.0d6nm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
-const db = client.db(`world`);
-
-const collection = db.collection(`city`);
 
 const myCity = {
   Name: `Sepphoris`,
@@ -21,6 +19,10 @@ const myCity = {
 const getNewCity = async () => {
   try {
     await client.connect();
+
+    const db = client.db(`world`);
+
+    const collection = db.collection(`city`);
 
     await collection.insertOne(myCity);
 

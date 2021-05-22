@@ -6,10 +6,10 @@ Q1: What columns violate 1NF?
 <br>
 Q2: What entities do you recognize that could be extracted?
 
-- members_table.
-- dinners_table.
-- locations_table.
-- foods_table.
+- members.
+- dinners.
+- venues.
+- foods.
 
 <br>
 Q3: Name all the tables and columns that would make a 3NF compliant solution.
@@ -25,7 +25,7 @@ Q3: Name all the tables and columns that would make a 3NF compliant solution.
   member_id INT FOREIGN KEY (member_id) REFERENCES members(member_id),<br>
   venue_code INT FOREIGN KEY (venue_code) REFERENCES venue(venue_code);
 
-- locations_table:<br>
+- venues_table:<br>
   venue_code INT AUTO_INCREMENT PRIMARY KEY,<br>
   vanue_description VARCHAR(50) NOT NULL;
 
