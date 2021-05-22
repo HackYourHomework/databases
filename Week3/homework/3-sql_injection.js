@@ -39,7 +39,7 @@ function getPopulation(Country, name, code, cb) {
   connection.end();
 }
 
-getPopulation(`country`, "Oman", "OMN", (err, results) => {
+getPopulation("country", "Oman", "OMN", (err, results) => {
   if (err) throw err;
   console.log(`Population of Oman is ${results[0].Population}`);
 });
