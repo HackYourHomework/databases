@@ -1,0 +1,10 @@
+1. Create an account in https://www.mongodb.com/cloud/atlas
+2. Create a new cluster
+3. Create User 
+4. In mysql terminal, write the commands to immigrate the files 
+5. An error 1290 and fixed it by typing this command in mysql ("SHOW VARIABLES LIKE "secure_file_priv";")
+6. Changed the CSV files and add new columns that explain data
+7. Open mongoDB application and create new collections
+8. Check datatype and import CSV data from  'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/'
+9. Check data in Atlas account in browser. 
+10.Run the code in visual studio and check it affects the mongoDB Atlas in browser or not.
