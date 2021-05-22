@@ -1,6 +1,13 @@
+const util = require("util");
+const mysql = require("mysql");
 
-
-
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "jyfuser",
+  password: "hyfpassword@",
+  database: "world",
+  multipleStatements: true,
+});
 
 /*
 
@@ -19,13 +26,20 @@
 */
 
 function getPopulation(Country, name, code, cb) {
-    // assuming that connection to the database is established and stored as connection
-    connection.query(
-      `SELECT Population FROM ? WHERE Name = ? and code = ?`,
-      function (err, result) {
-        if (err) cb(err);
-        if (result.length == 0) cb(new Error("Not found"));
-        cb(null, result[0].name);
-      }
-    );
+  // assuming that connection to the database is established and stored as connection
+  connection.query(
+    `SELECT Population FROM ${Country} WHERE Name = ? and code = ?`,
+    [name, code],
+    function (err, result) {
+      if (err) cb(err);
+      if (result.length == 0) cb(new Error("Not found"));
+      cb(null, result);
+    }
+  );
+  connection.end();
 }
+
+getPopulation(`country`, "Oman", "OMN", (err, results) => {
+  if (err) throw err;
+  console.log(`Population of Oman is ${results[0].Population}`);
+});
