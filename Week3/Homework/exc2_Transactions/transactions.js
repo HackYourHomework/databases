@@ -28,6 +28,8 @@ async function seedDatabase() {
 const execQuery = util.promisify(connection.query.bind(connection));
 
 try {
+  await execQuery(`START TRANSACTION`);
+  
   await execQuery(sourceTrans);
   await execQuery(destinTrans);
  

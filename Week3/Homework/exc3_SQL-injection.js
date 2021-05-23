@@ -18,4 +18,15 @@ function getPopulation(name, code, cb) {
         cb(null, result[0].name);
       }
     );
-  }
+  };
+
+
+/* vulnerable query that will return all the records in the database because 1=1 always true
+
+conn.query(`SELECT Population FROM ${Country} WHERE Name = 'anyName' AND code = 'AnyCountryCode' OR 1=1`,
+
+*/
+getPopulation("Netherlands", "NLD", (err, results) => {
+    if (err) throw err;
+    console.log(`Population: ${results}`);
+  });
