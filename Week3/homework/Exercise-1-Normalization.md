@@ -2,39 +2,45 @@
 
 ## What columns violate 1NF?
 
-### These fields are not normal:
+### These fields are not normal
+
 food_code: Multiple values
 food_description: Multiple values
 dinner_date: Different format
 
 ## What entities do you recognize that could be extracted?
 
-- dinner 
-- venue 
+- dinner
+- venue
+- food
 
-## Name all the tables and columns that would make a 3NF compliant solution.
+## Name all the tables and columns that would make a 3NF compliant solution
 
-### member table: 
-- member_id (PK) 
-- member_name 
+### member table
+
+- member_id (PK)
+- member_name
 - member_address
 
-### venue table: 
-- venue_code (PK) 
-- venue_description 
-- food_code(FK)
+### venue table
 
-### food table: 
-- food_code (PK) 
+- venue_code (PK)
+- venue_description
+
+### food table
+
+- food_code (PK)
 - food_description
 
-### dinner table: 
-- dinner_id (PK) 
-- dinner_date 
-- member_id (FK) 
+### dinner table
+
+- dinner_id (PK)
+- dinner_date
+- member_id (FK)
 - venue_code (FK)
 
-### foods dinner table:
+### foods dinner table
+
 - id (PK)
-- dinner_id (FK) 
-- food_code (FK) 
+- dinner_id (FK)
+- food_code (FK)
