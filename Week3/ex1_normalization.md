@@ -26,14 +26,19 @@ food_code varchar(100) foreign key references food table
 b. dinner table
 dinner_id int primary key
 dinner_date date
-venue_code int foreign key
+venue_code int
 
 c. venue table
 venue_code varchar(50) primary key
 venue_description varchar(50)
 dinner_id int foreign key
 
-c. food table
+d. food table
 food_code varchar(50) primary key
 food_description varchar(50)
 member_id foreign key
+
+I created a new table here, because dinner has members, members have dinners, this is many to many relation.
+e. dinners_members
+dinner_id int
+member_id int
