@@ -1,0 +1,18 @@
+1- Create an account in https://www.mongodb.com/cloud/atlas
+
+2- Create a new cluster
+
+3- Download compass mongodb to use it As the GUI for MongoDB
+
+4- From MongoDB Compass GUI create WorldDB and create three collections with the name City, Country, countrylanguage.
+
+5- Export City, Country, countrylanguage from World.sql as csv file
+
+6- Edit the exported (csv) files City, Country, countrylanguage by adding new row in order to hold the type of data for each column
+
+7- From MongoDB Compass GUI import data and change type of data of the new row to the correct type
+
+8- Done !!!
+
+
+ref : "https://www.youtube.com/watch?v=H9PlhBSzysA"
