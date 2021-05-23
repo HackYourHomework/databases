@@ -1,0 +1,137 @@
+[
+  {
+    "author_no": 1,
+    "author_name": "author 1",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 12,
+    "gender": "m",
+    "mentor": 2
+  },
+  {
+    "author_no": 2,
+    "author_name": "author 2",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 14,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_no": 3,
+    "author_name": "author 3",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 15,
+    "gender": "f",
+    "mentor": 2
+  },
+  {
+    "author_no": 4,
+    "author_name": "author 4",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 16,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_no": 5,
+    "author_name": "author 5",
+    "university": "university b",
+    "date_of_birth": "2010-10-10",
+    "h_index": 151,
+    "gender": "f",
+    "mentor": 4
+  },
+  {
+    "author_no": 6,
+    "author_name": "author 6",
+    "university": "university c",
+    "date_of_birth": "2010-10-10",
+    "h_index": 147,
+    "gender": "m",
+    "mentor": 2
+  },
+  {
+    "author_no": 7,
+    "author_name": "author 7",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 149,
+    "gender": "m",
+    "mentor": 1
+  },
+  {
+    "author_no": 8,
+    "author_name": "author 8",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 11,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_no": 9,
+    "author_name": "author 9",
+    "university": "university c",
+    "date_of_birth": "2010-10-10",
+    "h_index": 356,
+    "gender": "f",
+    "mentor": 6
+  },
+  {
+    "author_no": 10,
+    "author_name": "author 10",
+    "university": "university b",
+    "date_of_birth": "2010-10-10",
+    "h_index": 87,
+    "gender": "m",
+    "mentor": 7
+  },
+  {
+    "author_no": 11,
+    "author_name": "author 11",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 14,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_no": 12,
+    "author_name": "author 12",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 14,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_no": 13,
+    "author_name": "author 13",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 14,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_no": 14,
+    "author_name": "author 14",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 14,
+    "gender": "m",
+    "mentor": 3
+  },
+  {
+    "author_no": 15,
+    "author_name": "author 15",
+    "university": "university a",
+    "date_of_birth": "2010-10-10",
+    "h_index": 14,
+    "gender": "m",
+    "mentor": 3
+  }
+]

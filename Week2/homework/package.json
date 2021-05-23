@@ -1,17 +1,16 @@
 {
-  "name": "epic_todolist",
+  "name": "homework",
   "version": "1.0.0",
-  "description": "epic_todolist",
-  "main": "index.js",
+  "description": "",
+  "main": "Exercise1_Keys.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "faker": "^4.1.0",
-    "knex": "^0.21.1",
     "mysql": "^2.18.1",
-    "node-fetch": "^2.6.1"
+    "util": "^0.12.3"
   }
 }

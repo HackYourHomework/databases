@@ -109,25 +109,29 @@ musicians.push("Steve Lehman");
 console.log(musicians[0]); // prints: 'John Coltrane'
 ```
 
-While this JavaScript database is a nice and simple example, in practice you'll work with much more complicated databases.
+While this JavaScript database is a nice and simple example, it doesn't persist the data for the next day.
 
-In this module you will focus primarily on much more sophisticated relational databases, in particular MySQL.
+In this module you will focus primarily on persisting databases, in particular the relational database MySQL.
 
 To learn more, check out the following resources:
 
-- [What is Database & SQL](https://www.youtube.com/watch?v=FR4QIeZaPeM)
-- [What are databases?](https://www.youtube.com/watch?v=Ls_LzOZ7x0c)
+
 - [What is a database?](https://www.youtube.com/watch?v=t8jgX1f8kc4)
 
 ## 4. What is the role of a database in an application?
 
 A database setup typically involves two components, a server and a client.
 
-The server is the actual database management system and runs as a process on a machine either on your computer or on another computer in a data center somewhere.
+The server is the actual database management system (DBMS) and runs as a process on a machine either on your computer or on another computer in a data center somewhere.
+Unlike applications that you are used to, DBMSes usualy do not come with a user interface.
+The database server application can only be given commands using the CLI or using a separate client.
 
-The client is a program that talks to the database management system (the server), so it has to know where that server is running.
-
+The client is  a program that talks to the DBMS server, so it has to know where that server is running.
 The client then creates a [TCP connection](https://www.youtube.com/watch?v=EkNq4TrHP_U) to the server.
+
+A client would be your web application talking to the database or a GUI to interact with your database during development.
+Examples of free GUIs are [SequelPro for mac](https://www.sequelpro.com) and [HeidiSQL for Windows](https://www.heidisql.com/).
+These GUIs allow you to easily show the structure and contents of your database, and run your own queries.
 
 To do this the client needs to know:
 
@@ -136,11 +140,11 @@ To do this the client needs to know:
   - or a name like _my-db-server_
 - a username
 - a password
-- the name of the database
-
-The client would be your web application talking to the database.
+- the name of the database (optionally)
 
 The reason why you would want to use a database is that you can store information in a reliable and structured way. The database will ensure your information is stored safely (if setup correctly), with a high degree of reliability. The database also allows you to structure your information in such a way that we're able to find what we're looking for.
+
+- [What problems do database solve?](https://www.youtube.com/watch?v=Ls_LzOZ7x0c)
 
 ## 5. What is Structured Query Language (SQL)?
 
