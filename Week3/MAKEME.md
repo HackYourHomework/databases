@@ -15,7 +15,7 @@ Let's do a warming up with some interactive exercises! Let's start with doing le
 ## 2. **MySQL exercises**
 
 > You will need to do some research to solve these exercises. All the concepts necessary to solve
-these exercises are NOT covered in the reading material. This is on purpose.
+> these exercises are NOT covered in the reading material. This is on purpose.
 
 **Exercise 1 : Normalization**
 
@@ -51,7 +51,7 @@ Save all answers in a text file / MD file.
 4. Choose the appropriate data types and keys for these tables.
 5. Insert some sample data in these tables. (write transactions-insert-values.js file)
 6. Transfer the amount of 1000 from account number 101 to account number 102 and log the changes in the table `account_changes`.
-Do this in a _single transaction_ (Write transaction.js file)
+   Do this in a _single transaction_ (Write transaction.js file)
 
 Submit all three files (`transactions-create-tables.js`, `transactions-insert-values.js` and `transaction.js`).
 
@@ -64,7 +64,7 @@ function getPopulation(Country, name, code, cb) {
   // assuming that connection to the database is established and stored as conn
   conn.query(
     `SELECT Population FROM ${Country} WHERE Name = '${name}' and code = '${code}'`,
-    function(err, result) {
+    function (err, result) {
       if (err) cb(err);
       if (result.length == 0) cb(new Error("Not found"));
       cb(null, result[0].name);
@@ -74,7 +74,7 @@ function getPopulation(Country, name, code, cb) {
 ```
 
 1. Give an example of a value that can be passed as `name` and `code` that would take advantage of SQL-injection and
-(fetch all the records in the database)
+   (fetch all the records in the database)
 2. Rewrite the function so that it is no longer vulnerable to SQL injection
 
 **Exercise 4 : MongoDB CRUD**
@@ -93,15 +93,16 @@ select * into outfile 'countrylanguage.csv' FIELDS TERMINATED BY ',' LINES TERMI
 
 Then in Atlas , follow [add my own data](https://docs.atlas.mongodb.com/tutorial/insert-data-into-your-cluster) to import the csv data into new collections.
 
-* Write down all the steps of conversion (installation, commands etc.) in a text file / MD file.
+- Write down all the steps of conversion (installation, commands etc.) in a text file / MD file.
 
 Write the following queries using MongoDB syntax in the JavaScript files.
+
 1. Create a new record (document) for a new city (your home town, say)
 2. Update that record with a new population
 3. Read the document that you just updated in two ways : finding by the city name, and then by the country code
 4. Delete the city
 
-* Submit the javascript files for these queries.
+- Submit the javascript files for these queries.
 
 ## 3. **Code along**
 
