@@ -12,17 +12,17 @@ const useDb = "USE week3_db";
 
 const accountTable = `
   CREATE TABLE IF NOT EXISTS account (
-  account_number INT,
-  balance FLOAT,
-  CONSTRAINT  pk_account PRIMARY KEY (account_number)
+  account_number INT AUTO_INCREMENT,
+  balance INT,
+  CONSTRAINT pk_account PRIMARY KEY (account_number)
 );`;
 
 const accountChangeTable = `
 CREATE TABLE IF NOT EXISTS account_change (
-  change_number INT AUTO_INCREMENT,
+  change_number INT,
   account_number INT,
-  amount FLOAT,
-  changed_date DATE,
+  amount INT,
+  changed_date DATETIME,
   remark VARCHAR(150),
   CONSTRAINT pk_change PRIMARY KEY (change_number),
   CONSTRAINT FK_account_number FOREIGN KEY (account_number)
