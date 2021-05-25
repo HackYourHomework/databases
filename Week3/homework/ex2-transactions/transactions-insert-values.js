@@ -5,7 +5,6 @@ const connectionConfig = {
   host: `localhost`,
   user: `hyfuser`,
   password: `hyfpassword`,
-  password: ``,
   database: `hyf_db`,
 };
 

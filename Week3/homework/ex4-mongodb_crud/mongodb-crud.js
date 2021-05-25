@@ -16,7 +16,7 @@ const myCity = {
   Population: 972,
 };
 
-const getNewCity = async () => {
+const manipulateCity = async () => {
   try {
     await client.connect();
 
@@ -47,4 +47,4 @@ const getNewCity = async () => {
   }
 };
 
-getNewCity();
+manipulateCity();

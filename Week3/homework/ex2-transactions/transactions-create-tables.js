@@ -60,4 +60,5 @@ async function seedDatabase() {
     connection.end();
   }
 }
+
 seedDatabase();
