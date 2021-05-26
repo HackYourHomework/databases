@@ -16,7 +16,7 @@ conn.connect((err) => {
 function getPopulation(Country, name, code, cb) {
   conn.query(
     `SELECT Population FROM ${Country} 
-    WHERE Name = ? AND code2 = ?`,
+    WHERE Name = ? AND code2 = ?`, //code2 - the column with code of the country
     [name, code],
     function (err, result) {
       if (err) cb(err);

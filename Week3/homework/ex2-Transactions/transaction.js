@@ -30,6 +30,7 @@ connection.beginTransaction(function (err) {
         });
       }
       const fullDate = new Date();
+      //create the date in format 2000-02-25 18:15:05
       const date = `${fullDate.getFullYear()}-${
         fullDate.getMonth() + 1
       }-${fullDate.getDate()} ${fullDate.getHours()}:${fullDate.getMinutes()}:${fullDate.getSeconds()}`;
