@@ -36,8 +36,13 @@ dinner_date: Different format
 
 - dinner_id (PK)
 - dinner_date
-- member_id (FK)
 - venue_code (FK)
+
+### member dinner table
+
+- member_dinner_id (PK)
+- member_id (FK)
+- dinner_id (FK)
 
 ### foods dinner table
 

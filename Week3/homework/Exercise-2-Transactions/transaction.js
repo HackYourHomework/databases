@@ -28,7 +28,9 @@ const databaseQueries = async () => {
     );
     await execQuery(`COMMIT`);
   } catch (error) {
-    console.log('error: ', error);
+    return connection.rollback(function () {
+      console.log('error: ', error);
+    });
   }
 
   connection.end();
