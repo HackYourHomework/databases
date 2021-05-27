@@ -31,6 +31,12 @@ const databaseQueries = async () => {
     return connection.rollback(function () {
       console.log('error: ', error);
     });
+
+    // You can also do sth like this
+    // catch (err) {
+    // console.error('error: ', error);
+    // await execQuery("ROLLBACK");
+    // }
   }
 
   connection.end();
