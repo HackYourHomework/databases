@@ -1,0 +1,59 @@
+1- Go to https://www.mongodb.com/cloud/atlas
+
+2- Press Get started free button
+
+3- Select "Accept Privacy Policy & Terms of Service"
+
+4- Press Submit button
+
+5- Insert "Name your organization and project"
+
+6- Select your preferred language
+
+7- Press Continue button
+
+8- Press "Create a cluster" for free
+
+9- In the bottom of page click "Create cluster"
+
+10- From "Get Started" list select "Create your first database user"
+
+11- Click Database Access then Create Database
+
+12- In "Password Authentication" insert username and password then click add user
+
+13- From right side menubar select Network Access then Add IP Address then click "Allow Access From Anywhere" then click Confirm
+
+14- From Get Started button list, select "Connect to your cluster" then click connect then select "Connect using MongoDB Compass"
+
+15- Copy and save connection string and change "<password>" with the password you entered before
+
+16- Download "MongoDB Compass" from https://www.mongodb.com/try/download/compass 
+
+17- Run MongoDB Compass
+
+18- Insert the connection string you saved in step 15
+
+19- Click Create Database 
+
+20- Insert Database Name as world and Collection Name as cities then click Create Database button
+
+21- Select world database and add 2 collections: countries and countrylanguage
+
+22- Open "MySQL 8.0 Command Line Client" from windows start menu and insert root password
+
+23- In mysql> command line insert this command: SHOW VARIABLES LIKE "secure_file_priv";
+
+24- Type USE world
+
+25- Insert this command: select * into outfile '<add the value of step 23 and change all "\" to "/">city.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from city;
+
+26- Go to run of windows and insert value of step 23 in the folder will be open then open city.csv in Excel
+
+27- Insert a row top of all rows and set the ID, Name, CountryCode, District, Population for each column then save the file in desktop
+
+28- Go to "MongoDB Compass" and select cities from world then click Import Data then select CSV and browse city.csv from desktop
+
+29- Do the same for 'country' and 'countrylanguage'
+
+30- Check your MongoDB Atlas account and all data imported.

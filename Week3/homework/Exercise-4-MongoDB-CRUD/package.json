@@ -1,7 +1,7 @@
 {
-  "name": "epic_todolist",
+  "name": "exercise-4-mongodb-crud",
   "version": "1.0.0",
-  "description": "epic_todolist",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,9 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "faker": "^4.1.0",
-    "knex": "^0.21.1",
-    "mysql": "^2.18.1",
-    "node-fetch": "^2.6.1"
+    "mongodb": "^3.6.7"
   }
 }
