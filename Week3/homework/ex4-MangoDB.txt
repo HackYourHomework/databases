@@ -1,0 +1,11 @@
+1-I installed mongoDB compass and atlas.
+
+2-I imported the .csv files into mongo using the mongoDB compass
+first by creating world database and then the collection city, country, country_language and then start importing data into them.
+
+3-I created an account on Atlas but I cant do a connection between the compass or shell and atlas so I will use the localhost
+
+4-I use these commands:
+select * into outfile '<path file>city.csv' FIELDS TERMINATED BY ',' LINS TERMINATED BY '\n' from city;
+select * into outfile '<path file>country.csv' FIELDS TERMINATED BY ',' LINS TERMINATED BY '\n' from country;
+select * into outfile '<path file>country_language.csv' FIELDS TERMINATED BY ',' LINS TERMINATED BY '\n' from country_language;
