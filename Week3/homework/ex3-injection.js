@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 const execQuery = util.promisify(connection.query.bind(connection));
 const input = util.promisify(prompt.get.bind(this));
 
-async function getINfo() {
+async function getInfo() {
   let input_table = "";
   let input_city = "";
   let input_city_code = "";
@@ -62,4 +62,4 @@ async function getINfo() {
   connection.end();
 }
 
-getINfo();
+getInfo();
