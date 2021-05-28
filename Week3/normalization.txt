@@ -1,6 +1,6 @@
 What columns violate 1NF?
 
-The row with id=1,id=3 are duplicate and that violates 1NF .
+The row with id=1,id=3 are duplicate and that violates 1NF  member_id must be a unique id so we can't have the same id twice
 member_address datatype is different it is better to have a separate column for postcode .
 same issue with dinner_date values are not of the same type .
 Not a single value in food_code and food_description .
@@ -15,3 +15,4 @@ table member columns(member_id pk,member_name,member_address)
  table dinner columns (member_id fk,dinner_id pk,dinner_date)
  table venue columns (dinner_id,fk,venue_code,venue_description)
  table food columns (dinner_id,fk,food_code,food_description)
+ making a many to many relationship by making a table with two Fk (member_id,dinner_id)

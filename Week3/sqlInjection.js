@@ -12,7 +12,9 @@ function getPopulation(Country, name, code, cb) {
   connection.connect();
   // assuming that connection to the database is established and stored as conn
   connection.query(
-    `SELECT Population FROM ${Country} WHERE Name = ` +
+    `SELECT Population FROM ` +
+      connection.escape(Country) +
+      ` WHERE Name = ` +
       connection.escape(name) +
       " and code = " +
       connection.escape(code),
