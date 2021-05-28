@@ -19,7 +19,7 @@ const numPapersAuthors = `
 
 // Sum of the research papers published by all female authors.
 const sumPapersByFemales = `
-  SELECT COUNT(research_papers.paper_id) AS females_papers
+  SELECT COUNT(DISTINCT research_papers.paper_id) AS females_papers
   FROM research_papers
   INNER JOIN author_research ON research_id = research_papers.paper_id
   INNER JOIN authors ON author_research.author_no = authors.author_no
@@ -35,10 +35,10 @@ const averageHIndex = `
 
 // Sum of the research papers of the authors per university.
 const sumPapersPerUniversity = `
-  SELECT university, COUNT(research_papers.paper_id) AS research_papers
+  SELECT university, COUNT(DISTINCT research_papers.paper_id) AS research_papers
   FROM research_papers
   INNER JOIN author_research ON research_id = research_papers.paper_id
-  INNER JOIN authors on author_research.author_no = authors.author_no
+  INNER JOIN authors ON author_research.author_no = authors.author_no
   GROUP BY university;
 `;
 
