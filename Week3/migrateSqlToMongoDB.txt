@@ -1,0 +1,16 @@
+How to migrate database from Mysql to Mongodb ?
+
+1 create an account on Atlas mongodb 
+
+2 use compass mongodb as a client to upload your data to the cloud 
+
+3 connect your Atlas account to compass mongodb 
+ 
+4 create database WORLD in your compass with collection city 
+
+5 go to your sql command line client and type this query select * into outfile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from city;
+that will save the sql table CITY in a excel folder at the path C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/city.csv 
+
+6 go to your compass mongodb and click on city collection import the file city.csv
+
+7 repeat number 5,6 for country and countrylanguage 
