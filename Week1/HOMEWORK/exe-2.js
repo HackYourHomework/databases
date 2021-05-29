@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
 });
 connection.connect();
 
-const select_query = [
+const exercise_queries = [
   "SELECT name FROM country WHERE population > 8000000",
   "SELECT name FROM country WHERE name LIKE 'land%'",
   "SELECT name FROM city WHERE population between 50000 and  1000000",
